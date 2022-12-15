@@ -56,7 +56,7 @@
         imgBox[i].className = 'imgBox';
       }
       this.className = 'imgBox active';
-      bannerImg.style.background = `url('${this.querySelector('img').getAttribute('src')}')`
+      bannerImg.style.setProperty('background', `url('${this.querySelector('img').getAttribute('src')}')`)
       console.log(this.querySelector('img').getAttribute('src'));
     })
   })

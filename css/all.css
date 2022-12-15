@@ -52,11 +52,11 @@
 #banner {
   width: 100%;
   height: 100vh;
+  position: relative;
   background: url("https://fakeimg.pl/1903x961/?text=World&font=lobster");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  position: relative;
 }
 #banner::before {
   content: "";
@@ -71,7 +71,7 @@
 #banner #album {
   position: absolute;
   top: 50%;
-  left: 65%;
+  left: 50%;
   width: 200px;
   height: 200px;
   border-radius: 50%;
@@ -95,7 +95,7 @@
   border: 1px solid #fff;
   box-shadow: 0 0 0 4px #222, 0 0 0 6px #fff;
   transform: rotate(calc(45deg * var(--i)));
-  transform-origin: 120px;
+  transform-origin: 122px;
   z-index: 10;
 }
 #banner #album .container .imgBox.active {
