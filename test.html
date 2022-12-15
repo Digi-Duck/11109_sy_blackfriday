@@ -34,7 +34,6 @@
       justify-content: center;
       align-items: center;
       cursor: pointer;
-
     }
     .container .imgBox{
       position: absolute;
@@ -50,7 +49,7 @@
     }
     .container .imgBox.active{
       box-shadow: 0 0 0 4px #222,
-                  0 0 0 12px #ff1d50;
+                  0 0 0 8px #ff1d50;
     }
     .container .imgBox img{
       position: absolute;
@@ -66,7 +65,7 @@
     .container .imgBox.active img{
       filter: grayscale(0);
     }
-
+    
     .content{
       position: absolute;
       inset: 0;
@@ -86,6 +85,7 @@
       height: 100%;
       background-position: center;
       object-fit: cover;
+
     }
     .contentBox{
       position: absolute;
@@ -96,6 +96,110 @@
     .contentBox.active{
       transform: scale(1);
       opacity: 1;
+    }
+    @media (max-width: 768px){
+      #album{
+        width: 400px;
+        height: 400px;
+      }
+      .container .imgBox{
+        width: 80px;
+        height: 80px;
+        transform: rotate(calc(360deg/8 * var(--i)));
+        transform-origin: 235px;
+      }
+      .content .imgbox{
+        width: 280px;
+        height: 280px;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+    }
+    @media (max-width: 576px){
+      #album{
+        width: 240px;
+        height: 240px;
+
+      }
+      #album .container{
+        left: -85%;
+      }
+      .container .imgBox{
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        border: 1px solid #fff;
+        box-shadow: none;
+        transform: rotate(calc(360deg/8 * var(--i)));
+        transform-origin: 250px;
+      }
+      .container .imgBox img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+        transform: rotate(calc(-360deg/8 * var(--i)));
+        filter: grayscale(0);
+      }
+      .container .imgBox.active{
+        box-shadow: none;
+      }
+      
+      .content{
+        /* display: none; */
+      }
+      .content .imgbox{
+        width: 240px;
+        height: 240px;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+    }
+    @media (max-width: 576px){
+      #album{
+        width: 200px;
+        height: 200px;
+
+      }
+      #album .container{
+        left: -72%;
+      }
+      .container .imgBox{
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        border: 1px solid #fff;
+        box-shadow: none;
+        transform: rotate(calc(360deg/8 * var(--i)));
+        transform-origin: 182px;
+      }
+      .container .imgBox img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+        transform: rotate(calc(-360deg/8 * var(--i)));
+        filter: grayscale(0);
+      }
+      .container .imgBox.active{
+        box-shadow: none;
+      }
+      
+      .content{
+        /* display: none; */
+      }
+      .content .imgbox{
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        overflow: hidden;
+      }
     }
   </style>
 </head>
@@ -136,7 +240,7 @@
           </div>
         </div>
       </div>
-      <div class="contentBox" id="content2">
+      <!-- <div class="contentBox" id="content2">
         <div class="card">
           <div class="imgbox">
             <img src="https://picsum.photos/500/400?random=2" alt="">
@@ -184,28 +288,37 @@
             <img src="https://picsum.photos/500/400?random=8" alt="">
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </section>
 
   <script>
-    let imgBox = document.querySelectorAll('.imgBox');
-    let contentBox = document.querySelectorAll('.contentBox');
+    const imgBox = document.querySelectorAll('.imgBox');
+    const contentBox = document.querySelector('.contentBox');
 
     imgBox.forEach(function(item,index) {
       imgBox[index].addEventListener('click',  function() {
-        for(let i = 0; i < contentBox.length; i++){
-          contentBox[i].className = 'contentBox';
-        }
+        // for(let i = 0; i < contentBox.length; i++){
+        //   contentBox[i].className = 'contentBox';
+        // }
         
-        document.getElementById(this.dataset.id).className = 'contentBox active';
+        // document.getElementById(this.dataset.id).className = 'contentBox active';
 
         for(let i = 0; i < imgBox.length; i++){
           imgBox[i].className = 'imgBox';
         }
         this.className = 'imgBox active';
+        contentBox.innerHTML = `
+          <div class="card">
+            <div class="imgbox">
+              <img src="${this.querySelector('img').getAttribute('src')}" alt="">
+            </div>
+          </div>
+        `;
+        console.log(this.querySelector('img').getAttribute('src'));
       })
     })
+
   </script>
 </body>
 </html>

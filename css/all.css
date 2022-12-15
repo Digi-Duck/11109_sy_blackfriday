@@ -54,6 +54,8 @@
   height: 100vh;
   background: url("https://fakeimg.pl/1903x961/?text=World&font=lobster");
   background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   position: relative;
 }
 #banner::before {
@@ -64,8 +66,54 @@
   width: 100%;
   height: 80px;
   background: #fff;
-  -webkit-clip-path: polygon(0% 100%, 78% 0%, 100% 100%);
-          clip-path: polygon(0% 100%, 78% 0%, 100% 100%);
+  clip-path: polygon(0% 100%, 78% 0%, 100% 100%);
+}
+#banner #album {
+  position: absolute;
+  top: 50%;
+  left: 65%;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  user-select: none;
+}
+#banner #album .container {
+  position: relative;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+#banner #album .container .imgBox {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  box-shadow: 0 0 0 4px #222, 0 0 0 6px #fff;
+  transform: rotate(calc(45deg * var(--i)));
+  transform-origin: 120px;
+  z-index: 10;
+}
+#banner #album .container .imgBox.active {
+  box-shadow: 0 0 0 4px #222;
+}
+#banner #album .container .imgBox img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  transform: rotate(calc(-45deg * var(--i)));
+  filter: grayscale(1);
+}
+#banner #album .container .imgBox.active img {
+  filter: grayscale(0);
 }
 
 #about {
@@ -74,8 +122,7 @@
 }
 #about .content {
   margin-left: auto;
-  -ms-writing-mode: tb-rl;
-      writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
   position: relative;
   z-index: 2;
   line-height: 1.5;
@@ -98,6 +145,7 @@
 #main-card {
   padding: 100px 5%;
   background-color: rgb(248, 242, 234);
+  overflow: hidden;
 }
 #main-card .card {
   width: 100%;
@@ -125,6 +173,14 @@
   /* !! */
   transform: translateX(0%);
 }
+#main-card .card:first-child .pic, #main-card .card:last-child .pic {
+  transform: translateX(-150%);
+  transition: transform 0.5s;
+}
+#main-card .card:nth-child(2) .pic {
+  transform: translateX(150%);
+  transition: transform 0.5s;
+}
 #main-card .card .pic {
   width: 45%;
   height: 100%;
@@ -141,10 +197,19 @@
 #main-card .card .pic:hover img {
   transform: scale(1.1);
 }
+#main-card .card .pic.fade {
+  transform: translateX(0);
+}
 #main-card .card .card-body {
   width: 50%;
   padding: 10px 20px;
   margin: 0 0 0 auto;
+  opacity: 0;
+  transition: 0.5s;
+  transition-delay: 1s;
+}
+#main-card .card .card-body.opc {
+  opacity: 1;
 }
 #main-card .card .card-body h2 {
   margin-bottom: 12px;
@@ -325,4 +390,4 @@
   #footer .news .contactUs .content {
     display: block;
   }
-}/*# sourceMappingURL=all.css.map */
+}
