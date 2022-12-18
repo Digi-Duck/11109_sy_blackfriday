@@ -39,6 +39,7 @@
       if(scrollY+500 > item.offsetTop){
         item.querySelector('.pic').classList.add('fade');
         item.querySelector('.card-body').classList.add('opc');
+        item.classList.add('topFade');
       }
     })
   }
@@ -50,17 +51,25 @@
   const imgBox = document.querySelectorAll('.imgBox');
   const bannerImg = document.querySelector('#banner');
 
-  imgBox.forEach(function(item,index) {
+  imgBox.forEach(function(item,index,array) {
     imgBox[index].addEventListener('click',  function() {
+      // array.forEach((it,key) => {
+      //   console.log(it.getAttribute('class'));
+      //   if(it.getAttribute('class') == 'imgBox active'){
+      //     console.log(key);
+      //       it.style.setProperty('--i', key);
+      //       console.log(it);
+      //     }
+      // });
       for(let i = 0; i < imgBox.length; i++){
         imgBox[i].className = 'imgBox';
+        
       }
+
       this.className = 'imgBox active';
-      bannerImg.style.setProperty('background', `url('${this.querySelector('img').getAttribute('src')}')`)
-      console.log(this.querySelector('img').getAttribute('src'));
-    })
-  })
-  let x = 0;
-  setInterval(function() {
-    
-  })
+      // this.style.setProperty('--i', 1);
+      
+      bannerImg.style.setProperty('background-image', `url('${this.querySelector('img').getAttribute('src')}')`)
+    });
+  });
+  

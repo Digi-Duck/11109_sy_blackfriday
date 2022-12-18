@@ -69,10 +69,11 @@ $red: #f02b2b;
   width: 100%;
   height: 100vh;
   position: relative;
-  background: url('https://fakeimg.pl/1903x961/?text=World&font=lobster');
+  background-image: url('https://fakeimg.pl/1903x961/?text=World&font=lobster');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  transition: .5s;
   &::before{
     content: '';
     position:absolute;
@@ -183,9 +184,17 @@ $red: #f02b2b;
       width: 360px;
       height: 200px;
       left: 50%;
-      transform: translateX(-100%);
+      transform: translateX(-100%) translateY(100px);
       top: calc(100% - 100px);
       background-color: rgb(92, 190, 158);
+      // transform: translateY(100px);
+      opacity: 0;
+      transition: .5s;
+      transition-delay: 1s;
+    }
+    &.topFade::before{
+      transform: translateX(-100%) translateY(0);
+      opacity: 1;
     }
     &:nth-child(2)::before{
       
@@ -229,7 +238,7 @@ $red: #f02b2b;
       margin: 0 0 0 auto;
       opacity: 0;
       transition: 0.5s;
-      transition-delay: 1s;
+      transition-delay: .5s;
       &.opc{
         opacity: 1;
       }
