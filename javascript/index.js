@@ -21,26 +21,12 @@
     },
   });
 
-  const burger = document.querySelector('.burger');
-  const navbar = document.querySelector('.navbar')
-  burger.addEventListener('click', function() {
-    navbar.classList.toggle('d-block');
-    burger.querySelector('.fa-bars').classList.toggle('d-none');
-    burger.querySelector('.fa-x').classList.toggle('d-block');
-  })
 
-  const nav = document.querySelector('#nav');
-  const banner = document.querySelector('#banner');
+
   const cards = document.querySelectorAll('#main-card .card')
   
   function scroll() {
-    if(scrollY+80 > banner.offsetHeight) {
-      nav.classList.add('fixed');
-      // document.body.style.paddingTop = nav.offsetHeight+'px';
-    }else {
-      nav.classList.remove('fixed');
-      // document.body.style.paddingTop = 0;
-    }
+
     cards.forEach((item) => {
       console.log(scrollY, item.offsetTop);
       
