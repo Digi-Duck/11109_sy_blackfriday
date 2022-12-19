@@ -117,6 +117,9 @@
 #mobile-menu.active {
   transform: translateX(0%);
 }
+#mobile-menu a {
+  text-decoration: none;
+}
 #mobile-menu .header {
   display: flex;
   align-items: center;

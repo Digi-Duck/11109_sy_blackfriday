@@ -142,6 +142,9 @@ $red: #f02b2b;
   &.active{
     transform: translateX(0%);
   }
+  a{
+    text-decoration: none;
+  }
   .header{
     display: flex;
     align-items: center;
