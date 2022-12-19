@@ -49,10 +49,19 @@ $red: #f02b2b;
       color: $text-white;
     }
   }
+  .burger{
+    font-size: 32px;
+    color: $text-white;
+    display: none;
+    .fa-x{
+      display: none;
+    }
+  }
   .navbar{
     display: flex;
     align-items: center;
     a{
+      display: inline-block;
       padding: 12px 20px;
       text-decoration: none;
       color: $text-white;
@@ -61,8 +70,41 @@ $red: #f02b2b;
       margin-right: -20px;
     }
   }
-
 }
+@media (max-width: 768px){
+  #nav{
+    position: relative;
+    .burger{
+      display: block;
+      .fa-bars.d-none{
+        display: none;
+      }
+      
+      .fa-x.d-block{
+        display: block;
+      }
+
+    }
+    .navbar{
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      display: none;
+      height: calc(100vh - 80px);
+      background-color: $dark-green;
+      opacity: .8;
+      &.d-block{
+        display: block;
+      }
+      a{
+        width: 100%;
+        padding: 20px;
+      }
+    }
+  }
+}
+
 
 
 
@@ -84,7 +126,7 @@ $red: #f02b2b;
     width:100%;
     height:60px;
     background:#fff;
-    clip-path:polygon(0% 100%, 78%  0%,100% 100%);
+    clip-path:polygon(0% 100%, 78.5%  0%,100% 100%);
   }
 
   #album{
@@ -143,31 +185,96 @@ $red: #f02b2b;
   padding: 100px 20%;
   position: relative;
   .content{
-    margin-left: auto;
-    writing-mode:vertical-rl;
+    margin: 0 0 0 auto;
+    writing-mode: vertical-rl;
     position: relative;
     z-index: 2;
     line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     h2{
       transform: translateY(-50px);
+      font-size: 32px;
+      margin: 0 0 0 12px;
     }
     p{
-      margin: 0 20px;
+      margin: 0 16px;
+      font-size: 24px;
+    }
+  }
+}
+@media (max-width: 992px){
+  #about{
+    padding: 100px 5%;
+    .content{
+      margin: 0 auto;
+    }
+  }
+}
+@media (max-width: 768px){
+  #about{
+
+    .content{
+      writing-mode: horizontal-tb;
+      display: block;
+      h2{
+        transform: translateY(0px);
+        margin: 0 0 12px 0;
+      }
+    }
+  }
+}
+#sunset-banner{
+  width: 100%;
+  height: 640px;
+  // background-image: url('https://fakeimg.pl/1903x961/?text=World&font=lobster');
+  // background-attachment: fixed;
+  // background-position: center;
+  padding: 0 5%;
+  display: flex;
+  background-color: #292626;
+  .content{
+    width: 40%;
+    margin-left: auto;
+    writing-mode:vertical-rl;
+    color: $text-white;
+    font-size: 24px;
+    line-height: 66px;
+    padding: 60px 40px;
+    p:first-child, p:nth-child(3){
+      transform: translateY(56px);
+    }
+    p:nth-child(2), p:nth-child(4){
+      transform: translateY(30px);
+    }
+  }
+  .sunset-img{
+    width: 60%;
+    height: 100%;
+    background-image: url('https://fakeimg.pl/1903x961/?text=World&font=lobster');
+    background-position: center;
+    border-radius: 50px;
+  }
+}
+@media (max-width: 992px){
+  #sunset-banner{
+    padding: 0;
+    position: relative;
+    .content{
+      position: absolute;
+      width: 100%;
+    }
+    .sunset-img{
+      width: 100%;
+      border-radius: 0;
     }
   }
 }
 
-#sunset-banner{
-  width: 100%;
-  height: 640px;
-  background-image: url('https://fakeimg.pl/1903x961/?text=World&font=lobster');
-  background-attachment: fixed;
-  background-position: center;
-}
-
 #main-card{
   padding: 100px 5%;
-  background-color: rgb(248, 242, 234);
+  background-color: $green;
   overflow: hidden;
   .card{
     width: 100%;
@@ -205,13 +312,15 @@ $red: #f02b2b;
     }
     &:first-child, &:last-child{
       .pic{
-        transform: translateX(-150%);
+        transform: translateX(-20%);
+        opacity: 0;
         transition: transform .5s;
       }
     }
     &:nth-child(2){
       .pic{
-        transform: translateX(150%);
+        transform: translateX(20%);
+        opacity: 0;
         transition: transform .5s;
       }
     }
@@ -226,11 +335,13 @@ $red: #f02b2b;
         vertical-align: bottom;
         /* position: relative; */
         transition: transform .3s;
+        object-fit: cover;
       }
       &:hover img{
         transform: scale(1.1);
       }
       &.fade{
+        opacity: 1;
         transform: translateX(0);
       }
     }
@@ -245,16 +356,30 @@ $red: #f02b2b;
         opacity: 1;
       }
       h2{
-        margin-bottom: 12px;
+        margin-bottom: 20px;
+        position: relative;
+        &::after{
+          content: '';
+          position: absolute;
+          width: 40%;
+          height: 1px;
+          left: 0;
+          bottom: -10px;
+          background-color: #000;
+
+        }
       }
       p{
         line-height: 1.5;
-        border-top: 1px solid #000;
+        margin-bottom: 12px;
+        display: inline-block;
+        word-break: keep-all;
       }
       .btn{
         width: 100%;
         text-align: end;
         margin-top: 8px;
+        display: inline-block;
         a{ 
           padding: 12px 20px;
           background-color: #ccc;
@@ -276,8 +401,15 @@ $red: #f02b2b;
     padding: 100px 20px;
     .card{
       flex-direction: column;
+      &::before{
+        display: none;
+      }
+      &:nth-child(2){
+        flex-direction: column;
+      }
       &:nth-child(3){
         padding-left: 0px;
+        margin-bottom: 0;
       }
       .pic{
         width: 100%;
@@ -387,7 +519,7 @@ $red: #f02b2b;
   background-color: $dark-green;
   .news{
     display: flex;
-    margin-bottom: 12px;
+    margin-bottom: 20px;
     .title{
       display: flex;
       font-size: 32px;
@@ -403,8 +535,8 @@ $red: #f02b2b;
     }
     .social{
       display: flex;
-      font-size: 32px;
-      gap: 12px;
+      font-size: 36px;
+      gap: 20px;
       li:first-child i{
         color: #1877f2;
       }
@@ -447,6 +579,25 @@ $red: #f02b2b;
     }
   }
 }
+
+@media (max-width: 768px){
+  #footer{
+    .news{
+      display: block;
+      text-align: center;
+      .title{
+        justify-content: center;
+      }
+      .social{
+        justify-content: center;
+      }
+    }
+    .copyright p{
+      text-align: center;
+    }
+  }
+}
+
 
 
 
@@ -500,6 +651,8 @@ $red: #f02b2b;
       img{
         width: 100%;
         height: 100%;
+        vertical-align: bottom;
+        object-fit: cover;
       }
     }
     .card-body{
@@ -559,5 +712,131 @@ $red: #f02b2b;
       }
     }
     
+  }
+}
+
+
+
+// 民宿活動
+#activity-banner{
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-image: url('https://fakeimg.pl/1903x961/?text=World&font=lobster');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: .5s;
+  &::before{
+    content: '';
+    position:absolute;
+    bottom: 0;
+    left: 0;
+    width:100%;
+    height:60px;
+    background:$green;
+    clip-path:polygon(0% 100%, 50%  0%,100% 100%);
+  }
+}
+
+#activity{
+  padding: 80px 5%;
+  background-color: $green;
+  .card{
+    display: flex;
+    width: 100%;
+    .card-img{
+      width: 50%;
+      img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        vertical-align: bottom;
+      }
+    }
+    .card-body{
+      width: 50%;
+      padding: 0 12px;
+      h2{
+        font-size: 28px;
+        margin-bottom: 20px;
+        position: relative;
+        &::after{
+          content: '';
+          position: absolute;
+          width: 60%;
+          height: 1px;
+          background-color: #000;
+          bottom: -10px;
+          left: 0;
+        }
+      }
+      .remind{
+        margin: 12px 0 8px 0;
+        color: #f02b2b;
+      }
+    }
+  }
+  .card:first-child{
+    width: 60%;
+    .card-img{
+      width: 60%;
+      img{
+        width: 100%;
+      }
+    }
+    .card-body{
+      width: 40%;
+      
+    }
+  }
+  .card:nth-child(2){
+    margin-left: auto;
+    width: 50%;
+    .card-img{
+      width: 50%;
+    }
+    .card-body{
+      width: 50%;
+
+      .content{
+        display: inline-block;
+        margin-bottom: 12px;
+      }
+    }
+  }
+  .card:nth-child(3){
+    width: 50%;
+    // transform: translateY(-100px);
+    .card-img{
+      width: 50%;
+    }
+    .card-body{
+      width: 50%;
+    }
+  }
+  .card:nth-child(4){
+    width: 60%;
+    flex-direction: row-reverse;
+    margin-left: auto;
+    .card-img{
+      width: 50%;
+    }
+    .card-body{
+      h2::after{
+        left: 40%;
+      }
+      width: 50%;
+      text-align: right;
+    }
+  }
+  .card:last-child{
+    flex-direction: row-reverse;
+    .card-img{
+      width: 40%;
+    }
+    .card-body{
+      width: 60%;
+    }
   }
 }
