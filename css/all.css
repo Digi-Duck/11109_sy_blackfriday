@@ -15,7 +15,7 @@
   position: absolute;
   top: 0;
   z-index: 3;
-  background-color: #9b9a9a;
+  background-color: #243628;
 }
 #nav.fixed {
   position: fixed;
@@ -35,6 +35,7 @@
 }
 #nav .logo h1 {
   font-size: 36px;
+  color: #e2dcdc;
 }
 #nav .navbar {
   display: flex;
@@ -43,7 +44,7 @@
 #nav .navbar a {
   padding: 12px 20px;
   text-decoration: none;
-  color: #000;
+  color: #e2dcdc;
 }
 #nav .navbar a:last-child {
   margin-right: -20px;
@@ -65,10 +66,9 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 80px;
+  height: 60px;
   background: #fff;
-  -webkit-clip-path: polygon(0% 100%, 78% 0%, 100% 100%);
-          clip-path: polygon(0% 100%, 78% 0%, 100% 100%);
+  clip-path: polygon(0% 100%, 78% 0%, 100% 100%);
 }
 #banner #album {
   position: absolute;
@@ -77,10 +77,7 @@
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 #banner #album .container {
   position: relative;
@@ -112,8 +109,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 50%;
   transform: rotate(calc(-45deg * var(--i)));
   filter: grayscale(1);
@@ -128,8 +124,7 @@
 }
 #about .content {
   margin-left: auto;
-  -ms-writing-mode: tb-rl;
-      writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
   position: relative;
   z-index: 2;
   line-height: 1.5;
@@ -247,9 +242,6 @@
 #main-card .card:nth-child(2) .card-body {
   margin: 0 auto 0 0;
 }
-#main-card .card:nth-child(3) {
-  padding-left: 20px;
-}
 
 @media (max-width: 768px) {
   #main-card {
@@ -359,27 +351,35 @@
 
 #footer {
   padding: 28px 5%;
-  background-color: #9b9a9a;
+  background-color: #243628;
 }
 #footer .news {
   display: flex;
+  margin-bottom: 12px;
 }
 #footer .news .title {
   display: flex;
   font-size: 32px;
   margin-bottom: 8px;
+  color: #e2dcdc;
 }
 #footer .news .title p {
-  padding: 0 8px;
+  padding: 0 12px;
 }
 #footer .news .title p:first-child {
   padding-left: 0;
-  border-right: 2px solid #000;
+  border-right: 2px solid #e2dcdc;
 }
 #footer .news .social {
   display: flex;
   font-size: 32px;
   gap: 12px;
+}
+#footer .news .social li:first-child i {
+  color: #1877f2;
+}
+#footer .news .social li:last-child i {
+  color: #07be5b;
 }
 #footer .news .contactUs {
   margin: 0 auto;
@@ -388,6 +388,7 @@
 #footer .news .contactUs h3 {
   font-size: 24px;
   margin-bottom: 8px;
+  color: #e2dcdc;
 }
 #footer .news .contactUs .content {
   display: flex;
@@ -395,13 +396,110 @@
 }
 #footer .news .contactUs .content p {
   margin-bottom: 4px;
+  color: #e2dcdc;
 }
 #footer .copyright p {
   text-align: end;
+  color: #e2dcdc;
 }
 
 @media (max-width: 992px) {
   #footer .news .contactUs .content {
     display: block;
   }
-}/*# sourceMappingURL=all.css.map */
+}
+#room-banner {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-image: url("https://fakeimg.pl/1903x961/?text=World&font=lobster");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: 0.5s;
+}
+#room-banner::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: #ecf2ee;
+  clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+}
+
+#rooms {
+  padding: 80px 5%;
+  background-color: #ecf2ee;
+}
+#rooms .card {
+  width: 100%;
+  height: 360px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+#rooms .card:nth-child(2) {
+  flex-direction: row-reverse;
+}
+#rooms .card:nth-child(2) .card-body {
+  left: 3%;
+}
+#rooms .card:nth-child(2) .card-body h2, #rooms .card:nth-child(2) .card-body p {
+  text-align: right;
+}
+#rooms .card:last-child {
+  margin-bottom: 0;
+}
+#rooms .card .card-img {
+  width: 50%;
+  height: 100%;
+  flex-shrink: 0;
+}
+#rooms .card .card-img img {
+  width: 100%;
+  height: 100%;
+}
+#rooms .card .card-body {
+  flex-shrink: 0;
+  width: 53%;
+  padding: 40px 10px;
+  position: relative;
+  left: -3%;
+  background-color: #ecf2ee;
+}
+#bookRoom {
+  padding: 80px 5%;
+  display: flex;
+}
+#bookRoom .equip, #bookRoom .book-notice {
+  width: 50%;
+}
+#bookRoom .equip h2, #bookRoom .book-notice h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  position: relative;
+}
+#bookRoom .equip h2::after, #bookRoom .book-notice h2::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 1px;
+  background-color: #000;
+  bottom: -10px;
+  left: 0;
+}
+#bookRoom .equip .content div, #bookRoom .book-notice .content div {
+  margin-bottom: 8px;
+}
+#bookRoom .equip .content h3, #bookRoom .book-notice .content h3 {
+  font-size: 24px;
+}
+#bookRoom .equip .content .remark, #bookRoom .book-notice .content .remark {
+  margin-top: 16px;
+}
+#bookRoom .equip .content .remark .remind, #bookRoom .book-notice .content .remark .remind {
+  margin-top: 16px;
+  color: #f02b2b;
+}
