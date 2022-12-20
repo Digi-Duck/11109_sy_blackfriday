@@ -3,6 +3,7 @@
   list-style: none;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 
@@ -70,7 +71,7 @@ $red: #f02b2b;
       text-decoration: none;
       color: $text-white;
       transform: translateY(0px);
-      transition: .5s;
+      transition: transform .5s;
       position: relative;
       &:hover{
         transform: translateY(-4px);
@@ -119,7 +120,7 @@ $red: #f02b2b;
       background-color: $dark-green;
       opacity: .8;
       &.d-block{
-        // display: block;
+        display: block;
       }
       a{
         width: 100%;
@@ -138,8 +139,11 @@ $red: #f02b2b;
   background-color: $dark-green;
   display: block;
   transform: translateX(100%);
-  transition: .3s;
+  opacity: 0;
+  transition: transform .3s;
   &.active{
+    // display: block;
+    opacity: 1;
     transform: translateX(0%);
   }
   a{
@@ -222,7 +226,6 @@ $red: #f02b2b;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  transition: .5s;
   &::before{
     content: '';
     position:absolute;
@@ -336,17 +339,21 @@ $red: #f02b2b;
   // background-image: url('https://fakeimg.pl/1903x961/?text=World&font=lobster');
   // background-attachment: fixed;
   // background-position: center;
-  padding: 0 5%;
+  // padding: 0 0 0 5%;
   display: flex;
   background-color: #292626;
   .content{
-    width: 40%;
+    width: 50%;
     margin-left: auto;
     writing-mode:vertical-rl;
     color: $text-white;
     font-size: 24px;
     line-height: 66px;
     padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
     p:first-child, p:nth-child(3){
       transform: translateY(56px);
     }
@@ -355,12 +362,11 @@ $red: #f02b2b;
     }
   }
   .sunset-img{
-    width: 60%;
+    width: 50%;
     height: 100%;
     background-image: url('https://fakeimg.pl/1903x961/?text=World&font=lobster');
     background-position: center;
     background-size: cover;
-    border-radius: 50px;
   }
 }
 @media (max-width: 992px){
@@ -370,6 +376,7 @@ $red: #f02b2b;
     .content{
       position: absolute;
       width: 100%;
+      justify-content: start;
     }
     .sunset-img{
       width: 100%;
@@ -396,38 +403,39 @@ $red: #f02b2b;
     &::before{
       content: '';
       position: absolute;
-      width: 360px;
-      height: 200px;
+      width: 320px;
+      height: 240px;
       left: 50%;
       transform: translateX(-100%) translateY(100px);
-      top: calc(100% - 100px);
+      top: calc(100% - 140px);
       background-color: rgb(92, 190, 158);
-      // transform: translateY(100px);
       opacity: 0;
-      transition: .5s;
-      transition-delay: 1s;
+      transition: transform .5s, opacity .5s;
+      transition-delay: .5s 1s;
+    }
+    &:nth-child(2)::before{
+      transform: translateX(0%) translateY(100px);
     }
     &.topFade::before{
       transform: translateX(-100%) translateY(0);
       opacity: 1;
     }
-    &:nth-child(2)::before{
-      
-      /* !! */
-      transform: translateX(0%);
+    &:nth-child(2).topFade::before{
+      transform: translateX(0%) translateY(0);
+      opacity: 1;
     }
     &:first-child, &:last-child{
       .pic{
         transform: translateX(-20%);
         opacity: 0;
-        transition: transform .5s;
+        transition: transform .5s, opacity .5s;
       }
     }
     &:nth-child(2){
       .pic{
         transform: translateX(20%);
         opacity: 0;
-        transition: transform .5s;
+        transition: transform .5s, opacity .5s;
       }
     }
     .pic{
@@ -435,6 +443,7 @@ $red: #f02b2b;
       height: 100%;
       overflow: hidden;
       position: relative;
+      margin: 0 5% 0 0;
       img{
         width: 100%;
         height: 100%;
@@ -452,11 +461,11 @@ $red: #f02b2b;
       }
     }
     .card-body{
-      width: 55%;
+      width: 50%;
       padding: 10px 20px;
       // margin: 0 0 0 auto;
       opacity: 0;
-      transition: 0.5s;
+      transition: opacity 0.5s;
       transition-delay: .5s;
       &.opc{
         opacity: 1;
@@ -480,14 +489,14 @@ $red: #f02b2b;
         margin-bottom: 12px;
         display: inline-block;
         word-break: keep-all;
-
+        word-wrap: break-word;
       }
       .btn{
         width: 100%;
         text-align: end;
         margin-top: 8px;
-        display: inline-block;
         a{ 
+          display: inline-block;
           padding: 12px 20px;
           background-color: #ccc;
           text-decoration: none;
@@ -496,8 +505,8 @@ $red: #f02b2b;
         }
       }
     }
-    &:nth-child(2) .card-body{
-      // margin: 0 auto 0 0;
+    &:nth-child(2) .pic{
+      margin: 0 0 0 5%;
     }
 
   }
@@ -520,6 +529,7 @@ $red: #f02b2b;
       }
       .pic{
         width: 100%;
+        margin: 0;
       }
       .card-body{
         width: 100%;
@@ -528,8 +538,9 @@ $red: #f02b2b;
         left: 0;
         margin: 0;
       }
-      &:nth-child(2) .card-body{
-        left: 0%;
+      &:nth-child(2) .pic{
+        // left: 0%;
+        margin: 0;
       }
     }
 
@@ -610,7 +621,7 @@ $red: #f02b2b;
       opacity: 0;
       visibility: hidden;
       transform: translateY(500px);
-      transition: .5s;
+      transition: transform .5s;
     }
   }
   .swiper-slide.swiper-slide-active .content{
@@ -720,7 +731,6 @@ $red: #f02b2b;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  transition: .5s;
   &::before{
     content: '';
     position:absolute;
@@ -758,12 +768,35 @@ $red: #f02b2b;
       width: 50%;
       height: 100%;
       flex-shrink: 0;
+      position: relative;
+      a{
+        text-decoration: none;
+        color: $dark-green;
+        &:hover .search{
+          clip-path: circle(100%);
+        }
+      }
       img{
         width: 100%;
         height: 100%;
         vertical-align: bottom;
         object-fit: cover;
       }
+      .search{
+        position: absolute;
+        font-size: 32px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        clip-path: circle(40px);
+        background-color:rgba(119, 119, 119, .4);
+        top: 0;
+        left: 0;
+        transition: clip-path .5s;
+      }
+      
     }
     .card-body{
       flex-shrink: 0;
@@ -836,7 +869,6 @@ $red: #f02b2b;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  transition: .5s;
   &::before{
     content: '';
     position:absolute;
@@ -883,6 +915,7 @@ $red: #f02b2b;
       }
       p{
         word-break: keep-all;
+        word-wrap: break-word;
       }
       .remind{
         margin: 12px 0 8px 0;
@@ -905,7 +938,7 @@ $red: #f02b2b;
   }
   .card:nth-child(2){
     margin-left: auto;
-    width: 50%;
+    width: 60%;
     .card-img{
       width: 50%;
     }
@@ -950,6 +983,91 @@ $red: #f02b2b;
     }
     .card-body{
       width: 60%;
+    }
+  }
+}
+
+
+
+
+
+#map-banner{
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-image: url('https://fakeimg.pl/1903x961/?text=World&font=lobster');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  &::before{
+    content: '';
+    position:absolute;
+    bottom: 0;
+    left: 0;
+    width:100%;
+    height:60px;
+    background:$green;
+    clip-path:polygon(0% 100%, 50%  0%,100% 100%);
+  }
+}
+#map{
+  background-color: $green;
+  padding: 80px 5%;
+  iframe{
+    filter: grayscale(30%);
+    width: 50%;
+    float: right;
+  }
+  .content{
+    // width: 45%;
+    // clear: right;
+    .location{
+      margin-bottom: 48px;
+      p{
+        word-break: keep-all;
+        word-wrap: break-word;
+      }
+    }
+    h2{
+      font-size: 32px;
+      margin-bottom: 20px;
+      position: relative;
+      &::after{
+        content: '';
+        position: absolute;
+        width: 300px;
+        height: 1px;
+        left: 0;
+        bottom: -10px;
+        background-color: #000;
+      }
+    }
+    h3{
+      font-size: 24px;
+      margin-bottom: 4px;
+    }
+    .traffic{
+      p{
+        word-break: keep-all;
+        word-wrap: break-word;
+        margin-bottom: 8px;
+      }
+    }
+  }
+
+}
+@media (max-width: 768px){
+  #map{
+    iframe{
+      width: 100%;
+      float: none;
+      margin-bottom: 20px;
+    }
+    .content{
+      width: 100%;
+      .location{
+        margin-bottom: 32px;
+      }
     }
   }
 }

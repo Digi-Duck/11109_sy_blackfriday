@@ -1,4 +1,30 @@
+  const nav = document.querySelector('#nav');
+  const banner = document.querySelector('#banner');
+  const cards = document.querySelectorAll('#main-card .card')
   
+  function scroll() {
+    if(scrollY+80 > banner.offsetHeight) {
+      nav.classList.add('fixed');
+      // document.body.style.paddingTop = nav.offsetHeight+'px';
+    }else {
+      nav.classList.remove('fixed');
+      // document.body.style.paddingTop = 0;
+    }
+
+    cards.forEach((item) => {
+      console.log(scrollY, item.offsetTop);
+      
+      if(scrollY+500 > item.offsetTop){
+        item.querySelector('.pic').classList.add('fade');
+        item.querySelector('.card-body').classList.add('opc');
+        item.classList.add('topFade');
+      }
+    })
+  }
+  scroll();
+  window.addEventListener('scroll', scroll)
+
+
   // Initialize Swiper
   var swiper = new Swiper(".swiper", {
     effect: "coverflow",
@@ -23,22 +49,7 @@
 
 
 
-  const cards = document.querySelectorAll('#main-card .card')
-  
-  function scroll() {
-
-    cards.forEach((item) => {
-      console.log(scrollY, item.offsetTop);
-      
-      if(scrollY+500 > item.offsetTop){
-        item.querySelector('.pic').classList.add('fade');
-        item.querySelector('.card-body').classList.add('opc');
-        item.classList.add('topFade');
-      }
-    })
-  }
-  scroll();
-  window.addEventListener('scroll', scroll)
+ 
 
 
 

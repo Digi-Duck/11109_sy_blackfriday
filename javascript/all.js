@@ -12,15 +12,3 @@ cross.addEventListener('click', function() {
   body.style.overflow = 'auto';
 })
 
-const nav = document.querySelector('#nav');
-const banner = document.querySelector('#banner');
-
-window.addEventListener('scroll', function() {
-  if(scrollY+80 > banner.offsetHeight) {
-    nav.classList.add('fixed');
-    // document.body.style.paddingTop = nav.offsetHeight+'px';
-  }else {
-    nav.classList.remove('fixed');
-    // document.body.style.paddingTop = 0;
-  }
-})
