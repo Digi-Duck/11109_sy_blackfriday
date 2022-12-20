@@ -73,6 +73,9 @@ $red: #f02b2b;
       transform: translateY(0px);
       transition: transform .5s;
       position: relative;
+      &.active{
+        color: gray;
+      }
       &:hover{
         transform: translateY(-4px);
       }
@@ -187,6 +190,9 @@ $red: #f02b2b;
       text-decoration: none;
       color: $text-white;
       text-align: center;
+      &.active{
+        color: gray;
+      }
     }
   }
   .content{
@@ -235,6 +241,7 @@ $red: #f02b2b;
     height:60px;
     background:#fff;
     clip-path:polygon(0% 100%, 78.5%  0%,100% 100%);
+
   }
 
   #album{
@@ -322,17 +329,38 @@ $red: #f02b2b;
 }
 @media (max-width: 768px){
   #about{
-
+    padding: 100px 40px;
     .content{
       writing-mode: horizontal-tb;
       display: block;
       h2{
         transform: translateY(0px);
-        margin: 0 0 12px 0;
+        margin: 0 0 16px 0;
+        font-size: 28px;
+      }
+      p{
+        margin: 0 0 8px 16px;
+        font-size: 20px;
       }
     }
   }
 }
+@media (max-width: 375px){
+  #about{
+    padding: 60px 12px;
+    .content{
+      
+      h2{
+        margin: 0 0 8px 0;
+      }
+      p{
+        margin: 0 0 4px 12px;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
 #sunset-banner{
   width: 100%;
   height: 640px;
@@ -348,7 +376,7 @@ $red: #f02b2b;
     writing-mode:vertical-rl;
     color: $text-white;
     font-size: 24px;
-    line-height: 66px;
+    line-height: 64px;
     padding: 60px 40px;
     display: flex;
     flex-direction: column;
@@ -377,16 +405,27 @@ $red: #f02b2b;
       position: absolute;
       width: 100%;
       justify-content: start;
+      line-height: 54px;
     }
     .sunset-img{
       width: 100%;
-      border-radius: 0;
     }
   }
 }
-
+@media (max-width: 375px){
+  #sunset-banner{
+  
+    .content{
+      padding: 60px 20px;
+      line-height: 40px;
+    }
+    .sunset-img{
+      width: 100%;
+    }
+  }
+}
 #main-card{
-  padding: 100px 5%;
+  padding: 120px 5%;
   background-color: $green;
   overflow: hidden;
   .card{
@@ -395,7 +434,7 @@ $red: #f02b2b;
     display: flex;
     /* align-items: center; */
     position: relative;
-    margin-bottom: 120px;
+    margin-bottom: 100px;
     &.reverse{
       display: flex;
       flex-direction: row-reverse;
@@ -406,22 +445,22 @@ $red: #f02b2b;
       width: 320px;
       height: 240px;
       left: 50%;
-      transform: translateX(-100%) translateY(100px);
-      top: calc(100% - 140px);
+      transform: translate(-100%, 100px);
+      top: calc(100% - 200px);
       background-color: rgb(92, 190, 158);
       opacity: 0;
       transition: transform .5s, opacity .5s;
-      transition-delay: .5s 1s;
+      transition-delay: .5s, .3s;
     }
     &:nth-child(2)::before{
-      transform: translateX(0%) translateY(100px);
+      transform: translate(0, 100px);
     }
     &.topFade::before{
-      transform: translateX(-100%) translateY(0);
+      transform: translate(-100%, 0);
       opacity: 1;
     }
     &:nth-child(2).topFade::before{
-      transform: translateX(0%) translateY(0);
+      transform: translate(0, 0);
       opacity: 1;
     }
     &:first-child, &:last-child{
@@ -467,6 +506,7 @@ $red: #f02b2b;
       opacity: 0;
       transition: opacity 0.5s;
       transition-delay: .5s;
+      position: relative;
       &.opc{
         opacity: 1;
       }
@@ -485,6 +525,7 @@ $red: #f02b2b;
         }
       }
       p{
+        width: 100%;
         line-height: 1.5;
         margin-bottom: 12px;
         display: inline-block;
@@ -517,8 +558,19 @@ $red: #f02b2b;
     padding: 100px 20px;
     .card{
       flex-direction: column;
+      height: 100%;
       &::before{
-        display: none;
+        width: 320px;
+        height: 240px;
+        top: 154px;
+        left: 100%;
+        
+      }
+      &:nth-child(2)::before{
+        transform: translate(-100%, 100px);
+      }
+      &.topFade:nth-child(2)::before{
+        transform: translate(-100%, 0%);
       }
       &:nth-child(2){
         flex-direction: column;
@@ -528,7 +580,8 @@ $red: #f02b2b;
         margin-bottom: 0;
       }
       .pic{
-        width: 100%;
+        width: 88%;
+        height: 360px;
         margin: 0;
       }
       .card-body{
@@ -544,6 +597,36 @@ $red: #f02b2b;
       }
     }
 
+  }
+}
+@media (max-width: 576px){
+  #main-card{
+    .card{
+      &::before{
+        width: 280px;
+        height: 220px;
+        top: 168px;
+      }
+    }
+  }
+}
+@media (max-width: 375px){
+  #main-card{
+    padding: 60px 12px;
+    
+    .card{
+      flex-direction: column;
+      height: 100%;
+      margin-bottom: 40px;
+      &::before{
+        display: none;
+        
+      }
+      .pic{
+        width: 100%;
+        height: 100%;
+      }
+    }
   }
 }
 
@@ -596,38 +679,79 @@ $red: #f02b2b;
             transform: translateX(5px);
           }
         }
-        
+      }
+    }
+    .swiper-slide{
+      background-position: center;
+      background-size: cover;
+      width: 480px;
+      height: 320px;
+      -webkit-box-reflect: below .5px linear-gradient(transparent, transparent, #006);
+      position: relative;
+      img{
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+      .content{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 12px 16px;
+        visibility: hidden;
+        transform: translateY(500px);
+        transition: transform .5s;
+        h3{
+          margin-bottom: 4px;
+        }
+        p{
+          word-break: keep-all;
+        }
+      }
+    }
+    .swiper-slide.swiper-slide-active .content{
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0px);
+    }
+  }
+  }
+
+@media (max-width: 768px){
+  #around{
+    padding: 100px 20px;
+    .swiper{
+      .swiper-slide{
+        width: 400px;
+        height: 300px;
       }
     }
   }
-  .swiper-slide{
-    background-position: center;
-    background-size: cover;
-    width: 480px;
-    height: 320px;
-    -webkit-box-reflect: below .5px linear-gradient(transparent, transparent, #006);
-    position: relative;
-    img{
-      display: block;
-      width: 100%;
-      height: 100%;
+}
+@media (max-width: 375px){
+  #around{
+    padding: 60px 12px;
+    .swiper{
+      padding-bottom: 0px;
+      .header{
+        h2{
+
+          &::after{
+            width: 140px;
+          }
+        }
+      }
+      .swiper-slide{
+        width: 351px;
+        height: 300px;
+      }
     }
-    .content{
-      position: absolute;
-      top: 70%;
-      bottom: 0;
-      left: 10%;
-      right: 0;
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(500px);
-      transition: transform .5s;
-    }
-  }
-  .swiper-slide.swiper-slide-active .content{
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0px);
   }
 }
 
@@ -819,10 +943,11 @@ $red: #f02b2b;
 #bookRoom{
   padding: 80px 5%;
   display: flex;
+  gap: 20px;
   .equip, .book-notice{
     width: 50%;
     h2{
-      font-size: 36px;
+      font-size: 28px;
       margin-bottom: 20px;
       position: relative;
       &::after{
@@ -857,8 +982,37 @@ $red: #f02b2b;
     
   }
 }
-
-
+@media (max-width: 768px){
+  #bookRoom{
+    
+    .equip, .book-notice{
+      
+      h2{
+        font-size: 24px;
+        margin-bottom: 20px;
+        position: relative;
+        &::after{
+        
+          width: 200px;
+          
+        }
+      }
+      .content{
+        h3{
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 576px){
+  #bookRoom{
+    flex-wrap: wrap;
+    .equip, .book-notice{
+      width: 100%;
+    }
+  }
+}
 
 // 民宿活動
 #activity-banner{

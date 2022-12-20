@@ -12,7 +12,7 @@
     }
 
     cards.forEach((item) => {
-      console.log(scrollY, item.offsetTop);
+      // console.log(scrollY, item.offsetTop);
       
       if(scrollY+500 > item.offsetTop){
         item.querySelector('.pic').classList.add('fade');
@@ -47,9 +47,6 @@
     },
   });
 
-
-
- 
 
 
 
