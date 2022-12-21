@@ -35,8 +35,8 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-animation: animate 2s infinite linear;
-          animation: animate 2s infinite linear;
+  -webkit-animation: float 2s infinite linear;
+          animation: float 2s infinite linear;
 }
 .loading .container svg:nth-child(1) {
   width: 100%;
@@ -56,6 +56,28 @@
   -webkit-animation-delay: -0.4s;
           animation-delay: -0.4s;
   transform: translate(-100%, -20%);
+}
+@-webkit-keyframes float {
+  0% {
+    top: 50%;
+  }
+  50% {
+    top: 44%;
+  }
+  100% {
+    top: 50%;
+  }
+}
+@keyframes float {
+  0% {
+    top: 50%;
+  }
+  50% {
+    top: 44%;
+  }
+  100% {
+    top: 50%;
+  }
 }
 .loading .container h2 {
   font-size: 40px;
@@ -108,28 +130,6 @@
   }
   100% {
     border-left: 2px solid transparent;
-  }
-}
-@-webkit-keyframes animate {
-  0% {
-    top: 50%;
-  }
-  50% {
-    top: 44%;
-  }
-  100% {
-    top: 50%;
-  }
-}
-@keyframes animate {
-  0% {
-    top: 50%;
-  }
-  50% {
-    top: 44%;
-  }
-  100% {
-    top: 50%;
   }
 }
 
