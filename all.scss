@@ -865,6 +865,17 @@ $red: #f02b2b;
     background:$green;
     clip-path:polygon(0% 100%, 50%  0%,100% 100%);
   }
+  .title{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    h2{
+      font-size: 32px;
+      color: transparent;
+      -webkit-text-stroke: 1px #000;
+    }
+  }
 }
 
 #rooms{
@@ -1033,6 +1044,17 @@ $red: #f02b2b;
     background:$green;
     clip-path:polygon(0% 100%, 50%  0%,100% 100%);
   }
+  .title{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    h2{
+      font-size: 32px;
+      color: transparent;
+      -webkit-text-stroke: 1px #000;
+    }
+  }
 }
 
 #activity{
@@ -1142,7 +1164,125 @@ $red: #f02b2b;
 }
 
 
+// 農產品
+#product-banner{
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-image: url('https://fakeimg.pl/1903x961/?text=World&font=lobster');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  &::before{
+    content: '';
+    position:absolute;
+    bottom: 0;
+    left: 0;
+    width:100%;
+    height:60px;
+    background:$green;
+    clip-path:polygon(0% 100%, 50%  0%,100% 100%);
+  }
+  .title{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    h2{
+      font-size: 32px;
+      color: transparent;
+      -webkit-text-stroke: 1px #000;
+    }
+  }
 
+}
+#product{
+  padding: 100px 5%;
+  background-color: $green;
+  .card{
+    display: flex;
+    align-items: center;
+    // gap: 40px;
+    margin-bottom: 40px;
+    .card-header{
+      width: 40%;
+      flex-shrink: 0;
+      text-align: center;
+      img{
+        width: 360px;
+        height: 360px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      h2{
+        font-size: 28px;
+      }
+    }
+    .card-body{
+      width: 60%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      div{
+        width: 40%;
+        img{
+          filter: grayscale(100%);
+          width: 100%;
+          border-radius: 24px;
+          object-fit: cover;
+          cursor: pointer;
+          &:hover{
+          
+            filter: grayscale(0%);
+            
+          }
+        }
+      }
+    }
+  }
+  .tree-fruit{
+    flex-direction: row-reverse;
+    
+    .fruit{
+      div{
+        width: 30%;
+      }
+    }
+
+  }
+}
+
+#bounce{
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+  z-index: 5;
+  transform: scale(0);
+  transition: transform .3s;
+  &.active{
+    transform: scale(1);
+  }
+  .pop-up{
+    width: 400px;
+    height: 400px;
+    background-color: rgba(119, 119, 119, .7);
+    padding: 20px 32px;
+    border-radius: 24px;
+    &.d-none{
+      display: none;
+    }
+    .card{
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
 
 
 #map-banner{
@@ -1162,6 +1302,17 @@ $red: #f02b2b;
     height:60px;
     background:$green;
     clip-path:polygon(0% 100%, 50%  0%,100% 100%);
+  }
+  .title{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    h2{
+      font-size: 32px;
+      color: transparent;
+      -webkit-text-stroke: 1px #000;
+    }
   }
 }
 #map{

@@ -211,8 +211,7 @@
   width: 100%;
   height: 60px;
   background: #fff;
-  -webkit-clip-path: polygon(0% 100%, 78.5% 0%, 100% 100%);
-          clip-path: polygon(0% 100%, 78.5% 0%, 100% 100%);
+  clip-path: polygon(0% 100%, 78.5% 0%, 100% 100%);
 }
 #banner #album {
   position: absolute;
@@ -221,10 +220,7 @@
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 #banner #album .container {
   position: relative;
@@ -256,8 +252,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 50%;
   transform: rotate(calc(-45deg * var(--i)));
   filter: grayscale(1);
@@ -272,8 +267,7 @@
 }
 #about .content {
   margin: 0 0 0 auto;
-  -ms-writing-mode: tb-rl;
-      writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
   position: relative;
   z-index: 2;
   line-height: 1.5;
@@ -304,8 +298,7 @@
     padding: 100px 40px;
   }
   #about .content {
-    -ms-writing-mode: lr-tb;
-        writing-mode: horizontal-tb;
+    writing-mode: horizontal-tb;
     display: block;
   }
   #about .content h2 {
@@ -339,8 +332,7 @@
 #sunset-banner .content {
   width: 50%;
   margin-left: auto;
-  -ms-writing-mode: tb-rl;
-      writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
   color: #e2dcdc;
   font-size: 24px;
   line-height: 64px;
@@ -451,8 +443,7 @@
   vertical-align: bottom;
   /* position: relative; */
   transition: transform 0.3s;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 #main-card .card .pic:hover img {
   transform: scale(1.1);
@@ -781,8 +772,18 @@
   width: 100%;
   height: 60px;
   background: #ecf2ee;
-  -webkit-clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
-          clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+  clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+}
+#room-banner .title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#room-banner .title h2 {
+  font-size: 32px;
+  color: transparent;
+  -webkit-text-stroke: 1px #000;
 }
 
 #rooms {
@@ -819,15 +820,13 @@
   color: #243628;
 }
 #rooms .card .card-img a:hover .search {
-  -webkit-clip-path: circle(100%);
-          clip-path: circle(100%);
+  clip-path: circle(100%);
 }
 #rooms .card .card-img img {
   width: 100%;
   height: 100%;
   vertical-align: bottom;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 #rooms .card .card-img .search {
   position: absolute;
@@ -837,14 +836,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  -webkit-clip-path: circle(40px);
-          clip-path: circle(40px);
+  clip-path: circle(40px);
   background-color: rgba(119, 119, 119, 0.4);
   top: 0;
   left: 0;
-  transition: -webkit-clip-path 0.5s;
   transition: clip-path 0.5s;
-  transition: clip-path 0.5s, -webkit-clip-path 0.5s;
 }
 #rooms .card .card-body {
   flex-shrink: 0;
@@ -928,8 +924,18 @@
   width: 100%;
   height: 60px;
   background: #ecf2ee;
-  -webkit-clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
-          clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+  clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+}
+#activity-banner .title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#activity-banner .title h2 {
+  font-size: 32px;
+  color: transparent;
+  -webkit-text-stroke: 1px #000;
 }
 
 #activity {
@@ -946,8 +952,7 @@
 #activity .card .card-img img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   vertical-align: bottom;
 }
 #activity .card .card-body {
@@ -1032,6 +1037,118 @@
   width: 60%;
 }
 
+#product-banner {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-image: url("https://fakeimg.pl/1903x961/?text=World&font=lobster");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#product-banner::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: #ecf2ee;
+  clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+}
+#product-banner .title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#product-banner .title h2 {
+  font-size: 32px;
+  color: transparent;
+  -webkit-text-stroke: 1px #000;
+}
+
+#product {
+  padding: 100px 5%;
+  background-color: #ecf2ee;
+}
+#product .card {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+#product .card .card-header {
+  width: 40%;
+  flex-shrink: 0;
+  text-align: center;
+}
+#product .card .card-header img {
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+#product .card .card-header h2 {
+  font-size: 28px;
+}
+#product .card .card-body {
+  width: 60%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+#product .card .card-body div {
+  width: 40%;
+}
+#product .card .card-body div img {
+  filter: grayscale(100%);
+  width: 100%;
+  border-radius: 24px;
+  object-fit: cover;
+  cursor: pointer;
+}
+#product .card .card-body div img:hover {
+  filter: grayscale(0%);
+}
+#product .tree-fruit {
+  flex-direction: row-reverse;
+}
+#product .tree-fruit .fruit div {
+  width: 30%;
+}
+
+#bounce {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+  z-index: 5;
+  transform: scale(0);
+  transition: transform 0.3s;
+}
+#bounce.active {
+  transform: scale(1);
+}
+#bounce .pop-up {
+  width: 400px;
+  height: 400px;
+  background-color: rgba(119, 119, 119, 0.7);
+  padding: 20px 32px;
+  border-radius: 24px;
+}
+#bounce .pop-up.d-none {
+  display: none;
+}
+#bounce .pop-up .card {
+  display: flex;
+  flex-direction: column;
+}
+
 #map-banner {
   width: 100%;
   height: 100vh;
@@ -1049,8 +1166,18 @@
   width: 100%;
   height: 60px;
   background: #ecf2ee;
-  -webkit-clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
-          clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+  clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+}
+#map-banner .title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#map-banner .title h2 {
+  font-size: 32px;
+  color: transparent;
+  -webkit-text-stroke: 1px #000;
 }
 
 #map {
@@ -1105,4 +1232,4 @@
   #map .content .location {
     margin-bottom: 32px;
   }
-}/*# sourceMappingURL=all.css.map */
+}
