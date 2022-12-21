@@ -1,3 +1,14 @@
+  const loading = document.querySelector('.loading');
+
+  window.onload = function() {
+    setTimeout(function() {
+      loading.classList.add('end');
+    }, 1000)
+    setTimeout(function() {
+      loading.style.display = 'none';
+    }, 1500)
+  }
+  
   const nav = document.querySelector('#nav');
   const banner = document.querySelector('#banner');
   const cards = document.querySelectorAll('#main-card .card')

@@ -27,8 +27,7 @@ const types = document.querySelectorAll('#bounce [data-type]')
 // }
 
 
-const html = document.querySelector('html');
-console.log(html);
+
 breadBtns.forEach(function(item) {
   item.addEventListener('click', function() {
     types.forEach(type => {
