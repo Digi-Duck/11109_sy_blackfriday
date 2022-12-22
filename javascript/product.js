@@ -38,7 +38,6 @@ breadBtns.forEach(function(item) {
     });
     bounce.classList.add('active');
     body.style.overflow = 'hidden';
-
     // html.classList.add('noscroll');
     // html.preventDefault();
     // scrollBan();

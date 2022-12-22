@@ -10,7 +10,7 @@
 <body>
   <header>
     <section id="nav">
-      <a href="#">
+      <a href="">
         <div class="logo">
           <div class="logoPic">
             <!-- <img src="https://lh4.googleusercontent.com/2eRlX2gRUIy84eVC2umXSKN8-MLuO3cEOo1G1fAZEcMWLgqHoPHPQv5aLaxHqihbhW5r2Sk5Osj06Z6CYDH_gLfDL5WJtDDdrzWAi0t8mpC2AVjPFGarOc2gz9KN0jOcdHOS8o8ilLk=w16383" alt=""> -->
@@ -67,13 +67,24 @@
   </header>
 
   <main>
+    <section id="tabs">
+      <ul>
+        <li><a href="#" data-type="ecology">生態導覽</a></li>
+        <li><a href="#" data-type="pick">採果樂</a></li>
+        <li><a href="#" data-type="food">特色美食</a></li>
+        <li><a href="#" data-type="experience">咖啡體驗</a></li>
+        <li><a href="#" data-type="firefly">螢火蟲</a></li>
+        <li><a href="#" data-type="view">風景欣賞</a></li>
+      </ul>
+    </section>
     <section id="activity-banner">
       <div class="title">
         <h2>民宿活動</h2>
       </div>
     </section>
     <section id="activity">
-      <div class="card">
+      <div class="card" id=""
+      data-type="ecology">
         <div class="card-img">
           <img src="https://fakeimg.pl/1903x961/?text=World&font=lobster" alt="">
         </div>
@@ -87,7 +98,7 @@
           <p class="remind">(需提前七日預約) </p>
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-type="pick">
         <div class="card-img">
           <img src="https://fakeimg.pl/1903x961/?text=World&font=lobster" alt="">
         </div>
@@ -100,7 +111,7 @@
           <p class="remind">(需提前七日預約) </p>
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-type="food">
         <div class="card-img">
           <img src="https://fakeimg.pl/1903x961/?text=World&font=lobster" alt="">
         </div>
@@ -110,7 +121,7 @@
           <p class="remind">(需提前七日預約) </p>
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-type="experience">
         <div class="card-img">
           <img src="https://fakeimg.pl/1903x961/?text=World&font=lobster" alt="">
         </div>
@@ -120,17 +131,17 @@
           <p class="remind">(需提前七日預約) </p>
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-type="firefly">
         <div class="card-img">
           <img src="https://fakeimg.pl/1903x961/?text=World&font=lobster" alt="">
         </div>
         <div class="card-body">
-          <h2>營火蟲</h2>
+          <h2>螢火蟲</h2>
           <p>民宿周圍擁有晴朗、溫暖且附近有乾淨水源的環境，螢火蟲在每年四月到五月會大量出沒。歡迎您一同來尋訪夜間山林的點點星火。</p>
           <p class="remind">(需提前七日預約) </p>
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-type="view">
         <div class="card-img">
           <img src="https://fakeimg.pl/1903x961/?text=World&font=lobster" alt="">
         </div>
@@ -140,8 +151,6 @@
             白天可以遼望山林，黃昏時可以欣賞雲海，也晚時則可以看遠眺星空與美麗市景。</p>
         </div>
       </div>
-
-
     </section>
   </main>
 

@@ -35,8 +35,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-animation: float 2s infinite linear;
-          animation: float 2s infinite linear;
+  animation: float 2s infinite linear;
 }
 .loading .container svg:nth-child(1) {
   width: 100%;
@@ -46,27 +45,14 @@
 .loading .container svg:nth-child(2) {
   width: 75%;
   height: 75%;
-  -webkit-animation-delay: -0.2s;
-          animation-delay: -0.2s;
+  animation-delay: -0.2s;
   transform: translate(-30%, -30%);
 }
 .loading .container svg:nth-child(3) {
   width: 60%;
   height: 60%;
-  -webkit-animation-delay: -0.4s;
-          animation-delay: -0.4s;
+  animation-delay: -0.4s;
   transform: translate(-100%, -20%);
-}
-@-webkit-keyframes float {
-  0% {
-    top: 50%;
-  }
-  50% {
-    top: 44%;
-  }
-  100% {
-    top: 50%;
-  }
 }
 @keyframes float {
   0% {
@@ -92,19 +78,8 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  -webkit-animation: typing 0.8s steps(5), blink 0.2s 5;
-          animation: typing 0.8s steps(5), blink 0.2s 5;
+  animation: typing 0.8s steps(5), blink 0.2s 5;
   background-color: #000;
-}
-@-webkit-keyframes typing {
-  0% {
-    left: 0;
-    border-left: 2px solid #fff;
-  }
-  100% {
-    border-left: 2px solid #fff;
-    left: 100%;
-  }
 }
 @keyframes typing {
   0% {
@@ -114,14 +89,6 @@
   100% {
     border-left: 2px solid #fff;
     left: 100%;
-  }
-}
-@-webkit-keyframes blink {
-  0% {
-    border-left: 2px solid #fff;
-  }
-  100% {
-    border-left: 2px solid transparent;
   }
 }
 @keyframes blink {
@@ -338,8 +305,7 @@
   width: 100%;
   height: 60px;
   background: #fff;
-  -webkit-clip-path: polygon(0% 100%, 78.5% 0%, 100% 100%);
-          clip-path: polygon(0% 100%, 78.5% 0%, 100% 100%);
+  clip-path: polygon(0% 100%, 78.5% 0%, 100% 100%);
 }
 #banner #album {
   position: absolute;
@@ -348,10 +314,7 @@
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 #banner #album .container {
   position: relative;
@@ -383,8 +346,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 50%;
   transform: rotate(calc(-45deg * var(--i)));
   filter: grayscale(1);
@@ -399,8 +361,7 @@
 }
 #about .content {
   margin: 0 0 0 auto;
-  -ms-writing-mode: tb-rl;
-      writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
   position: relative;
   z-index: 2;
   line-height: 1.5;
@@ -476,8 +437,7 @@
 #sunset-banner .content {
   width: 50%;
   margin-left: auto;
-  -ms-writing-mode: tb-rl;
-      writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
   color: #e2dcdc;
   font-size: 24px;
   line-height: 64px;
@@ -588,8 +548,7 @@
   vertical-align: bottom;
   /* position: relative; */
   transition: transform 0.3s;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 #main-card .card .pic:hover img {
   transform: scale(1.1);
@@ -918,8 +877,7 @@
   width: 100%;
   height: 60px;
   background: #ecf2ee;
-  -webkit-clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
-          clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+  clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
 }
 #room-banner .title {
   position: absolute;
@@ -967,15 +925,13 @@
   color: #243628;
 }
 #rooms .card .card-img a:hover .search {
-  -webkit-clip-path: circle(100%);
-          clip-path: circle(100%);
+  clip-path: circle(100%);
 }
 #rooms .card .card-img img {
   width: 100%;
   height: 100%;
   vertical-align: bottom;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 #rooms .card .card-img .search {
   position: absolute;
@@ -985,14 +941,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  -webkit-clip-path: circle(40px);
-          clip-path: circle(40px);
+  clip-path: circle(40px);
   background-color: rgba(119, 119, 119, 0.4);
   top: 0;
   left: 0;
-  transition: -webkit-clip-path 0.5s;
   transition: clip-path 0.5s;
-  transition: clip-path 0.5s, -webkit-clip-path 0.5s;
 }
 #rooms .card .card-body {
   flex-shrink: 0;
@@ -1059,6 +1012,121 @@
     width: 100%;
   }
 }
+#product-banner {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-image: url("https://fakeimg.pl/1903x961/?text=World&font=lobster");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#product-banner::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: #ecf2ee;
+  clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+}
+#product-banner .title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#product-banner .title h2 {
+  font-size: 32px;
+  color: transparent;
+  -webkit-text-stroke: 1px #000;
+}
+
+#product {
+  padding: 100px 5%;
+  background-color: #ecf2ee;
+}
+#product .card {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+#product .card .card-header {
+  width: 40%;
+  flex-shrink: 0;
+  text-align: center;
+}
+#product .card .card-header img {
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+#product .card .card-header h2 {
+  font-size: 28px;
+}
+#product .card .card-body {
+  width: 60%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+#product .card .card-body div {
+  width: 40%;
+}
+#product .card .card-body div img {
+  filter: grayscale(100%);
+  width: 100%;
+  border-radius: 24px;
+  object-fit: cover;
+  cursor: pointer;
+}
+#product .card .card-body div img:hover {
+  filter: grayscale(0%);
+}
+#product .tree-fruit {
+  flex-direction: row-reverse;
+}
+#product .tree-fruit .fruit div {
+  width: 30%;
+}
+
+#bounce {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+  z-index: 5;
+  opacity: 0;
+  transform: scale(0);
+  transition: transform 0.5s;
+}
+#bounce.active {
+  transform: scale(1);
+  opacity: 1;
+}
+#bounce .modal {
+  width: 400px;
+  height: 400px;
+  background-color: rgba(85, 83, 83, 0.7);
+  padding: 20px 32px;
+  border-radius: 24px;
+}
+#bounce .modal.d-none {
+  display: none;
+}
+#bounce .modal .card {
+  display: flex;
+  flex-direction: column;
+  color: #e2dcdc;
+}
+
 #activity-banner {
   width: 100%;
   height: 100vh;
@@ -1076,8 +1144,7 @@
   width: 100%;
   height: 60px;
   background: #ecf2ee;
-  -webkit-clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
-          clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+  clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
 }
 #activity-banner .title {
   position: absolute;
@@ -1091,6 +1158,38 @@
   -webkit-text-stroke: 1px #000;
 }
 
+#tabs {
+  position: fixed;
+  top: 50%;
+  right: -24px;
+  transform: translateY(-50%);
+  text-align: right;
+  z-index: 3;
+}
+#tabs a {
+  display: inline-block;
+  padding: 0px 12px;
+  height: 28px;
+  text-decoration: none;
+  line-height: 28px;
+  color: #e2dcdc;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-size: 14px;
+  margin: 0 0 4px 0;
+  transform: rotate(12deg);
+  clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+}
+#tabs a:hover {
+  margin: 0 8px 4px 0;
+}
+#tabs a.active {
+  font-weight: 666;
+  font-size: 16px;
+  margin: 0 16px 4px 0;
+  padding: 0px 16px;
+  background-color: #243628;
+}
+
 #activity {
   padding: 80px 5%;
   background-color: #ecf2ee;
@@ -1098,6 +1197,7 @@
 #activity .card {
   display: flex;
   width: 100%;
+  margin-bottom: 60px;
 }
 #activity .card .card-img {
   width: 50%;
@@ -1105,8 +1205,7 @@
 #activity .card .card-img img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   vertical-align: bottom;
 }
 #activity .card .card-body {
@@ -1183,129 +1282,13 @@
 }
 #activity .card:last-child {
   flex-direction: row-reverse;
+  height: 400px;
 }
 #activity .card:last-child .card-img {
   width: 40%;
 }
 #activity .card:last-child .card-body {
   width: 60%;
-}
-
-#product-banner {
-  width: 100%;
-  height: 100vh;
-  position: relative;
-  background-image: url("https://fakeimg.pl/1903x961/?text=World&font=lobster");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-#product-banner::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 60px;
-  background: #ecf2ee;
-  -webkit-clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
-          clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
-}
-#product-banner .title {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-#product-banner .title h2 {
-  font-size: 32px;
-  color: transparent;
-  -webkit-text-stroke: 1px #000;
-}
-
-#product {
-  padding: 100px 5%;
-  background-color: #ecf2ee;
-}
-#product .card {
-  display: flex;
-  align-items: center;
-  margin-bottom: 40px;
-}
-#product .card .card-header {
-  width: 40%;
-  flex-shrink: 0;
-  text-align: center;
-}
-#product .card .card-header img {
-  width: 360px;
-  height: 360px;
-  border-radius: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-#product .card .card-header h2 {
-  font-size: 28px;
-}
-#product .card .card-body {
-  width: 60%;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-#product .card .card-body div {
-  width: 40%;
-}
-#product .card .card-body div img {
-  filter: grayscale(100%);
-  width: 100%;
-  border-radius: 24px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  cursor: pointer;
-}
-#product .card .card-body div img:hover {
-  filter: grayscale(0%);
-}
-#product .tree-fruit {
-  flex-direction: row-reverse;
-}
-#product .tree-fruit .fruit div {
-  width: 30%;
-}
-
-#bounce {
-  position: fixed;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
-  z-index: 5;
-  transform: scale(0);
-  transition: transform 0.3s;
-}
-#bounce.active {
-  transform: scale(1);
-}
-#bounce .modal {
-  width: 400px;
-  height: 400px;
-  background-color: rgba(85, 83, 83, 0.7);
-  padding: 20px 32px;
-  border-radius: 24px;
-}
-#bounce .modal.d-none {
-  display: none;
-}
-#bounce .modal .card {
-  display: flex;
-  flex-direction: column;
-  color: #e2dcdc;
 }
 
 #map-banner {
@@ -1325,8 +1308,7 @@
   width: 100%;
   height: 60px;
   background: #ecf2ee;
-  -webkit-clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
-          clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+  clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
 }
 #map-banner .title {
   position: absolute;
@@ -1392,4 +1374,4 @@
   #map .content .location {
     margin-bottom: 32px;
   }
-}/*# sourceMappingURL=all.css.map */
+}
