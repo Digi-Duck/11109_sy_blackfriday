@@ -3,10 +3,11 @@
   window.onload = function() {
     setTimeout(function() {
       loading.classList.add('end');
+      body.style.overflow = 'auto';
+      setTimeout(function() {
+        loading.style.display = 'none';
+      }, 300)
     }, 1000)
-    setTimeout(function() {
-      loading.style.display = 'none';
-    }, 1500)
   }
   
   const nav = document.querySelector('#nav');

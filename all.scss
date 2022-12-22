@@ -12,22 +12,21 @@ $green: #ecf2ee;
 $grey: rgba(19, 21, 19, 0.31);
 
 $mix-white: #f9f9f9;
-
+$title-color: #6c6666;
+$text-color: #1c291c;
 $text-white: #e2dcdc;
-$red: #f02b2b;
+$line-color: #777777;
+$red: #d82121;
 
 
 
 .loading{
     position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
+    inset: 0 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: black;
+    background-color: #0c1b2e;
     z-index: 10;
     transform: scale(1);
     opacity: 1;
@@ -42,7 +41,7 @@ $red: #f02b2b;
       position: relative;
       width: 200px;
       height: 200px;
-      svg{
+      img{
         filter: drop-shadow(2px 2px 3px #0002);
         position: absolute;
         top: 50%;
@@ -52,19 +51,19 @@ $red: #f02b2b;
         &:nth-child(1){
           width: 100%;
           height: 100%;
-          transform: translate(-60%, -50%);
+          transform: translate(-50%, -50%);
         }
         &:nth-child(2) {
           width: 75%;
           height: 75%;
           animation-delay: -0.2s;
-          transform: translate(-30%, -30%);
+          transform: translate(-20%, -30%);
         }
         &:nth-child(3) {
           width: 60%;
           height: 60%;
           animation-delay: -0.4s;
-          transform: translate(-100%, -20%);
+          transform: translate(-90%, -20%);
         }
         @keyframes float {
           0% {
@@ -82,25 +81,24 @@ $red: #f02b2b;
         font-size: 40px;
         color: $text-white;
         position: relative;
-        left: 50%;
+        text-align: center;
         top: 90%;
-        transform: translateX(-50%);
         &::after{
           content: '';
           position: absolute;
           width: 100%;
           height: 100%;
-          animation: typing .8s steps(5), blink .2s 5;
-          background-color: #000;
+          animation: typing .8s steps(4), blink .2s 6;
+          background-color: #0c1b2e;
         }
         @keyframes typing {
           0%{
-            left: 0;
+            left: 12%;
             border-left: 2px solid #fff;
           }
           100%{
             border-left: 2px solid #fff;
-            left: 100%;
+            left: 88%;
           }
         }
         @keyframes blink {
@@ -323,8 +321,6 @@ $red: #f02b2b;
 }
 
 
-
-
 #banner{
   width: 100%;
   height: 100vh;
@@ -342,7 +338,6 @@ $red: #f02b2b;
     height:60px;
     background:#fff;
     clip-path:polygon(0% 100%, 78.5%  0%,100% 100%);
-
   }
 
   #album{
@@ -413,10 +408,12 @@ $red: #f02b2b;
       transform: translateY(-50px);
       font-size: 32px;
       margin: 0 0 0 12px;
+      color: $title-color;
     }
     p{
       margin: 0 16px;
       font-size: 24px;
+      color: $title-color;
     }
   }
 }
@@ -630,6 +627,7 @@ $red: #f02b2b;
       h2{
         margin-bottom: 20px;
         position: relative;
+        color: $title-color;
         &::after{
           content: '';
           position: absolute;
@@ -637,7 +635,7 @@ $red: #f02b2b;
           height: 1px;
           left: 0;
           bottom: -10px;
-          background-color: #000;
+          background-color: $line-color;
 
         }
       }
@@ -648,6 +646,7 @@ $red: #f02b2b;
         display: inline-block;
         word-break: keep-all;
         word-wrap: break-word;
+        color: $text-color;
       }
       .btn{
         width: 100%;
@@ -760,6 +759,7 @@ $red: #f02b2b;
       h2{
         align-self: center;
         position: relative;
+        color: $title-color;
         &::after{
           content: '';
           position: absolute;
@@ -767,7 +767,7 @@ $red: #f02b2b;
           height: 1px;
           left: 0;
           bottom: -10px;
-          background-color: #000;
+          background-color: $line-color;
         }
       }
       .btn-group{
@@ -820,7 +820,7 @@ $red: #f02b2b;
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-        padding: 12px 16px;
+        padding: 12px 24px;
         visibility: hidden;
         transform: translateY(500px);
         transition: transform .5s;
@@ -963,7 +963,8 @@ $red: #f02b2b;
 
 
 
-// 房型資訊
+
+// ---------------- 房型資訊 ------------------
 #room-banner{
   width: 100%;
   height: 100vh;
@@ -996,31 +997,65 @@ $red: #f02b2b;
 }
 
 #rooms{
-  padding: 80px 5%;
+  padding: 100px 5%;
   background-color: $green;
+  overflow: hidden;
   .card{
     width: 100%;
     height: 360px;
     display: flex;
+    justify-content: center;
     align-items: center;
-    margin-bottom: 40px;
+    margin: 0 0 40px 0;
+    gap: 120px;    
     &:nth-child(2){
       flex-direction: row-reverse;
+      .card-img::after{
+        animation-delay: -6s;
+      }
       .card-body{
-        left: 3%;
+        // left: 3%;
         h2, p{
           text-align: right;
         }
       }
     }
     &:last-child{
-      margin-bottom: 0;      
+      margin-bottom: 0; 
+      .card-img::after{
+        animation-delay: -4s;
+      }
     }
     .card-img{
-      width: 50%;
-      height: 100%;
+      width: 40%;
+      height: 110%;
       flex-shrink: 0;
       position: relative;
+      z-index: 1;
+      &::after{
+        content: '';
+        position: absolute;
+        inset: -20% -12%;
+        z-index: -1;
+        box-shadow: inset 10px 10px 10px rgba(0, 0, 0, .05),
+        20px 20px 20px rgba(0, 0, 0, .05),
+        20px 20px 20px rgba(0, 0, 0, .05),
+        inset -10px -10px 10px rgba(0, 0, 0, .05);
+        border-radius: 65% 40% 30% 70% / 65% 30% 70% 40%;
+        animation: liquid 8s ease-in-out infinite;
+
+      }
+
+      @keyframes liquid{
+        0%, 100%{
+          border-radius: 65% 40% 30% 70% / 65% 30% 70% 40%;
+          background-size: 100% 100%;
+        }
+        50%{
+          border-radius: 30% 65% 70% 40% / 50% 60% 30% 65%;
+          background-size: 300% 150%;
+        }
+      } 
       a{
         text-decoration: none;
         color: $dark-green;
@@ -1033,6 +1068,7 @@ $red: #f02b2b;
         height: 100%;
         vertical-align: bottom;
         object-fit: cover;
+        border-radius: 50%;
       }
       .search{
         position: absolute;
@@ -1044,6 +1080,8 @@ $red: #f02b2b;
         align-items: center;
         clip-path: circle(40px);
         background-color:rgba(119, 119, 119, .4);
+
+        border-radius: 50%;
         top: 0;
         left: 0;
         transition: clip-path .5s;
@@ -1051,18 +1089,85 @@ $red: #f02b2b;
       
     }
     .card-body{
-      flex-shrink: 0;
-      width: 53%;
+      // flex-shrink: 0;
+      width: 50%;
       // height: 160px;
-      padding: 40px 10px;
+      // padding: 40px 10px;
       position: relative;
-      left: -3%;     
+      // left: -3%;
+      z-index: 1;
       background-color: $green;
       h2{
-        
+        color: $title-color;
       }
       p{
+        color: $text-color;
+      }
+    }
+  }
+}
+@media (max-width: 768px){
+  #rooms{
+    .card{
+      width: 100%;
+      height: 280px;
+      gap: 10%;
+      margin: 0 0 40px 0;
+      &:nth-child(2){
+        flex-direction: row-reverse;
+        .card-img::after{
+          animation-delay: -6s;
+        }
+        .card-body{
+          left: 0%;
+          h2, p{
+            text-align: right;
+          }
+        }
+      }
+      &:last-child{
+        margin-bottom: 0; 
+        .card-img::after{
+          animation-delay: -4s;
+        }
+      }
+      .card-img{
+
+        &::after{
+          inset: -16% -12% 0%;
+          box-shadow: inset 8px 8px 8px rgba(0, 0, 0, .05),
+          20px 20px 20px rgba(0, 0, 0, .05),
+          20px 20px 20px rgba(0, 0, 0, .05),
+          inset -10px -10px 10px rgba(0, 0, 0, .05);
+          border-radius: 60% 40% 50% 50% / 60% 30% 50% 50%;
+          animation: liquid 8s ease-in-out infinite;
+  
+        }
+  
+        @keyframes liquid{
+          0%, 100%{
+            border-radius: 65% 40% 50% 50% / 65% 30% 50% 50%;
+            // background-size: 100% 100%;
+          }
+          50%{
+            border-radius: 30% 65% 50% 50% / 50% 60% 50% 50%;
+            // background-size: 300% 150%;
+          }
+        } 
+
+        img{
+
+          border-radius: 50%;
+        }
+        .search{
+          border-radius: 50%;
+        }
         
+      }
+      .card-body{
+        width: 40%;
+        position: relative;
+        flex-shrink: 1;
       }
     }
   }
@@ -1078,12 +1183,13 @@ $red: #f02b2b;
       font-size: 28px;
       margin-bottom: 20px;
       position: relative;
+      color: $title-color;
       &::after{
         content: '';
         position: absolute;
         width: 300px;
         height: 1px;
-        background-color: #000;
+        background-color: $line-color;
         bottom: -10px;
         left: 0;
       }
@@ -1095,15 +1201,16 @@ $red: #f02b2b;
       }
       h3{
         font-size: 24px;
+        color: $text-color;
       }
       p{
-        
+        color: $text-color;
       }
       .remark{
         margin-top: 16px;
         .remind{
           margin-top: 16px;
-          color: #f02b2b;
+          color: $red;
         }
       }
     }
@@ -1144,133 +1251,7 @@ $red: #f02b2b;
 
 
 
-// 農產品
-#product-banner{
-  width: 100%;
-  height: 100vh;
-  position: relative;
-  background-image: url('https://fakeimg.pl/1903x961/?text=World&font=lobster');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  &::before{
-    content: '';
-    position:absolute;
-    bottom: 0;
-    left: 0;
-    width:100%;
-    height:60px;
-    background:$green;
-    clip-path:polygon(0% 100%, 50%  0%,100% 100%);
-  }
-  .title{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    h2{
-      font-size: 32px;
-      color: transparent;
-      -webkit-text-stroke: 1px #000;
-    }
-  }
-
-}
-#product{
-  padding: 100px 5%;
-  background-color: $green;
-  .card{
-    display: flex;
-    align-items: center;
-    // gap: 40px;
-    margin-bottom: 40px;
-    .card-header{
-      width: 40%;
-      flex-shrink: 0;
-      text-align: center;
-      img{
-        width: 360px;
-        height: 360px;
-        border-radius: 50%;
-        object-fit: cover;
-      }
-      h2{
-        font-size: 28px;
-      }
-    }
-    .card-body{
-      width: 60%;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      div{
-        width: 40%;
-        img{
-          filter: grayscale(100%);
-          width: 100%;
-          border-radius: 24px;
-          object-fit: cover;
-          cursor: pointer;
-          &:hover{
-          
-            filter: grayscale(0%);
-            
-          }
-        }
-      }
-    }
-  }
-  .tree-fruit{
-    flex-direction: row-reverse;
-    
-    .fruit{
-      div{
-        width: 30%;
-      }
-    }
-
-  }
-}
-
-#bounce{
-  position: fixed;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  backdrop-filter: blur(5px);
-  z-index: 5;
-  opacity: 0;
-  transform: scale(0);
-  transition: transform .5s;
-  // transition-delay: 0s .5s;
-  &.active{
-    transform: scale(1);
-    opacity: 1;
-  }
-  .modal{
-    width: 400px;
-    height: 400px;
-    background-color: rgba(85, 83, 83, 0.7);
-    padding: 20px 32px;
-    border-radius: 24px;
-    &.d-none{
-      display: none;
-    }
-    .card{
-      display: flex;
-      flex-direction: column;
-      color: $text-white;
-    }
-  }
-}
-
-
-
-// 民宿活動
+// ---------------- 民宿活動 ------------------
 #activity-banner{
   width: 100%;
   height: 100vh;
@@ -1322,7 +1303,7 @@ $red: #f02b2b;
     transform: rotate(12deg);
     clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
     &:hover{
-      margin: 0 8px 4px 0;
+      margin: 0 10px 4px 0;
     }
     &.active{
       font-weight: 600;
@@ -1340,7 +1321,6 @@ $red: #f02b2b;
   .card{
     display: flex;
     width: 100%;
-    // height: 500px;
     margin-bottom: 60px;
     .card-img{
       width: 50%;
@@ -1358,12 +1338,13 @@ $red: #f02b2b;
         font-size: 28px;
         margin-bottom: 20px;
         position: relative;
+        color: $title-color;
         &::after{
           content: '';
           position: absolute;
           width: 60%;
           height: 1px;
-          background-color: #000;
+          background-color: $line-color;
           bottom: -10px;
           left: 0;
         }
@@ -1371,81 +1352,341 @@ $red: #f02b2b;
       p{
         word-break: keep-all;
         word-wrap: break-word;
+        color: $text-color;
       }
       .remind{
         margin: 12px 0 8px 0;
-        color: #f02b2b;
+        color: $red;
       }
     }
-  }
-  .card:first-child{
-    width: 60%;
-    .card-img{
+    &:first-child{
       width: 60%;
-      img{
-        width: 100%;
+      .card-img{
+        width: 60%;
+        img{
+          width: 100%;
+        }
+      }
+      .card-body{
+        width: 40%;
+        
       }
     }
-    .card-body{
-      width: 40%;
-      
+    &:nth-child(2){
+      margin-left: auto;
+      width: 60%;
+      .card-img{
+        width: 50%;
+      }
+      .card-body{
+        width: 50%;
+  
+        .content{
+          display: inline-block;
+          margin-bottom: 12px;
+        }
+      }
+    }
+    &:nth-child(3){
+      width: 50%;
+      // transform: translateY(-100px);
+      .card-img{
+        width: 50%;
+      }
+      .card-body{
+        width: 50%;
+      }
+    }
+    &:nth-child(4){
+      width: 60%;
+      flex-direction: row-reverse;
+      margin-left: auto;
+      .card-img{
+        width: 50%;
+      }
+      .card-body{
+        h2::after{
+          // left: 40%;
+        }
+        width: 50%;
+        // text-align: right;
+      }
+    }
+    &:last-child{
+      flex-direction: row-reverse;
+      height: 50vh;
+      .card-img{
+        width: 40%;
+      }
+      .card-body{
+        width: 60%;
+      }
     }
   }
-  .card:nth-child(2){
-    margin-left: auto;
-    width: 60%;
-    .card-img{
-      width: 50%;
-    }
-    .card-body{
-      width: 50%;
+}
+@media (max-width: 768px){
+  #activity{
+    padding: 100px 20px;
+    .card{
+      width: 100%;
+      margin-bottom: 40px;
+      .card-img{
 
-      .content{
-        display: inline-block;
+      }
+      .card-body{
+        h2{
+          font-size: 24px;
+          margin-bottom: 16px;
+          &::after{
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 1px;
+            background-color: $line-color;
+            bottom: -8px;
+            left: 0;
+          }
+        }
+      }
+      &:first-child{
+        width: 100%;
+        .card-img{
+          width: 55%;
+          img{
+            width: 100%;
+          }
+        }
+        .card-body{
+          width: 45%;
+          
+        }
+      }
+      &:nth-child(2){
+        margin-left: 0;
+        width: 100%;
+        flex-direction: row-reverse;
+        .card-img{
+          width: 45%;
+        }
+        .card-body{
+          width: 55%;
+    
+          .content{
+            display: inline-block;
+            margin-bottom: 12px;
+          }
+        }
+      }
+      &:nth-child(3){
+        width: 100%;
+        .card-img{
+          width: 45%;
+        }
+        .card-body{
+          width: 55%;
+        }
+      }
+      &:nth-child(4){
+        width: 100%;
+        flex-direction: row-reverse;
+        margin-left: auto;
+        .card-img{
+          width: 55%;
+        }
+        .card-body{
+          width: 45%;
+        }
+      }
+      &:nth-child(5){
+        
+        .card-img{
+          width: 45%;
+        }
+        .card-body{
+          width: 55%;
+        }
+      }
+      &:last-child{
+        height: 40vh;
+
+        .card-img{
+          width: 50%;
+        }
+        .card-body{
+          width: 50%;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 375px){
+  #activity{
+    padding: 60px 12px;
+    .card{
+      width: 100%;
+      margin-bottom: 20px;
+      display: block;
+      .card-img{
         margin-bottom: 12px;
       }
-    }
-  }
-  .card:nth-child(3){
-    width: 50%;
-    // transform: translateY(-100px);
-    .card-img{
-      width: 50%;
-    }
-    .card-body{
-      width: 50%;
-    }
-  }
-  .card:nth-child(4){
-    width: 60%;
-    flex-direction: row-reverse;
-    margin-left: auto;
-    .card-img{
-      width: 50%;
-    }
-    .card-body{
-      h2::after{
-        // left: 40%;
+      .card-body{
+
       }
-      width: 50%;
-      // text-align: right;
-    }
-  }
-  .card:last-child{
-    flex-direction: row-reverse;
-    height: 400px;
-    .card-img{
-      width: 40%;
-    }
-    .card-body{
-      width: 60%;
+      &:first-child, &:nth-child(2), &:nth-child(3), &:nth-child(4), &:nth-child(5){
+        width: 100%;
+        .card-img{
+          width: 100%;
+        }
+        .card-body{
+          width: 100%;
+        }
+      }
+      &:last-child{
+        height: 40vh;
+
+        .card-img{
+          width: 100%;
+        }
+        .card-body{
+          width: 100%;
+        }
+      }
     }
   }
 }
 
 
 
-// 交通資訊
+// ---------------- 農產品 ------------------
+#product-banner{
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-image: url('https://fakeimg.pl/1903x961/?text=World&font=lobster');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  &::before{
+    content: '';
+    position:absolute;
+    bottom: 0;
+    left: 0;
+    width:100%;
+    height:60px;
+    background:$green;
+    clip-path:polygon(0% 100%, 50%  0%,100% 100%);
+  }
+  .title{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    h2{
+      font-size: 32px;
+      color: transparent;
+      -webkit-text-stroke: 1px #000;
+    }
+  }
+
+}
+#product{
+  padding: 100px 5%;
+  background-color: $green;
+  .card{
+    display: flex;
+    align-items: center;
+    // gap: 40px;
+    margin-bottom: 40px;
+    .card-header{
+      width: 40%;
+      flex-shrink: 0;
+      text-align: center;
+      img{
+        width: 360px;
+        height: 360px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      h2{
+        font-size: 28px;
+        color: $title-color;
+      }
+    }
+    .card-body{
+      width: 60%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      div{
+        width: 40%;
+        img{
+          filter: grayscale(100%);
+          width: 100%;
+          border-radius: 24px;
+          object-fit: cover;
+          cursor: pointer;
+          &:hover{
+          
+            filter: grayscale(0%);
+            
+          }
+        }
+      }
+    }
+  }
+  .tree-fruit{
+    flex-direction: row-reverse;
+    
+    .fruit{
+      div{
+        width: 30%;
+      }
+    }
+
+  }
+}
+
+#bounce{
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+  z-index: 5;
+  opacity: 0;
+  transform: scale(0);
+  transition: transform .3s;
+  // transition-delay: 0s .5s;
+  &.active{
+    opacity: 1;
+    transform: scale(1);
+  }
+  .modal{
+    width: 400px;
+    height: 400px;
+    background-color: rgba(85, 83, 83, 0.7);
+    padding: 20px 32px;
+    border-radius: 24px;
+    &.d-none{
+      display: none;
+    }
+    .card{
+      display: flex;
+      flex-direction: column;
+      color: $text-white;
+    }
+  }
+}
+
+
+
+
+
+// ---------------- 交通資訊 ------------------
 #map-banner{
   width: 100%;
   height: 100vh;
@@ -1498,6 +1739,7 @@ $red: #f02b2b;
       font-size: 32px;
       margin-bottom: 20px;
       position: relative;
+      color: $title-color;
       &::after{
         content: '';
         position: absolute;
@@ -1505,23 +1747,26 @@ $red: #f02b2b;
         height: 1px;
         left: 0;
         bottom: -10px;
-        background-color: #000;
+        background-color: $line-color
+        ;
       }
     }
     h3{
       font-size: 24px;
       margin-bottom: 4px;
+      color: $text-color;
     }
     .traffic{
       p{
         word-break: keep-all;
         word-wrap: break-word;
         margin-bottom: 8px;
+        color: $text-color;
       }
     }
   }
-
 }
+
 @media (max-width: 768px){
   #map{
     iframe{
