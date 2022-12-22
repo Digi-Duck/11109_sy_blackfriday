@@ -1315,8 +1315,8 @@ $red: #f02b2b;
     height: 28px;
     text-decoration: none;
     line-height: 28px;
-    color: $text-white;
-    background-color: rgba(0, 0, 0, .5);
+    color: #fff;
+    background-color: rgba(90, 58, 49, .6);
     font-size: 14px;
     margin: 0 0 4px 0;
     transform: rotate(12deg);
@@ -1325,11 +1325,11 @@ $red: #f02b2b;
       margin: 0 8px 4px 0;
     }
     &.active{
-      font-weight: 666;
+      font-weight: 600;
       font-size: 16px;
       margin: 0 16px 4px 0;
       padding: 0px 16px;
-      background-color: $dark-green;
+      background-color: #5A3A31;
     }
   }
 }

@@ -45,7 +45,7 @@ tab.forEach(function(item) {
 
 window.addEventListener('scroll', function() {
     
-    if(scrollY >= ecology.offsetTop-140 && scrollY < pick.offsetTop-140){
+    if(scrollY >= ecology.offsetTop-200 && scrollY < pick.offsetTop-140){
       tab.forEach(item => {
 
         item.classList.remove('active');
