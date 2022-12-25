@@ -18,13 +18,7 @@ const fruitBtns = document.querySelectorAll('#product .fruit div');
 const coffeeBtns = document.querySelectorAll('#product .coffee div');
 const bounce = document.querySelector('#bounce');
 const types = document.querySelectorAll('#bounce [data-type]')
-
-
-// function scrollBan() {
-//   window.addEventListener('wheel', function(e) {
-//     e.preventDefault();
-//   })
-// }
+const close = document.querySelectorAll('#bounce .modal .fa-x');
 
 
 
@@ -38,10 +32,7 @@ breadBtns.forEach(function(item) {
     });
     bounce.classList.add('active');
     body.style.overflow = 'hidden';
-    // html.classList.add('noscroll');
-    // html.preventDefault();
-    // scrollBan();
-  })
+  });
 })
 fruitBtns.forEach(function(item) {
   item.addEventListener('click', function(e) {
@@ -75,7 +66,12 @@ window.addEventListener('click', function(e) {
   if(e.target.getAttribute('id') == 'bounce'){
     bounce.classList.remove('active');
     body.style.overflow = 'auto';
-    html.classList.remove('noscroll');
-    // body.style.paddingRight = '0px';
   }
 });
+
+close.forEach((item) => {
+  item.addEventListener('click', function() {
+    bounce.classList.remove('active');
+    body.style.overflow = 'auto';
+  })
+})

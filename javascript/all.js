@@ -14,10 +14,10 @@ cross.addEventListener('click', function() {
 });
 tabs.forEach(function(item) {
   item.addEventListener('click', function(e) {
-    if(item.classList.contains('active')){
-      e.preventDefault();
-      return;
-    }
+    // if(item.classList.contains('active')){
+    //   e.preventDefault();
+    //   return;
+    // }
     mobileMenu.classList.remove('active');
     body.style.overflow = 'auto';
   });

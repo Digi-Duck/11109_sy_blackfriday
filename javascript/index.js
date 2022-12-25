@@ -12,7 +12,9 @@
   
   const nav = document.querySelector('#nav');
   const banner = document.querySelector('#banner');
-  const cards = document.querySelectorAll('#main-card .card')
+  const cards = document.querySelectorAll('#main-card .card');
+  const about = document.querySelector('#about');
+  const around = document.querySelector('#around');
   
   function scroll() {
     if(scrollY+80 > banner.offsetHeight) {
@@ -22,16 +24,21 @@
       nav.classList.remove('fixed');
       // document.body.style.paddingTop = 0;
     }
-
+    if(scrollY + 500 > about.offsetTop){
+      about.querySelector('h2').classList.add('fade');
+      about.querySelector('.text').classList.add('fade');
+    }
     cards.forEach((item) => {
       // console.log(scrollY, item.offsetTop);
-      
-      if(scrollY+500 > item.offsetTop){
+      if(scrollY+700 > item.offsetTop){
         item.querySelector('.pic').classList.add('fade');
         item.querySelector('.card-body').classList.add('opc');
         item.classList.add('topFade');
       }
-    })
+    });
+    if(scrollY + 600 > around.offsetTop){
+      around.querySelector('.swiper').classList.add('fade');
+    }
   }
   scroll();
   window.addEventListener('scroll', scroll)
@@ -46,9 +53,9 @@
     initialSlide: 1,
     // slideToClickedSlide: true,
     coverflowEffect: {
-      rotate: 5,
+      rotate: 0,
       stretch: 0,
-      depth: 120,
+      depth: 100,
       modifier: 2,
       slideShadows: true,
     },
