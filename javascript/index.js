@@ -6,6 +6,7 @@
       body.style.overflow = 'auto';
       setTimeout(function() {
         loading.style.display = 'none';
+        scroll();
       }, 300)
     }, 1000)
   }
@@ -24,7 +25,7 @@
       nav.classList.remove('fixed');
       // document.body.style.paddingTop = 0;
     }
-    if(scrollY + 500 > about.offsetTop){
+    if(scrollY + 576 > about.offsetTop){
       about.querySelector('h2').classList.add('fade');
       about.querySelector('.text').classList.add('fade');
     }
@@ -40,7 +41,7 @@
       around.querySelector('.swiper').classList.add('fade');
     }
   }
-  scroll();
+  
   window.addEventListener('scroll', scroll)
 
 

@@ -2,7 +2,7 @@ const nav = document.querySelector('#nav');
 const banner = document.querySelector('#activity-banner');
 
 function scroll() {
-  if(scrollY+80 > banner.offsetHeight) {
+  if(scrollY + 80 > banner.offsetHeight) {
     nav.classList.add('fixed');
     // document.body.style.paddingTop = nav.offsetHeight+'px';
   }else {
@@ -33,7 +33,7 @@ tab.forEach(function(item) {
 
       if(card.dataset.type == item.dataset.type){
         window.scrollTo({
-          top: card.offsetTop-84,
+          top: card.offsetTop - 84,
           behavior: "smooth",
         });
       }
@@ -45,7 +45,7 @@ tab.forEach(function(item) {
 
 window.addEventListener('scroll', function() {
     
-    if(scrollY >= ecology.offsetTop-200 && scrollY < pick.offsetTop-140){
+    if(scrollY >= ecology.offsetTop-200 && scrollY < pick.offsetTop-200){
       tab.forEach(item => {
 
         item.classList.remove('active');
@@ -53,7 +53,7 @@ window.addEventListener('scroll', function() {
           item.classList.add('active');
         };
       });
-    }else if(scrollY >= pick.offsetTop-140 && scrollY < food.offsetTop-140){
+    }else if(scrollY >= pick.offsetTop-200 && scrollY < food.offsetTop-200){
       tab.forEach(item => {
 
         item.classList.remove('active');
@@ -61,7 +61,7 @@ window.addEventListener('scroll', function() {
           item.classList.add('active');
         };
       });
-    }else if(scrollY >= food.offsetTop-140 && scrollY < experience.offsetTop-140){
+    }else if(scrollY >= food.offsetTop-200 && scrollY < experience.offsetTop-200){
       tab.forEach(item => {
 
         item.classList.remove('active');
@@ -69,7 +69,7 @@ window.addEventListener('scroll', function() {
           item.classList.add('active');
         };
       });
-    }else if(scrollY >= experience.offsetTop-140 && scrollY < firefly.offsetTop-140){
+    }else if(scrollY >= experience.offsetTop-200 && scrollY < firefly.offsetTop-200){
       tab.forEach(item => {
 
         item.classList.remove('active');
@@ -77,7 +77,7 @@ window.addEventListener('scroll', function() {
           item.classList.add('active');
         };
       });
-    }else if(scrollY >= firefly.offsetTop-140 && scrollY < view.offsetTop-140){
+    }else if(scrollY >= firefly.offsetTop-200 && scrollY < view.offsetTop-200){
       tab.forEach(item => {
 
         item.classList.remove('active');
@@ -85,7 +85,7 @@ window.addEventListener('scroll', function() {
           item.classList.add('active');
         };
       });
-    }else if(scrollY >= view.offsetTop-140){
+    }else if(scrollY >= view.offsetTop-200){
       tab.forEach(item => {
 
         item.classList.remove('active');

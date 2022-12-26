@@ -141,7 +141,7 @@ $red: #d82121;
     justify-content: center;
     align-items: center;
     .logoPic{
-      height: 48px;
+      height: 40px;
       img{
         width: 100%;
         height: 100%;
@@ -171,12 +171,11 @@ $red: #d82121;
       transition: transform .5s;
       position: relative;
       &.active{
-        // color: gray;
+        
       }
       &.active::after{
         left: 5%;
         right: 5%;
-        // border-bottom: 1px solid gray;
       }
       &::after{
         content: '';
@@ -193,13 +192,11 @@ $red: #d82121;
         right: 5%;
       }
     }
-    li:last-child a{
-      // margin-right: -16px;
-    }
   }
 }
 @media (max-width: 768px){
   #nav{
+    padding: 0 20px;
     .logo{
       
       .logoPic{
@@ -251,7 +248,7 @@ $red: #d82121;
   height: 100vh;
   top: 0;
   z-index: 10;
-  padding: 0 24px;
+  padding: 0 20px;
   background-color: $dark-green;
   display: block;
   transform: translateX(100%);
@@ -281,7 +278,7 @@ $red: #d82121;
         }
       }
       h2{
-        font-size: 36px;
+        font-size: 32px;
         color: $text-white;
       }
     }
@@ -292,7 +289,7 @@ $red: #d82121;
     }
   }
   .navbar{
-    margin-bottom: 40px;
+    margin-bottom: 48px;
     padding: 32px 0;
     a{
       display: inline-block;
@@ -308,9 +305,9 @@ $red: #d82121;
   .content{
     margin-bottom: 40px;
     p{
-      padding: 12px 20px;
+      padding: 8px 12px;
       color: $text-white;
-      
+      font-size: 15px;
     }
   }
   .footer{
@@ -327,6 +324,7 @@ $red: #d82121;
     .copyright{
       text-align: center;
       color: $text-white;
+      font-size: 14px;
     }
   }
 }
@@ -403,19 +401,20 @@ $red: #d82121;
   }
 }
 @media (max-width: 768px) {
- #banner{
-  height: 50vh;
-  &::before{
-    bottom: -0.5px;
-  }
- } 
+  #banner{
+    height: 56vh;
+    &::before{
+      bottom: -0.5px;
+    }
+  } 
 }
+
 #about{
   padding: 100px 20%;
   position: relative;
   width: 100%;
   background-image: url('../image/關於我們-底圖.png');
-  background-position: 0px center; background-size: contain;
+  background-position: 10% bottom; background-size: 720px;
   background-repeat: no-repeat;
   .content{
     margin: 0 0 0 auto;
@@ -429,7 +428,7 @@ $red: #d82121;
     h2{
       transform: translateY(-200px);
       font-size: 32px;
-      margin: 0 0 0 12px;
+      margin: 0 0 0 20px;
       color: $title-color;
       opacity: 0;
       transition: transform 1s, opacity .5s;
@@ -449,7 +448,7 @@ $red: #d82121;
       }
     }
     p{
-      margin: 0 16px;
+      margin: 0 32px;
       font-size: 24px;
       color: $title-color;
     }
@@ -457,17 +456,26 @@ $red: #d82121;
 }
 @media (max-width: 992px){
   #about{
-    padding: 100px 5%;
-    background-size: cover;
-    background-position: -100px center;
+    padding: 100px 60px;
+    background-size: 560px;
+    background-position: 0 bottom;
     .content{
       margin: 0 auto;
+      h2{
+        
+        margin: 0 0 0 16px;
+        font-size: 28px;
+      }
+      p{
+        margin: 0 24px;
+        font-size: 20px;
+      }
     }
   }
 }
 @media (max-width: 768px){
   #about{
-    padding: 100px 40px;
+    padding: 80px 40px;
     .content{
       display: block;
       h2{
@@ -484,11 +492,10 @@ $red: #d82121;
 }
 @media (max-width: 576px){
   #about{
-    padding: 100px 20px;
+    padding: 80px 20px;
+    background-size: 480px;
     .content{
-      
       h2{
-        
         margin: 0 0 0 12px;
         font-size: 28px;
       }
@@ -501,15 +508,17 @@ $red: #d82121;
 }
 @media (max-width: 390px){
   #about{
-    padding: 60px 12px;
+    padding: 60px 20px;
+    background-size: 440px;
     .content{
       
       h2{
         margin: 0 0 0 8px;
+        font-size: 24px;
       }
       p{
         margin: 0 0 0 4px;
-        font-size: 20px;
+        font-size: 18px;
       }
     }
   }
@@ -517,7 +526,7 @@ $red: #d82121;
 
 #sunset-banner{
   width: 100%;
-  height: 640px;
+  height: 52vh;
   display: flex;
   background-color: #292626;
   .content{
@@ -549,6 +558,7 @@ $red: #d82121;
 }
 @media (max-width: 992px){
   #sunset-banner{
+    height: 48vh;
     padding: 0;
     position: relative;
     .content{
@@ -557,6 +567,7 @@ $red: #d82121;
       width: 100%;
       justify-content: start;
       line-height: 54px;
+      font-size: 20px;
     }
     .sunset-img{
       width: 100%;
@@ -565,15 +576,15 @@ $red: #d82121;
 }
 @media (max-width: 390px){
   #sunset-banner{
-  
     .content{
       padding: 24px 16px;
       line-height: 40px;
     }
   }
 }
+
 #main-card{
-  padding: 120px 5%;
+  padding: 100px 5%;
   background-color: $green;
   overflow: hidden;
   .card{
@@ -634,7 +645,6 @@ $red: #d82121;
         width: 100%;
         height: 100%;
         vertical-align: bottom;
-        /* position: relative; */
         transition: transform .5s;
         object-fit: cover;
       }
@@ -648,7 +658,6 @@ $red: #d82121;
     .card-body{
       width: 50%;
       padding: 10px 20px;
-      // margin: 0 0 0 auto;
       opacity: 0;
       transition: opacity 1s;
       transition-delay: .5s;
@@ -668,7 +677,6 @@ $red: #d82121;
           left: 0;
           bottom: -10px;
           background-color: $line-color;
-
         }
       }
       p{
@@ -698,11 +706,11 @@ $red: #d82121;
 
 @media (max-width: 768px){
   #main-card{
-    padding: 100px 20px;
+    padding: 80px 20px;
     .card{
       flex-direction: column;
       height: 100%;
-      margin-bottom: 60px;
+      margin-bottom: 40px;
       &::before{
         width: 320px;
         height: 240px;
@@ -726,6 +734,7 @@ $red: #d82121;
         width: 88%;
         height: 360px;
         margin: 0;
+        margin-bottom: 20px;
       }
       .card-body{
         width: 100%;
@@ -733,13 +742,18 @@ $red: #d82121;
         background: transparent;
         left: 0;
         margin: 0;
+        padding: 0;
+        h2{
+          margin-bottom: 16px;
+          &::after{
+            bottom: -8px;
+          }
+        }
       }
       &:nth-child(2) .pic{
-        // left: 0%;
-        margin: 0;
+        margin: 0 0 20px;
       }
     }
-
   }
 }
 @media (max-width: 576px){
@@ -755,21 +769,26 @@ $red: #d82121;
 }
 @media (max-width: 390px){
   #main-card{
-    padding: 60px 12px;
-    
+    padding: 60px 20px;
     .card{
       flex-direction: column;
       height: 100%;
-      margin-bottom: 40px;
+      margin-bottom: 32px;
       &::before{
         display: none;
-        
       }
       .pic{
         width: 100%;
         height: 100%;
+        margin-bottom: 16px;
       }
       .card-body{
+        h2{
+          margin-bottom: 12px;
+          &::after{
+            bottom: -6px;
+          }
+        }
         .btn{
           a{ 
             padding: 8px 16px;
@@ -795,7 +814,7 @@ $red: #d82121;
     }
     .header{
       display: flex;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
       padding: 0 10px;
       h2{
         align-self: center;
@@ -910,7 +929,7 @@ $red: #d82121;
 
 @media (max-width: 768px){
   #around{
-    padding: 100px 20px;
+    padding: 80px 20px;
     .swiper{
       .swiper-slide{
         width: 400px;
@@ -921,7 +940,6 @@ $red: #d82121;
 }
 @media (max-width: 576px){
   #around{
-    padding: 100px 20px;
     .swiper{
       .swiper-slide{
         width: 360px;
@@ -932,19 +950,25 @@ $red: #d82121;
 }
 @media (max-width: 390px){
   #around{
-    padding: 60px 12px;
+    padding: 60px 20px;
     .swiper{
       padding-bottom: 0px;
+
       .header{
         h2{
-
           &::after{
             width: 140px;
           }
         }
+        .btn-group{
+          .swiper-button-prev, .swiper-button-next{
+            width: 44px;
+            height: 44px;
+          }
+        }
       }
       .swiper-slide{
-        width: 351px;
+        width: 334px;
         height: 300px;
       }
     }
@@ -953,7 +977,7 @@ $red: #d82121;
 
 
 #footer{
-  padding: 28px 5%;
+  padding: 32px 5%;
   background-color: $dark-green;
   .news{
     display: flex;
@@ -993,6 +1017,7 @@ $red: #d82121;
         p{
           margin-bottom: 8px;
           color: $text-white;
+          font-size: 15px;
         }
       }
     }
@@ -1000,6 +1025,7 @@ $red: #d82121;
   .copyright p{
     text-align: end;
     color: $text-white;
+    font-size: 14px;
   }
 }
 
@@ -1017,6 +1043,7 @@ $red: #d82121;
 
 @media (max-width: 768px){
   #footer{
+    padding: 32px 20px;
     .news{
       display: block;
       text-align: center;
@@ -1025,6 +1052,11 @@ $red: #d82121;
       }
       .social{
         justify-content: center;
+      }
+      .contactUs{
+        h3{
+          font-size: 20px;
+        }
       }
     }
     .copyright p{
@@ -1070,10 +1102,10 @@ $red: #d82121;
 }
 @media (max-width: 768px) {
   #room-banner{
-   height: 50vh;
-   &::before{
-     bottom: -0.5px;
-   }
+    height: 56vh;
+    &::before{
+      bottom: -0.5px;
+    }
   } 
 }
 
@@ -1087,8 +1119,8 @@ $red: #d82121;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 0 40px 0;
-    gap: 60px;    
+    margin: 0 0 60px 0;
+    gap: 60px;
     &:nth-child(2){
       flex-direction: row-reverse;
       .card-img::after{
@@ -1111,6 +1143,7 @@ $red: #d82121;
     }
     .card-img{
       width: 55%;
+      height: 100%;
       // height: 360px;
       position: relative;
       // z-index: 1;
@@ -1222,22 +1255,24 @@ $red: #d82121;
 }
 @media (max-width: 768px){
   #rooms{
-
+    padding: 80px 20px;
     .card{
       display: block;
-      gap: 40px;
+      margin-bottom: 40px;
       .card-img{
         width: 100%;
         margin-bottom: 20px;
       }
       .card-body{
         width: 100%;
+        margin-bottom: 0;
         h2{
-          margin-bottom: 20px;
+          margin-bottom: 16px;
+          font-size: 24px;
         &::after{
           width: 48%;
           left: 0%;
-          bottom: -10px;
+          bottom: -8px;
         }
         }
       }
@@ -1252,9 +1287,28 @@ $red: #d82121;
     }
   }
 }
+@media (max-width: 390px){
+  #rooms{
+    padding: 60px 20px;
+    .card{
+      margin-bottom: 32px;
+      .card-img{
+        margin-bottom: 16px;
+      }
+      .card-body{
+        h2{
+          margin-bottom: 12px;
+        &::after{
+          bottom: -6px;
+        }
+        }
+      }
+    }
+  }
+}
 
 #bookRoom{
-  padding: 80px 5%;
+  padding: 100px 5%;
   display: flex;
   gap: 20px;
   .equip, .book-notice{
@@ -1299,17 +1353,16 @@ $red: #d82121;
 }
 @media (max-width: 768px){
   #bookRoom{
-    
+    padding: 80px 20px;
     .equip, .book-notice{
       
       h2{
         font-size: 24px;
-        margin-bottom: 20px;
+        margin-bottom: 16px;
         position: relative;
         &::after{
-        
           width: 200px;
-          
+          bottom: -8px;
         }
       }
       .content{
@@ -1328,7 +1381,19 @@ $red: #d82121;
     }
   }
 }
-
+@media (max-width: 390px){
+  #bookRoom{
+    padding: 60px 20px;
+    .equip, .book-notice{
+      h2{
+        margin-bottom: 12px;
+        &::after{
+          bottom: -6px;
+        }
+      }
+    }
+  }
+}
 
 
 // ---------------- 民宿活動 ------------------
@@ -1363,10 +1428,10 @@ $red: #d82121;
 }
 @media (max-width: 768px) {
   #activity-banner{
-   height: 50vh;
-   &::before{
-     bottom: -0.5px;
-   }
+    height: 56vh;
+    &::before{
+      bottom: -0.5px;
+    }
   } 
 }
 
@@ -1403,7 +1468,7 @@ $red: #d82121;
 }
 
 #activity{
-  padding: 80px 5%;
+  padding: 100px 5%;
   background-color: $green;
   .card{
     display: flex;
@@ -1501,7 +1566,8 @@ $red: #d82121;
     }
     &:last-child{
       flex-direction: row-reverse;
-      height: 50vh;
+      height: 56vh;
+      margin-bottom: 0;
       .card-img{
         width: 40%;
       }
@@ -1513,14 +1579,13 @@ $red: #d82121;
 }
 @media (max-width: 768px){
   #activity{
-    padding: 100px 20px;
+    padding: 80px 20px;
     .card{
       width: 100%;
       margin-bottom: 40px;
-      .card-img{
 
-      }
       .card-body{
+
         h2{
           font-size: 24px;
           margin-bottom: 16px;
@@ -1608,15 +1673,18 @@ $red: #d82121;
 }
 @media (max-width: 576px){
   #activity{
-    padding: 60px 12px;
+    padding: 80px 20px;
     .card{
       width: 100%;
-      margin-bottom: 20px;
+      margin-bottom: 32px;
       display: block;
-      .card-img{
-        margin-bottom: 12px;
-      }
 
+      .card-img{
+        margin-bottom: 20px;
+      }
+      .card-body{
+        padding: 0;
+      }
       &:first-child, &:nth-child(2), &:nth-child(3), &:nth-child(4), &:nth-child(5){
         width: 100%;
         .card-img{
@@ -1639,7 +1707,24 @@ $red: #d82121;
     }
   }
 }
-
+@media (max-width: 390px){
+  #activity{
+    padding: 60px 20px;
+    .card{
+      .card-img{
+        margin-bottom: 16px;
+      }
+      .card-body{
+        h2{
+          margin-bottom: 12px;
+          &::after{
+            bottom: -6px;
+          }
+        }
+      }
+    }
+  }
+}
 
 
 
@@ -1675,10 +1760,10 @@ $red: #d82121;
 }
 @media (max-width: 768px) {
   #product-banner{
-   height: 50vh;
-   &::before{
-     bottom: -0.5px;
-   }
+    height: 56vh;
+    &::before{
+      bottom: -0.5px;
+    }
   } 
 }
 
@@ -1770,6 +1855,9 @@ $red: #d82121;
     &:nth-child(2) .card-body{
       flex-direction: row-reverse;
     }
+    &:last-child{
+      margin-bottom: 0;
+    }
   }
 }
 @media (max-width: 768px){
@@ -1821,9 +1909,9 @@ $red: #d82121;
 }
 @media (max-width: 390px){
   #product{
-    padding: 40px 20px;
+    padding: 60px 20px;
     .card{
-      margin-bottom: 28px;
+      margin-bottom: 32px;
       .card-header{
         margin-bottom: 16px;
         &::before{
@@ -1876,7 +1964,7 @@ $red: #d82121;
     width: 40%;
     // height: 40%;
     background-color: rgba(85, 83, 83, 0.7);
-    padding: 24px 36px;
+    padding: 20px 36px;
     position: relative;
     &.d-none{
       display: none;
@@ -1954,16 +2042,16 @@ $red: #d82121;
 }
 @media (max-width: 768px) {
   #map-banner{
-   height: 50vh;
-   &::before{
-     bottom: -0.5px;
-   }
+    height: 56vh;
+    &::before{
+      bottom: -0.5px;
+    }
   } 
 }
 
 #map{
   background-color: $green;
-  padding: 80px 5%;
+  padding: 100px 5%;
   iframe{
     filter: grayscale(30%);
     width: 50%;
@@ -2011,17 +2099,44 @@ $red: #d82121;
 
 @media (max-width: 768px){
   #map{
+    padding: 80px 20px;
     iframe{
       width: 100%;
       float: none;
-      margin-bottom: 24px;
+      margin-bottom: 40px;
     }
     .content{
       width: 100%;
+
       .location{
-        margin-bottom: 20px;
-        h2{
-          font-size: 24px;
+        margin-bottom: 40px;
+      }
+      h2{
+        font-size: 24px;
+        margin-bottom: 16px;
+        &::after{
+          bottom: -8px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 390px){
+  #map{
+    padding: 60px 20px;
+    iframe{
+      margin-bottom: 32px;
+    }
+    .content{
+      .location{
+        margin-bottom: 32px;
+      }
+      h2{
+        font-size: 24px;
+        margin-bottom: 12px;
+        &::after{
+          bottom: -6px;
         }
       }
     }
