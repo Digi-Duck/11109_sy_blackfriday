@@ -1,13 +1,13 @@
-  const loading = document.querySelector('.loading');
+  // const loading = document.querySelector('.loading');
 
   window.onload = function() {
-    setTimeout(function() {
-      loading.classList.add('end');
+    // setTimeout(function() {
+    //   loading.classList.add('end');
       body.style.overflow = 'auto';
-      setTimeout(function() {
-        loading.style.display = 'none';
-      }, 300)
-    }, 1000)
+      // setTimeout(function() {
+      //   loading.style.display = 'none';
+      // }, 300)
+    // }, 1000)
   }
   
   const nav = document.querySelector('#nav');

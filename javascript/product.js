@@ -61,6 +61,7 @@ coffeeBtns.forEach(function(item) {
     body.style.overflow = 'hidden';
   })
 })
+
 window.addEventListener('click', function(e) {
   // console.log(e.target.getAttribute('id'));
   if(e.target.getAttribute('id') == 'bounce'){
