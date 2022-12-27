@@ -522,7 +522,7 @@ $red: #d82121;
 
 #sunset-banner{
   width: 100%;
-  height: 52vh;
+  height: 520px;
   display: flex;
   background-color: #292626;
   .content{
@@ -554,7 +554,7 @@ $red: #d82121;
 }
 @media (max-width: 992px){
   #sunset-banner{
-    height: 48vh;
+    height: 480px;
     padding: 0;
     position: relative;
     .content{
