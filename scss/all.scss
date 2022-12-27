@@ -332,7 +332,20 @@ body{
   }
 }
 
-
+ .glow{
+   position: absolute;
+   width: 40px;
+   height: 40px;
+   border-radius: 50%;
+  //  background-color: red;
+  //  background-color: transparent;
+   left: 50.5%;
+   top: 28%;
+   transition: box-shadow 2s linear; 
+    &:hover{
+    box-shadow: 0 0 300px 500px rgb(255, 217, 0);
+ }
+}
 #banner{
   width: 100%;
   height: 100vh;

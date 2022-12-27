@@ -94,3 +94,4 @@
     });
   });
   
+  const glow = document.querySelector('.glow')
