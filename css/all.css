@@ -371,7 +371,7 @@ body ::selection {
 
 @media (max-width: 768px) {
   #banner {
-    height: 560px;
+    height: 520px;
   }
   #banner::before {
     bottom: -0.5px;
@@ -1060,7 +1060,7 @@ body ::selection {
 
 @media (max-width: 768px) {
   #room-banner {
-    height: 560px;
+    height: 520px;
   }
   #room-banner::before {
     bottom: -0.5px;
@@ -1328,7 +1328,7 @@ body ::selection {
 
 @media (max-width: 768px) {
   #activity-banner {
-    height: 560px;
+    height: 520px;
   }
   #activity-banner::before {
     bottom: -0.5px;
@@ -1626,7 +1626,7 @@ body ::selection {
 
 @media (max-width: 768px) {
   #product-banner {
-    height: 560px;
+    height: 520px;
   }
   #product-banner::before {
     bottom: -0.5px;
@@ -1955,7 +1955,7 @@ body ::selection {
 
 @media (max-width: 768px) {
   #map-banner {
-    height: 560px;
+    height: 520px;
   }
   #map-banner::before {
     bottom: -0.5px;
