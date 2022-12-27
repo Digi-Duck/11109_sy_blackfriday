@@ -352,7 +352,6 @@ $red: #d82121;
     left: 50%;
     width: 200px;
     height: 200px;
-    // border: 2px solid #fff;
     border-radius: 50%;
     user-select: none;
     .container{
@@ -398,7 +397,7 @@ $red: #d82121;
 }
 @media (max-width: 768px) {
   #banner{
-    height: 56vh;
+    height: 560px;
     &::before{
       bottom: -0.5px;
     }
@@ -1111,7 +1110,7 @@ $red: #d82121;
 }
 @media (max-width: 768px) {
   #room-banner{
-    height: 56vh;
+    height: 560px;
     &::before{
       bottom: -0.5px;
     }
@@ -1437,7 +1436,7 @@ $red: #d82121;
 }
 @media (max-width: 768px) {
   #activity-banner{
-    height: 56vh;
+    height: 560px;
     &::before{
       bottom: -0.5px;
     }
@@ -1767,7 +1766,7 @@ $red: #d82121;
 }
 @media (max-width: 768px) {
   #product-banner{
-    height: 56vh;
+    height: 560px;
     &::before{
       bottom: -0.5px;
     }
@@ -2108,7 +2107,7 @@ $red: #d82121;
 }
 @media (max-width: 768px) {
   #map-banner{
-    height: 56vh;
+    height: 560px;
     &::before{
       bottom: -0.5px;
     }

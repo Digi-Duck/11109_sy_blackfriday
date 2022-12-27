@@ -365,7 +365,7 @@
 
 @media (max-width: 768px) {
   #banner {
-    height: 56vh;
+    height: 560px;
   }
   #banner::before {
     bottom: -0.5px;
@@ -1023,7 +1023,7 @@
 
 @media (max-width: 768px) {
   #room-banner {
-    height: 56vh;
+    height: 560px;
   }
   #room-banner::before {
     bottom: -0.5px;
@@ -1284,7 +1284,7 @@
 
 @media (max-width: 768px) {
   #activity-banner {
-    height: 56vh;
+    height: 560px;
   }
   #activity-banner::before {
     bottom: -0.5px;
@@ -1581,7 +1581,7 @@
 
 @media (max-width: 768px) {
   #product-banner {
-    height: 56vh;
+    height: 560px;
   }
   #product-banner::before {
     bottom: -0.5px;
@@ -1897,7 +1897,7 @@
 
 @media (max-width: 768px) {
   #map-banner {
-    height: 56vh;
+    height: 560px;
   }
   #map-banner::before {
     bottom: -0.5px;
