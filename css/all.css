@@ -262,7 +262,7 @@ body ::selection {
   transform: translateX(100%);
   opacity: 0;
   transition: transform 0.5s;
-  overflow-y: auto;
+  overflow: auto;
 }
 #mobile-menu.active {
   opacity: 1;
