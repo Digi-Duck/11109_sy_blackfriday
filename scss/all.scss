@@ -1031,7 +1031,7 @@ $red: #d82121;
           margin-bottom: 8px;
           color: $text-white;
           font-size: 15px;
-          user-select: none;
+
         }
       }
     }
@@ -2087,7 +2087,7 @@ $red: #d82121;
 @media (max-width: 390px){
   #bounce{  
     .modal{
-      width: 80%;
+      width: 90%;
       // height: 36%;
     }
   }

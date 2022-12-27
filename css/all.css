@@ -963,7 +963,6 @@
   margin-bottom: 8px;
   color: #e2dcdc;
   font-size: 15px;
-  user-select: none;
 }
 #footer .copyright p {
   text-align: end;
@@ -1876,7 +1875,7 @@
 }
 @media (max-width: 390px) {
   #bounce .modal {
-    width: 80%;
+    width: 90%;
   }
 }
 #map-banner {
