@@ -334,6 +334,7 @@ body ::selection {
   text-align: center;
   color: #e2dcdc;
   font-size: 14px;
+  margin-bottom: 20px;
 }
 
 .glow {
