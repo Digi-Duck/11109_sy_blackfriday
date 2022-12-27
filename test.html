@@ -201,6 +201,55 @@
         overflow: hidden;
       }
     }
+  /* #album{
+  // position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  user-select: none;
+  .container{
+    position: relative;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    .imgBox{
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 1px solid #fff;
+      box-shadow: 0 0 0 4px #222,
+                  0 0 0 6px #fff;
+      transform: rotate(calc(360deg/8 * var(--i)));
+      transform-origin: 122px;
+      z-index: 10;
+      &.active{
+        box-shadow: 0 0 0 4px #222;
+      }
+      img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+        transform: rotate(calc(-360deg/8 * var(--i)));
+        filter: grayscale(1);
+      }
+      &.active img{
+        filter: grayscale(0);
+      }
+    }
+  }
+ } */
   </style>
 </head>
 <body>
@@ -292,6 +341,34 @@
     </div>
   </section>
 
+        <!-- <div id="album">
+        <div class="container">
+          <div class="imgBox active" style="--i:1">
+            <img src="https://picsum.photos/1903/961?random=1" alt="">
+          </div>
+          <div class="imgBox" style="--i:2">
+            <img src="https://picsum.photos/1903/961?random=2" alt="">
+          </div>
+          <div class="imgBox" style="--i:3;">
+            <img src="https://picsum.photos/1903/961?random=3" alt="">
+          </div>
+          <div class="imgBox" style="--i:4">
+            <img src="https://picsum.photos/1903/961?random=4" alt="">
+          </div>
+          <div class="imgBox" style="--i:5">
+            <img src="https://picsum.photos/1903/961?random=5" alt="">
+          </div>
+          <div class="imgBox" style="--i:6">
+            <img src="https://picsum.photos/1903/961?random=6" alt="">
+          </div>
+          <div class="imgBox" style="--i:7">
+            <img src="https://picsum.photos/1903/961?random=7" alt="">
+          </div>
+          <div class="imgBox" style="--i:8">
+            <img src="https://picsum.photos/1903/961?random=8" alt="">
+          </div>
+        </div>
+      </div>  -->
   <script>
     const imgBox = document.querySelectorAll('.imgBox');
     const contentBox = document.querySelector('.contentBox');
@@ -318,7 +395,30 @@
         console.log(this.querySelector('img').getAttribute('src'));
       })
     })
+  //   const imgBox = document.querySelectorAll('.imgBox');
+  // const bannerImg = document.querySelector('#banner');
 
+  // imgBox.forEach(function(item,index,array) {
+  //   imgBox[index].addEventListener('click',  function() {
+  //     // array.forEach((it,key) => {
+  //     //   console.log(it.getAttribute('class'));
+  //     //   if(it.getAttribute('class') == 'imgBox active'){
+  //     //     console.log(key);
+  //     //       it.style.setProperty('--i', key);
+  //     //       console.log(it);
+  //     //     }
+  //     // });
+  //     for(let i = 0; i < imgBox.length; i++){
+  //       imgBox[i].className = 'imgBox';
+        
+  //     }
+
+  //     this.className = 'imgBox active';
+  //     // this.style.setProperty('--i', 1);
+      
+  //     bannerImg.style.setProperty('background-image', `url('${this.querySelector('img').getAttribute('src')}')`)
+  //   });
+  // });
   </script>
 </body>
 </html>

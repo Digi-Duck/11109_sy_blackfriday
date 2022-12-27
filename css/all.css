@@ -7,6 +7,11 @@
   scroll-behavior: smooth;
 }
 
+body ::-moz-selection {
+  background: #39553f;
+  color: #fff;
+}
+
 body ::selection {
   background: #39553f;
   color: #fff;
@@ -38,7 +43,8 @@ body ::selection {
   position: absolute;
   top: 50%;
   left: 50%;
-  animation: float 2s infinite linear;
+  -webkit-animation: float 2s infinite linear;
+          animation: float 2s infinite linear;
 }
 .loading .container img:nth-child(1) {
   width: 100%;
@@ -48,14 +54,24 @@ body ::selection {
 .loading .container img:nth-child(2) {
   width: 75%;
   height: 75%;
-  animation-delay: -0.2s;
+  -webkit-animation-delay: -0.2s;
+          animation-delay: -0.2s;
   transform: translate(-20%, -30%);
 }
 .loading .container img:nth-child(3) {
   width: 60%;
   height: 60%;
-  animation-delay: -0.4s;
+  -webkit-animation-delay: -0.4s;
+          animation-delay: -0.4s;
   transform: translate(-90%, -20%);
+}
+@-webkit-keyframes float {
+  0%, 100% {
+    top: 52%;
+  }
+  50% {
+    top: 44%;
+  }
 }
 @keyframes float {
   0%, 100% {
@@ -77,8 +93,19 @@ body ::selection {
   position: absolute;
   width: 100%;
   height: 100%;
-  animation: typing 0.8s steps(4), blink 0.2s 6;
+  -webkit-animation: typing 0.8s steps(4), blink 0.2s 6;
+          animation: typing 0.8s steps(4), blink 0.2s 6;
   background-color: #0c1b2e;
+}
+@-webkit-keyframes typing {
+  0% {
+    left: 12%;
+    border-left: 2px solid #fff;
+  }
+  100% {
+    border-left: 2px solid #fff;
+    left: 88%;
+  }
 }
 @keyframes typing {
   0% {
@@ -88,6 +115,14 @@ body ::selection {
   100% {
     border-left: 2px solid #fff;
     left: 88%;
+  }
+}
+@-webkit-keyframes blink {
+  0% {
+    border-left: 2px solid #fff;
+  }
+  100% {
+    border-left: 2px solid transparent;
   }
 }
 @keyframes blink {
@@ -106,9 +141,6 @@ body ::selection {
   padding: 0 24px;
   width: 100%;
   height: 80px;
-  position: absolute;
-  top: 0;
-  z-index: 3;
   background-color: #243628;
 }
 #nav a {
@@ -117,6 +149,7 @@ body ::selection {
 #nav.fixed {
   position: fixed;
   top: 0;
+  z-index: 3;
 }
 #nav .logo {
   display: flex;
@@ -175,6 +208,7 @@ body ::selection {
 
 @media (max-width: 768px) {
   #nav {
+    height: 60px;
     padding: 0 20px;
   }
   #nav .logo .logoPic {
@@ -240,7 +274,7 @@ body ::selection {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 80px;
+  height: 60px;
 }
 #mobile-menu .header .logo {
   display: flex;
@@ -316,7 +350,7 @@ body ::selection {
 
 #banner {
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 80px);
   position: relative;
   background-image: url("../image/banner.jpg");
   background-position: center;
@@ -331,54 +365,8 @@ body ::selection {
   width: 100%;
   height: 60px;
   background: #fff;
-  clip-path: polygon(0% 100%, 78.5% 0%, 100% 100%);
-}
-#banner #album {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  user-select: none;
-}
-#banner #album .container {
-  position: relative;
-  left: 0%;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
-#banner #album .container .imgBox {
-  position: absolute;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  border: 1px solid #fff;
-  box-shadow: 0 0 0 4px #222, 0 0 0 6px #fff;
-  transform: rotate(calc(45deg * var(--i)));
-  transform-origin: 122px;
-  z-index: 10;
-}
-#banner #album .container .imgBox.active {
-  box-shadow: 0 0 0 4px #222;
-}
-#banner #album .container .imgBox img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-  transform: rotate(calc(-45deg * var(--i)));
-  filter: grayscale(1);
-}
-#banner #album .container .imgBox.active img {
-  filter: grayscale(0);
+  -webkit-clip-path: polygon(0% 100%, 78.5% 0%, 100% 100%);
+          clip-path: polygon(0% 100%, 78.5% 0%, 100% 100%);
 }
 
 @media (max-width: 768px) {
@@ -400,7 +388,8 @@ body ::selection {
 }
 #about .content {
   margin: 0 0 0 auto;
-  writing-mode: vertical-rl;
+  -ms-writing-mode: tb-rl;
+      writing-mode: vertical-rl;
   position: relative;
   z-index: 2;
   line-height: 1.5;
@@ -530,7 +519,8 @@ body ::selection {
 #sunset-banner .content {
   width: 50%;
   margin-left: auto;
-  writing-mode: vertical-rl;
+  -ms-writing-mode: tb-rl;
+      writing-mode: vertical-rl;
   color: #e2dcdc;
   font-size: 24px;
   line-height: 64px;
@@ -641,7 +631,8 @@ body ::selection {
   height: 100%;
   vertical-align: bottom;
   transition: transform 0.5s;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 #main-card .card .pic:hover img {
   transform: scale(1.1);
@@ -1038,7 +1029,7 @@ body ::selection {
 }
 #room-banner {
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 80px);
   position: relative;
   background-image: url("../image/roomBanner.png");
   background-position: center;
@@ -1053,7 +1044,8 @@ body ::selection {
   width: 100%;
   height: 60px;
   background: #ecf2ee;
-  clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+  -webkit-clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+          clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
 }
 #room-banner .title {
   position: absolute;
@@ -1090,7 +1082,8 @@ body ::selection {
   flex-direction: row-reverse;
 }
 #rooms .card:nth-child(2) .card-img::after {
-  animation-delay: -6s;
+  -webkit-animation-delay: -6s;
+          animation-delay: -6s;
 }
 #rooms .card:nth-child(2) .card-body {
   text-align: right;
@@ -1111,13 +1104,15 @@ body ::selection {
   color: #243628;
 }
 #rooms .card .card-img a:hover .search {
-  clip-path: circle(100%);
+  -webkit-clip-path: circle(100%);
+          clip-path: circle(100%);
 }
 #rooms .card .card-img img {
   width: 100%;
   height: 100%;
   vertical-align: bottom;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 #rooms .card .card-img .search {
   position: absolute;
@@ -1127,11 +1122,14 @@ body ::selection {
   display: flex;
   justify-content: center;
   align-items: center;
-  clip-path: circle(40px);
+  -webkit-clip-path: circle(40px);
+          clip-path: circle(40px);
   background-color: rgba(119, 119, 119, 0.4);
   top: 0;
   left: 0;
+  transition: -webkit-clip-path 0.5s;
   transition: clip-path 0.5s;
+  transition: clip-path 0.5s, -webkit-clip-path 0.5s;
 }
 #rooms .card .card-body {
   width: 45%;
@@ -1299,7 +1297,7 @@ body ::selection {
 }
 #activity-banner {
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 80px);
   position: relative;
   background-image: url("../image/actBanner.jfif");
   background-position: center;
@@ -1314,7 +1312,8 @@ body ::selection {
   width: 100%;
   height: 60px;
   background: #ecf2ee;
-  clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+  -webkit-clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+          clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
 }
 #activity-banner .title {
   position: absolute;
@@ -1354,7 +1353,8 @@ body ::selection {
   font-size: 14px;
   margin: 0 0 4px 0;
   transform: rotate(12deg);
-  clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+  -webkit-clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+          clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
 }
 #tabs a:hover {
   margin: 0 10px 4px 0;
@@ -1382,7 +1382,8 @@ body ::selection {
 #activity .card .card-img img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   vertical-align: bottom;
 }
 #activity .card .card-body {
@@ -1594,7 +1595,7 @@ body ::selection {
 }
 #product-banner {
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 80px);
   position: relative;
   background-image: url("../image/Rectangle 17.png");
   background-position: center;
@@ -1609,7 +1610,8 @@ body ::selection {
   width: 100%;
   height: 60px;
   background: #ecf2ee;
-  clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+  -webkit-clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+          clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
 }
 #product-banner .title {
   position: absolute;
@@ -1714,7 +1716,8 @@ body ::selection {
 #product .card .card-body .tree img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   vertical-align: bottom;
 }
 #product .card .card-body .tree h3 {
@@ -1760,7 +1763,8 @@ body ::selection {
 #product .card .card-body .output div img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   vertical-align: bottom;
   cursor: pointer;
   filter: blur(4px);
@@ -1792,11 +1796,11 @@ body ::selection {
   #product .card .card-header h2 {
     font-size: 28px;
   }
-  #product .card .card-body .output div {
-    filter: grayscale(0%);
+  #product .card .card-body .output div img {
+    filter: blur(0);
   }
-  #product .card .card-body .output div:hover {
-    filter: grayscale(0%);
+  #product .card .card-body .output div img:hover {
+    filter: blur(0);
   }
   #product .card .card-body .output div::after {
     font-family: "Font Awesome 5 Free";
@@ -1920,7 +1924,7 @@ body ::selection {
 }
 #map-banner {
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 80px);
   position: relative;
   background-image: url("../image/大雪山 1.png");
   background-position: center;
@@ -1935,7 +1939,8 @@ body ::selection {
   width: 100%;
   height: 60px;
   background: #ecf2ee;
-  clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+  -webkit-clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+          clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
 }
 #map-banner .title {
   position: absolute;
@@ -2039,4 +2044,4 @@ body ::selection {
   #map .content h2::after {
     bottom: -6px;
   }
-}
+}/*# sourceMappingURL=all.css.map */

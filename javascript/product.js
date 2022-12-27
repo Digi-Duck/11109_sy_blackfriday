@@ -2,12 +2,12 @@ const nav = document.querySelector('#nav');
 const banner = document.querySelector('#product-banner');
 
 function scroll() {
-  if(scrollY+80 > banner.offsetHeight) {
+  if(scrollY > banner.offsetHeight) {
     nav.classList.add('fixed');
-    // document.body.style.paddingTop = nav.offsetHeight+'px';
+    document.body.style.paddingTop = nav.offsetHeight+'px';
   }else {
     nav.classList.remove('fixed');
-    // document.body.style.paddingTop = 0;
+    document.body.style.paddingTop = 0;
   }
 }
 scroll();
@@ -85,7 +85,7 @@ const outputFades = document.querySelectorAll('#product .card-body .output div')
 
 function scrollFade() {
   cardTops.forEach((item) => {
-    console.log(scrollY, item.offsetTop);
+    // console.log(scrollY, item.offsetTop);
     if(scrollY + 624 > item.offsetTop){
       item.querySelector('.tree').classList.add('fade');
       item.querySelectorAll('.output div').forEach(i => {

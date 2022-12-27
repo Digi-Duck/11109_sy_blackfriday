@@ -125,9 +125,6 @@ body{
   padding: 0 24px;
   width: 100%;
   height: 80px;
-  position: absolute;
-  top: 0;
-  z-index: 3;
   background-color: $dark-green;
   a{
     text-decoration: none;
@@ -135,6 +132,7 @@ body{
   &.fixed{
     position: fixed;
     top: 0;
+    z-index: 3;
   }
 
   .logo{
@@ -198,6 +196,7 @@ body{
 }
 @media (max-width: 768px){
   #nav{
+    height: 60px;
     padding: 0 20px;
     .logo{
       
@@ -268,7 +267,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 80px;
+    height: 60px;
     .logo{
       display: flex;
       justify-content: center;
@@ -332,23 +331,23 @@ body{
   }
 }
 
- .glow{
-   position: absolute;
-   width: 40px;
-   height: 40px;
-   border-radius: 50%;
+.glow{
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
   //  background-color: red;
   //  background-color: transparent;
-   left: 50.5%;
-   top: 28%;
-   transition: box-shadow 2s linear; 
-    &:hover{
+  left: 50.5%;
+  top: 28%;
+  transition: box-shadow 2s linear; 
+  &:hover{
     box-shadow: 0 0 300px 500px rgb(255, 217, 0);
- }
+  }
 }
 #banner{
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 80px);
   position: relative;
   background-image: url('../image/banner.jpg');
   background-position: center;
@@ -363,56 +362,6 @@ body{
     height:60px;
     background:#fff;
     clip-path:polygon(0% 100%, 78.5%  0%,100% 100%);
-  }
-
-  #album{
-    // position: relative;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    user-select: none;
-    .container{
-      position: relative;
-      left: 0%;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      .imgBox{
-        position: absolute;
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        border: 1px solid #fff;
-        box-shadow: 0 0 0 4px #222,
-                    0 0 0 6px #fff;
-        transform: rotate(calc(360deg/8 * var(--i)));
-        transform-origin: 122px;
-        z-index: 10;
-        &.active{
-          box-shadow: 0 0 0 4px #222;
-        }
-        img{
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          border-radius: 50%;
-          transform: rotate(calc(-360deg/8 * var(--i)));
-          filter: grayscale(1);
-        }
-        &.active img{
-          filter: grayscale(0);
-        }
-      }
-    }
   }
 }
 @media (max-width: 768px) {
@@ -1130,7 +1079,7 @@ body{
 // ---------------- 房型資訊 ------------------
 #room-banner{
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 80px);
   position: relative;
   background-image: url('../image/roomBanner.png');
   background-position: center;
@@ -1457,7 +1406,7 @@ body{
 // ---------------- 民宿活動 ------------------
 #activity-banner{
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 80px);
   position: relative;
   background-image: url('../image/actBanner.jfif');
   background-position: center;
@@ -1786,7 +1735,7 @@ body{
 // ---------------- 農產品 ------------------
 #product-banner{
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 80px);
   position: relative;
   background-image: url('../image/Rectangle\ 17.png');
   background-position: center;
@@ -1997,9 +1946,11 @@ body{
       .card-body{
         .output{
           div{
-            filter: grayscale(0%);
-            &:hover{
-              filter: grayscale(0%);
+            img{
+              filter: blur(0);
+              &:hover{
+                filter: blur(0);
+              }
             }
             &::after{
               font-family: "Font Awesome 5 Free"; 
@@ -2145,7 +2096,7 @@ body{
 // ---------------- 交通資訊 ------------------
 #map-banner{
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 80px);
   position: relative;
   background-image: url('../image/大雪山\ 1.png');
   background-position: center;

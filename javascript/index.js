@@ -18,10 +18,12 @@
   const around = document.querySelector('#around');
   
   function scroll() {
-    if(scrollY+80 > banner.offsetHeight) {
+    if(scrollY > banner.offsetHeight) {
       nav.classList.add('fixed');
+          document.body.style.paddingTop = nav.offsetHeight+'px';
     }else {
       nav.classList.remove('fixed');
+      document.body.style.paddingTop = 0;
     }
     if(scrollY + 576 > about.offsetTop){
       about.querySelector('h2').classList.add('fade');
@@ -67,31 +69,3 @@
   });
 
 
-
-
-  const imgBox = document.querySelectorAll('.imgBox');
-  const bannerImg = document.querySelector('#banner');
-
-  imgBox.forEach(function(item,index,array) {
-    imgBox[index].addEventListener('click',  function() {
-      // array.forEach((it,key) => {
-      //   console.log(it.getAttribute('class'));
-      //   if(it.getAttribute('class') == 'imgBox active'){
-      //     console.log(key);
-      //       it.style.setProperty('--i', key);
-      //       console.log(it);
-      //     }
-      // });
-      for(let i = 0; i < imgBox.length; i++){
-        imgBox[i].className = 'imgBox';
-        
-      }
-
-      this.className = 'imgBox active';
-      // this.style.setProperty('--i', 1);
-      
-      bannerImg.style.setProperty('background-image', `url('${this.querySelector('img').getAttribute('src')}')`)
-    });
-  });
-  
-  const glow = document.querySelector('.glow')
