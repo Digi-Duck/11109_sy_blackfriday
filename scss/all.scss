@@ -256,6 +256,7 @@ body{
   transform: translateX(100%);
   opacity: 0;
   transition: transform .5s;
+  overflow-y: auto;
   &.active{
     opacity: 1;
     transform: translateX(0%);
