@@ -465,6 +465,7 @@ body ::selection {
     font-size: 28px;
   }
   #about .content p {
+    height: 320px;
     margin: 0 24px;
     font-size: 20px;
   }
