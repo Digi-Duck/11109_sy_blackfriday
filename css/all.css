@@ -7,6 +7,11 @@
   scroll-behavior: smooth;
 }
 
+body ::selection {
+  background: #243628;
+  color: #fff;
+}
+
 .loading {
   position: fixed;
   inset: 0 0;
@@ -999,7 +1004,7 @@
   width: 100%;
   height: 100vh;
   position: relative;
-  background-image: url("../image/roomBanner.jpg");
+  background-image: url("../image/roomBanner.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1260,7 +1265,7 @@
   width: 100%;
   height: 100vh;
   position: relative;
-  background-image: url("../image/actBanner.jpg");
+  background-image: url("../image/actBanner.jfif");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1694,7 +1699,6 @@
 #product .card .card-body .output div {
   width: calc(50% - 8px);
   position: relative;
-  filter: grayscale(100%);
   opacity: 0;
   transition: transform 0.5s, opacity 0.5s;
 }
@@ -1717,15 +1721,17 @@
   transform: translateX(0);
   opacity: 1;
 }
-#product .card .card-body .output div:hover {
-  filter: grayscale(0%);
-}
 #product .card .card-body .output div img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   vertical-align: bottom;
   cursor: pointer;
+  filter: blur(5px);
+  transition: filter 0.15s;
+}
+#product .card .card-body .output div img:hover {
+  filter: blur(0);
 }
 #product .card:last-child {
   margin-bottom: 0;

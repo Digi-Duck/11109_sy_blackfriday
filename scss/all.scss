@@ -4,8 +4,8 @@
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
+  
 }
-
 
 $dark-green: #243628;
 $green: #ecf2ee;
@@ -18,6 +18,13 @@ $text-white: #e2dcdc;
 $line-color: #777777;
 $red: #d82121;
 
+body{
+  ::selection {
+    background: $dark-green;
+    color: #fff;
+  }
+  
+}
 
 
 .loading{
@@ -1087,7 +1094,7 @@ $red: #d82121;
   width: 100%;
   height: 100vh;
   position: relative;
-  background-image: url('../image/roomBanner.jpg');
+  background-image: url('../image/roomBanner.png');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1414,7 +1421,7 @@ $red: #d82121;
   width: 100%;
   height: 100vh;
   position: relative;
-  background-image: url('../image/actBanner.jpg');
+  background-image: url('../image/actBanner.jfif');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1546,9 +1553,7 @@ $red: #d82121;
       }
       .card-body{
         width: 50%;
-  
-        .content{
-         
+        .content{      
           margin-bottom: 12px;
         }
       }
@@ -1887,7 +1892,7 @@ $red: #d82121;
         div{
           width: calc(50% - 8px);
           position: relative;
-          filter: grayscale(100%);
+          
           opacity: 0;
           transition: transform .5s, opacity .5s;
           &:nth-child(1){
@@ -1909,9 +1914,7 @@ $red: #d82121;
             transform: translateX(0);
             opacity: 1;
           }
-          &:hover{
-            filter: grayscale(0%);
-          }
+          
           &::after{
 
           }
@@ -1921,6 +1924,11 @@ $red: #d82121;
             object-fit: cover;
             vertical-align: bottom;
             cursor: pointer;
+            filter: blur(5px);
+            transition: filter .15s;
+            &:hover{
+              filter: blur(0);
+            }
           }
         }
       }
