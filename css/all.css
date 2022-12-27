@@ -472,6 +472,7 @@ body ::selection {
 }
 @media (max-width: 768px) {
   #about {
+    height: 100%;
     padding: 80px 40px;
   }
   #about .content {
