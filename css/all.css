@@ -637,7 +637,6 @@
   width: 100%;
   line-height: 1.5;
   margin-bottom: 16px;
-  display: inline-block;
   word-break: keep-all;
   word-wrap: break-word;
   color: #1c291c;
@@ -1475,7 +1474,6 @@
     width: 55%;
   }
   #activity .card:nth-child(2) .card-body .content {
-    display: inline-block;
     margin-bottom: 12px;
   }
   #activity .card:nth-child(3) {

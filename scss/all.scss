@@ -678,7 +678,6 @@ $red: #d82121;
         width: 100%;
         line-height: 1.5;
         margin-bottom: 16px;
-        display: inline-block;
         word-break: keep-all;
         word-wrap: break-word;
         color: $text-color;
@@ -1639,7 +1638,7 @@ $red: #d82121;
           width: 55%;
     
           .content{
-            display: inline-block;
+            
             margin-bottom: 12px;
           }
         }
