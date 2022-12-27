@@ -847,6 +847,10 @@ $red: #d82121;
           &::after{
             display: none;
           }
+          img{
+            width: 100%;
+            height: 100%;
+          }
         }
         .swiper-button-prev:hover{
           transform: translateX(-5px);

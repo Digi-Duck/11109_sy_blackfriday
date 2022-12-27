@@ -798,6 +798,10 @@
 #around .swiper .header .btn-group .swiper-button-prev::after, #around .swiper .header .btn-group .swiper-button-next::after {
   display: none;
 }
+#around .swiper .header .btn-group .swiper-button-prev img, #around .swiper .header .btn-group .swiper-button-next img {
+  width: 100%;
+  height: 100%;
+}
 #around .swiper .header .btn-group .swiper-button-prev:hover {
   transform: translateX(-5px);
 }
