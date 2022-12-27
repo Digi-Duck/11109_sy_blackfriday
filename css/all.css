@@ -1368,7 +1368,6 @@
   word-break: keep-all;
   word-wrap: break-word;
   color: #1c291c;
-  white-space: pre-wrap;
 }
 #activity .card .card-body .remind {
   margin: 12px 0 8px 0;
@@ -1397,7 +1396,6 @@
   width: 50%;
 }
 #activity .card:nth-child(2) .card-body .content {
-  display: inline-block;
   margin-bottom: 12px;
 }
 #activity .card:nth-child(3) {
