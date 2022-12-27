@@ -194,7 +194,7 @@ body{
     }
   }
 }
-@media (max-width: 768px){
+@media (max-width: 1024px){
   #nav{
     height: 60px;
     padding: 0 20px;
@@ -456,7 +456,6 @@ body{
     .content{
       margin: 0 auto;
       h2{
-        
         margin: 0 0 0 16px;
         font-size: 28px;
       }
@@ -474,7 +473,6 @@ body{
     .content{
       display: block;
       h2{
-        
         margin: 0 0 0 12px;
         font-size: 28px;
       }
@@ -506,7 +504,6 @@ body{
     padding: 60px 20px;
     background-size: 440px;
     .content{
-      
       h2{
         margin: 0 0 0 8px;
         font-size: 24px;

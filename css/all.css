@@ -206,7 +206,7 @@ body ::selection {
   right: 5%;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   #nav {
     height: 60px;
     padding: 0 20px;
