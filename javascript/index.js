@@ -20,17 +20,16 @@
   function scroll() {
     if(scrollY+80 > banner.offsetHeight) {
       nav.classList.add('fixed');
-      // document.body.style.paddingTop = nav.offsetHeight+'px';
     }else {
       nav.classList.remove('fixed');
-      // document.body.style.paddingTop = 0;
     }
     if(scrollY + 576 > about.offsetTop){
       about.querySelector('h2').classList.add('fade');
-      about.querySelector('.text').classList.add('fade');
+      about.querySelectorAll('.text p').forEach(text => {
+        text.classList.add('fade');
+      })
     }
     cards.forEach((item) => {
-      // console.log(scrollY, item.offsetTop);
       if(scrollY+700 > item.offsetTop){
         item.querySelector('.pic').classList.add('fade');
         item.querySelector('.card-body').classList.add('opc');
