@@ -1978,6 +1978,20 @@ $red: #d82121;
     }
   }
 }
+@media (max-width: 576px){
+  #product{
+    .card{
+      .card-header{
+        &::before{
+          width: 32%;
+        }
+        &::after{
+          width: 32%;
+        }
+      }
+    }
+  }
+}
 @media (max-width: 390px){
   #product{
     padding: 60px 20px;
