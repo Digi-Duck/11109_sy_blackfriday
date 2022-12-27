@@ -449,6 +449,7 @@ body{
 @media (max-width: 992px){
   #about{
     padding: 100px 60px;
+    height: 520px;
     background-size: 560px;
     background-position: 0 bottom;
     .content{
@@ -459,7 +460,6 @@ body{
         font-size: 28px;
       }
       p{
-        height: 320px;
         margin: 0 24px;
         font-size: 20px;
       }

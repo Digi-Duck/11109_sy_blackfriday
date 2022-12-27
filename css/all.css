@@ -454,6 +454,7 @@ body ::selection {
 @media (max-width: 992px) {
   #about {
     padding: 100px 60px;
+    height: 520px;
     background-size: 560px;
     background-position: 0 bottom;
   }
@@ -465,7 +466,6 @@ body ::selection {
     font-size: 28px;
   }
   #about .content p {
-    height: 320px;
     margin: 0 24px;
     font-size: 20px;
   }
