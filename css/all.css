@@ -1369,6 +1369,10 @@
   word-wrap: break-word;
   color: #1c291c;
 }
+#activity .card .card-body .content {
+  word-break: keep-all;
+  word-wrap: break-word;
+}
 #activity .card .card-body .remind {
   margin: 12px 0 8px 0;
   color: #d82121;

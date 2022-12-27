@@ -1520,6 +1520,10 @@ $red: #d82121;
         word-wrap: break-word;
         color: $text-color;
       }
+      .content{
+        word-break: keep-all;
+        word-wrap: break-word;
+      }
       .remind{
         margin: 12px 0 8px 0;
         color: $red;
