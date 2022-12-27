@@ -857,6 +857,7 @@
 }
 #around .swiper .swiper-slide .content p {
   word-break: keep-all;
+  word-wrap: break-word;
   color: #fff;
   margin-bottom: 12px;
 }
