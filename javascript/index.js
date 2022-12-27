@@ -20,10 +20,10 @@
   function scroll() {
     if(scrollY > banner.offsetHeight) {
       nav.classList.add('fixed');
-      document.querySelector('body').style.paddingTop = nav.offsetHeight+'px';
+      document.body.style.paddingTop = nav.offsetHeight+'px';
     }else {
       nav.classList.remove('fixed');
-      document.querySelector('body').style.paddingTop = 0;
+      document.body.style.paddingTop = 0;
     }
     if(scrollY + 576 > about.offsetTop){
       about.querySelector('h2').classList.add('fade');
