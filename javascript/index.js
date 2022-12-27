@@ -7,8 +7,8 @@
       setTimeout(function() {
         loading.style.display = 'none';
         scroll();
-      }, 300)
-    }, 1000)
+      }, 300);
+    }, 1000);
   }
   
   const nav = document.querySelector('#nav');
@@ -42,7 +42,7 @@
     }
   }
   
-  window.addEventListener('scroll', scroll)
+  window.addEventListener('scroll', scroll);
 
 
   // Initialize Swiper

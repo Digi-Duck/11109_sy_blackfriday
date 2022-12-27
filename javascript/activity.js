@@ -45,7 +45,7 @@ tab.forEach(function(item) {
 
 window.addEventListener('scroll', function() {
     
-    if(scrollY >= ecology.offsetTop-200 && scrollY < pick.offsetTop-200){
+    if(scrollY >= ecology.offsetTop-300 && scrollY < pick.offsetTop-300){
       tab.forEach(item => {
 
         item.classList.remove('active');
@@ -53,7 +53,7 @@ window.addEventListener('scroll', function() {
           item.classList.add('active');
         };
       });
-    }else if(scrollY >= pick.offsetTop-200 && scrollY < food.offsetTop-200){
+    }else if(scrollY >= pick.offsetTop-300 && scrollY < food.offsetTop-300){
       tab.forEach(item => {
 
         item.classList.remove('active');
@@ -61,7 +61,7 @@ window.addEventListener('scroll', function() {
           item.classList.add('active');
         };
       });
-    }else if(scrollY >= food.offsetTop-200 && scrollY < experience.offsetTop-200){
+    }else if(scrollY >= food.offsetTop-300 && scrollY < experience.offsetTop-300){
       tab.forEach(item => {
 
         item.classList.remove('active');
@@ -69,7 +69,7 @@ window.addEventListener('scroll', function() {
           item.classList.add('active');
         };
       });
-    }else if(scrollY >= experience.offsetTop-200 && scrollY < firefly.offsetTop-200){
+    }else if(scrollY >= experience.offsetTop-300 && scrollY < firefly.offsetTop-300){
       tab.forEach(item => {
 
         item.classList.remove('active');
@@ -77,7 +77,7 @@ window.addEventListener('scroll', function() {
           item.classList.add('active');
         };
       });
-    }else if(scrollY >= firefly.offsetTop-200 && scrollY < view.offsetTop-200){
+    }else if(scrollY >= firefly.offsetTop-300 && scrollY < view.offsetTop-300){
       tab.forEach(item => {
 
         item.classList.remove('active');
@@ -85,7 +85,7 @@ window.addEventListener('scroll', function() {
           item.classList.add('active');
         };
       });
-    }else if(scrollY >= view.offsetTop-200){
+    }else if(scrollY >= view.offsetTop-300){
       tab.forEach(item => {
 
         item.classList.remove('active');

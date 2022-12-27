@@ -75,4 +75,24 @@ close.forEach((item) => {
     bounce.classList.remove('active');
     body.style.overflow = 'auto';
   })
-})
+});
+
+const cardTops = document.querySelectorAll('#product .card')
+const treeFades = document.querySelectorAll('#product .card-body .tree');
+const outputFades = document.querySelectorAll('#product .card-body .output div');
+
+
+
+function scrollFade() {
+  cardTops.forEach((item) => {
+    console.log(scrollY, item.offsetTop);
+    if(scrollY + 624 > item.offsetTop){
+      item.querySelector('.tree').classList.add('fade');
+      item.querySelectorAll('.output div').forEach(i => {
+        i.classList.add('fade');
+      });
+    }
+  });
+}
+scrollFade();
+window.addEventListener('scroll', scrollFade);

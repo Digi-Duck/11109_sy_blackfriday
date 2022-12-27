@@ -33,8 +33,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-animation: float 2s infinite linear;
-          animation: float 2s infinite linear;
+  animation: float 2s infinite linear;
 }
 .loading .container img:nth-child(1) {
   width: 100%;
@@ -44,37 +43,21 @@
 .loading .container img:nth-child(2) {
   width: 75%;
   height: 75%;
-  -webkit-animation-delay: -0.2s;
-          animation-delay: -0.2s;
+  animation-delay: -0.2s;
   transform: translate(-20%, -30%);
 }
 .loading .container img:nth-child(3) {
   width: 60%;
   height: 60%;
-  -webkit-animation-delay: -0.4s;
-          animation-delay: -0.4s;
+  animation-delay: -0.4s;
   transform: translate(-90%, -20%);
 }
-@-webkit-keyframes float {
-  0% {
-    top: 50%;
-  }
-  50% {
-    top: 44%;
-  }
-  100% {
-    top: 50%;
-  }
-}
 @keyframes float {
-  0% {
-    top: 50%;
+  0%, 100% {
+    top: 52%;
   }
   50% {
     top: 44%;
-  }
-  100% {
-    top: 50%;
   }
 }
 .loading .container h2 {
@@ -89,19 +72,8 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  -webkit-animation: typing 0.8s steps(4), blink 0.2s 6;
-          animation: typing 0.8s steps(4), blink 0.2s 6;
+  animation: typing 0.8s steps(4), blink 0.2s 6;
   background-color: #0c1b2e;
-}
-@-webkit-keyframes typing {
-  0% {
-    left: 12%;
-    border-left: 2px solid #fff;
-  }
-  100% {
-    border-left: 2px solid #fff;
-    left: 88%;
-  }
 }
 @keyframes typing {
   0% {
@@ -111,14 +83,6 @@
   100% {
     border-left: 2px solid #fff;
     left: 88%;
-  }
-}
-@-webkit-keyframes blink {
-  0% {
-    border-left: 2px solid #fff;
-  }
-  100% {
-    border-left: 2px solid transparent;
   }
 }
 @keyframes blink {
@@ -155,6 +119,7 @@
   align-items: center;
 }
 #nav .logo .logoPic {
+  width: 64px;
   height: 40px;
 }
 #nav .logo .logoPic img {
@@ -208,6 +173,7 @@
     padding: 0 20px;
   }
   #nav .logo .logoPic {
+    width: 57.6px;
     height: 36px;
   }
   #nav .logo .logoPic img {
@@ -347,8 +313,7 @@
   width: 100%;
   height: 60px;
   background: #fff;
-  -webkit-clip-path: polygon(0% 100%, 78.5% 0%, 100% 100%);
-          clip-path: polygon(0% 100%, 78.5% 0%, 100% 100%);
+  clip-path: polygon(0% 100%, 78.5% 0%, 100% 100%);
 }
 #banner #album {
   position: absolute;
@@ -357,10 +322,7 @@
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 #banner #album .container {
   position: relative;
@@ -392,8 +354,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 50%;
   transform: rotate(calc(-45deg * var(--i)));
   filter: grayscale(1);
@@ -421,8 +382,7 @@
 }
 #about .content {
   margin: 0 0 0 auto;
-  -ms-writing-mode: tb-rl;
-      writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
   position: relative;
   z-index: 2;
   line-height: 1.5;
@@ -529,8 +489,7 @@
 #sunset-banner .content {
   width: 50%;
   margin-left: auto;
-  -ms-writing-mode: tb-rl;
-      writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
   color: #e2dcdc;
   font-size: 24px;
   line-height: 64px;
@@ -641,8 +600,7 @@
   height: 100%;
   vertical-align: bottom;
   transition: transform 0.5s;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 #main-card .card .pic:hover img {
   transform: scale(1.1);
@@ -694,7 +652,13 @@
   background-color: #243628;
   text-decoration: none;
   color: #fff;
-  border-radius: 12px;
+  border: 1px solid #243628;
+  border-radius: 24px;
+}
+#main-card .card .card-body .btn a:hover {
+  border: 1px solid #243628;
+  background-color: #ecf2ee;
+  color: #243628;
 }
 
 @media (max-width: 768px) {
@@ -897,9 +861,16 @@
   text-align: right;
 }
 #around .swiper .swiper-slide .content div a {
+  display: inline-block;
   text-decoration: none;
   color: #fff;
-  padding: 4px 8px;
+  border: 1px solid #fff;
+  border-radius: 24px;
+  padding: 4px 12px;
+}
+#around .swiper .swiper-slide .content div a:hover, #around .swiper .swiper-slide .content div a:active {
+  background-color: #fff;
+  color: #000;
 }
 #around .swiper .swiper-slide.swiper-slide-active .content {
   opacity: 1;
@@ -1037,8 +1008,7 @@
   width: 100%;
   height: 60px;
   background: #ecf2ee;
-  -webkit-clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
-          clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+  clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
 }
 #room-banner .title {
   position: absolute;
@@ -1075,8 +1045,7 @@
   flex-direction: row-reverse;
 }
 #rooms .card:nth-child(2) .card-img::after {
-  -webkit-animation-delay: -6s;
-          animation-delay: -6s;
+  animation-delay: -6s;
 }
 #rooms .card:nth-child(2) .card-body {
   text-align: right;
@@ -1097,15 +1066,13 @@
   color: #243628;
 }
 #rooms .card .card-img a:hover .search {
-  -webkit-clip-path: circle(100%);
-          clip-path: circle(100%);
+  clip-path: circle(100%);
 }
 #rooms .card .card-img img {
   width: 100%;
   height: 100%;
   vertical-align: bottom;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 #rooms .card .card-img .search {
   position: absolute;
@@ -1115,14 +1082,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  -webkit-clip-path: circle(40px);
-          clip-path: circle(40px);
+  clip-path: circle(40px);
   background-color: rgba(119, 119, 119, 0.4);
   top: 0;
   left: 0;
-  transition: -webkit-clip-path 0.5s;
   transition: clip-path 0.5s;
-  transition: clip-path 0.5s, -webkit-clip-path 0.5s;
 }
 #rooms .card .card-body {
   width: 45%;
@@ -1305,8 +1269,7 @@
   width: 100%;
   height: 60px;
   background: #ecf2ee;
-  -webkit-clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
-          clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+  clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
 }
 #activity-banner .title {
   position: absolute;
@@ -1346,8 +1309,7 @@
   font-size: 14px;
   margin: 0 0 4px 0;
   transform: rotate(12deg);
-  -webkit-clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
-          clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+  clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
 }
 #tabs a:hover {
   margin: 0 10px 4px 0;
@@ -1375,8 +1337,7 @@
 #activity .card .card-img img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   vertical-align: bottom;
 }
 #activity .card .card-body {
@@ -1455,14 +1416,14 @@
 }
 #activity .card:last-child {
   flex-direction: row-reverse;
-  height: 56vh;
+  height: 40vh;
   margin-bottom: 0;
 }
 #activity .card:last-child .card-img {
-  width: 40%;
+  width: 55%;
 }
 #activity .card:last-child .card-body {
-  width: 60%;
+  width: 45%;
 }
 
 @media (max-width: 768px) {
@@ -1539,15 +1500,6 @@
   #activity .card:nth-child(5) .card-body {
     width: 55%;
   }
-  #activity .card:last-child {
-    height: 40vh;
-  }
-  #activity .card:last-child .card-img {
-    width: 50%;
-  }
-  #activity .card:last-child .card-body {
-    width: 50%;
-  }
 }
 @media (max-width: 576px) {
   #activity {
@@ -1614,8 +1566,7 @@
   width: 100%;
   height: 60px;
   background: #ecf2ee;
-  -webkit-clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
-          clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+  clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
 }
 #product-banner .title {
   position: absolute;
@@ -1643,6 +1594,33 @@
 #product .card {
   width: 100%;
   margin-bottom: 60px;
+}
+#product .card:nth-child(2) .card-body {
+  flex-direction: row-reverse;
+}
+#product .card:nth-child(2) .card-body .tree {
+  opacity: 0;
+  transform: translateX(150px);
+  transition: 0.5s;
+}
+#product .card:nth-child(2) .card-body .output div:nth-child(1) {
+  transform: translateX(-150px);
+  transition-delay: 0.5s;
+}
+#product .card:nth-child(2) .card-body .output div:nth-child(2) {
+  transform: translateX(-300px);
+  transition-delay: 0s;
+}
+#product .card:nth-child(2) .card-body .output div:nth-child(3) {
+  transform: translateX(-150px);
+  transition-delay: 1.5s;
+}
+#product .card:nth-child(2) .card-body .output div:nth-child(4) {
+  transform: translateX(-300px);
+  transition-delay: 1s;
+}
+#product .card:nth-child(2) .card-body .output div.fade {
+  transform: translateX(0);
 }
 #product .card .card-header {
   margin-bottom: 20px;
@@ -1677,16 +1655,23 @@
   display: flex;
   width: 100%;
   gap: 16px;
+  overflow: hidden;
 }
 #product .card .card-body .tree {
   width: 45%;
   position: relative;
+  opacity: 0;
+  transform: translateX(-150px);
+  transition: transform 0.5s;
+}
+#product .card .card-body .tree.fade {
+  opacity: 1;
+  transform: translateX(0);
 }
 #product .card .card-body .tree img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   vertical-align: bottom;
 }
 #product .card .card-body .tree h3 {
@@ -1708,6 +1693,27 @@
   width: calc(50% - 8px);
   position: relative;
   filter: grayscale(100%);
+  opacity: 0;
+  transition: transform 0.5s, opacity 0.5s;
+}
+#product .card .card-body .output div:nth-child(1) {
+  transform: translateX(300px);
+}
+#product .card .card-body .output div:nth-child(2) {
+  transform: translateX(150px);
+  transition-delay: 0.5s;
+}
+#product .card .card-body .output div:nth-child(3) {
+  transform: translateX(300px);
+  transition-delay: 1s;
+}
+#product .card .card-body .output div:nth-child(4) {
+  transform: translateX(150px);
+  transition-delay: 1.5s;
+}
+#product .card .card-body .output div.fade {
+  transform: translateX(0);
+  opacity: 1;
 }
 #product .card .card-body .output div:hover {
   filter: grayscale(0%);
@@ -1715,13 +1721,9 @@
 #product .card .card-body .output div img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   vertical-align: bottom;
   cursor: pointer;
-}
-#product .card:nth-child(2) .card-body {
-  flex-direction: row-reverse;
 }
 #product .card:last-child {
   margin-bottom: 0;
@@ -1813,8 +1815,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
   z-index: 5;
   opacity: 0;
   transform: scale(0);
@@ -1881,8 +1882,7 @@
   width: 100%;
   height: 60px;
   background: #ecf2ee;
-  -webkit-clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
-          clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+  clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
 }
 #map-banner .title {
   position: absolute;
@@ -1986,4 +1986,4 @@
   #map .content h2::after {
     bottom: -6px;
   }
-}/*# sourceMappingURL=all.css.map */
+}
