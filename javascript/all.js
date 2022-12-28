@@ -22,3 +22,24 @@ tabs.forEach(function(item) {
     body.style.overflow = 'auto';
   });
 });
+
+
+function floatCloud(e) {
+
+  let cloud = document.createElement('span');
+  cloud.className = 'mousedownCloud';
+  let x = e.offsetX;
+  let y = e.offsetY;
+  cloud.style.left = x+'px';
+  cloud.style.top = y+'px';
+  let size = Math.random() * 100;
+  cloud.style.width = size+20+'px';
+  cloud.style.height = size+20+'px';
+  body.appendChild(cloud);
+  // console.log(e);
+  setTimeout(function() {
+    cloud.remove();
+  }, 1000);
+}
+body.addEventListener('mousedown', floatCloud);
+

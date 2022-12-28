@@ -4,7 +4,6 @@
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
-  
 }
 
 $dark-green: #243628;
@@ -23,6 +22,29 @@ body{
     background: #39553f;
     color: #fff;
   }
+
+  position: relative;
+  .mousedownCloud{
+    position: absolute;
+    display: inline-block;
+    z-index: 200;
+    background: url('../image/icon/cloudMid.svg');
+    pointer-events: none;
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    animation: animate 3s linear infinite;
+    @keyframes animate {
+      0%{
+        transform: translate(0, 0%);
+        opacity: 1;
+      }
+      100%{
+        transform: translate(0, -1000%);
+        opacity: 0;
+      }
+    }
+  }
 }
 
 
@@ -34,7 +56,7 @@ body{
     justify-content: center;
     align-items: center;
     background-color: #0c1b2e;
-    z-index: 10;
+    z-index: 11;
     transform: scale(1);
     opacity: 1;
     transition: transform .5s, opacity 1s;
@@ -132,7 +154,7 @@ body{
   &.fixed{
     position: fixed;
     top: 0;
-    z-index: 3;
+    z-index: 10;
   }
 
   .logo{
@@ -339,19 +361,18 @@ body{
   height: calc(100vh - 80px);
   position: relative;
   overflow: hidden;
-  // background-image: url('../image/banner.jpg');
-  // background-position: center;
-  // background-size: cover;
-  // background-repeat: no-repeat;
+  background-image: url('../image/banner.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 
-  // filter: hue-rotate(170deg);
   .glow{
     position: absolute;
     width: 40px;
     height: 40px;
     border-radius: 50%;
     z-index: 1;
-     background-color: transparent;
+    background-color: transparent;
     left: 51.5%;
     top: 20.5%;
     transition: box-shadow 2s linear; 
@@ -359,28 +380,30 @@ body{
       box-shadow: 0 0 200px 100px rgba(246, 224, 86, .8);
     }
   }
-  img{
+
+  .moveCloud{
+    position: absolute;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    position: absolute;
-  }
-  .moveCloud{
     user-select: none;
-    animation: moveCloud 30s infinite ease-in-out;
   }
-  @keyframes moveCloud {
-    0%,100%{
-      transform: translate(-100px, 0px);
-    }
-    50%{
-      transform: translate(0px, 0px);
-    }
-  }
+
+  // .moveCloud{
+  //   animation: moveCloud 30s infinite ease-in-out;
+  // }
+  // @keyframes moveCloud {
+  //   0%,100%{
+  //     transform: translate(-100px, 0px);
+  //   }
+  //   50%{
+  //     transform: translate(0px, 0px);
+  //   }
+  // }
   &::before{
     content: '';
     position:absolute;
-    z-index: 2;
+    z-index: 4;
     bottom: 0;
     left: 0;
     width:100%;

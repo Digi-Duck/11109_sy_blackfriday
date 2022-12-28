@@ -27,7 +27,9 @@ breadBtns.forEach(function(item) {
     types.forEach(type => {
       type.classList.add('d-none')
       if(type.dataset.type == 'bread'){
-        type.classList.remove('d-none')
+        type.classList.remove('d-none');
+        console.log();
+        type.querySelector('.card-img img').setAttribute('src',item.querySelector('img').getAttribute('src'))
       }
     });
     bounce.classList.add('active');
@@ -40,7 +42,8 @@ fruitBtns.forEach(function(item) {
     types.forEach(type => {
       type.classList.add('d-none')
       if(type.dataset.type == 'fruit'){
-        type.classList.remove('d-none')
+        type.classList.remove('d-none');
+        type.querySelector('.card-img img').setAttribute('src',item.querySelector('img').getAttribute('src'))
       }
     });
     bounce.classList.add('active');
@@ -54,7 +57,8 @@ coffeeBtns.forEach(function(item) {
     types.forEach(type => {
       type.classList.add('d-none')
       if(type.dataset.type == 'coffee'){
-        type.classList.remove('d-none')
+        type.classList.remove('d-none');
+        type.querySelector('.card-img img').setAttribute('src',item.querySelector('img').getAttribute('src'))
       }
     });
     bounce.classList.add('active');

@@ -45,6 +45,40 @@
   
   window.addEventListener('scroll', scroll);
 
+  const topLayer = banner.querySelector('.top');
+  const handle = banner.querySelector('.handle');
+  let skew = 1000;
+  let delta = 0;
+
+  const cloud = banner.querySelector('.moveCloud');
+
+  function mouseCloud(e) {
+    // console.log(e.clientX - window.innerWidth / 2);
+    let moveX = (e.clientX - window.innerWidth / 2) * 0.03;
+    let moveY = (e.clientY - window.innerHeight / 2) * 0.01;
+    cloud.style.transform = `translate3D(-${moveX}px,${moveY}px,${moveY}px)`
+  }
+  banner.addEventListener('mousemove', mouseCloud);
+  banner.addEventListener('touchmove',mouseCloud); 
+   // if(banner.className.indexOf('skewed') != -1){
+  //   skew = 1000;
+  // }
+
+  // banner.addEventListener('mousemove', function(e) {
+    // delta = (e.clientX);
+    // console.log(delta, window.innerWidth);
+    // handle.style.left = e.clientX + delta + 'px';
+    // topLayer.style.width = e.clientX + skew + delta + 'px';
+
+    // console.log(e.pageY,banner.offsetHeight);
+    // topLayer.style.height = ((e.pageY-80)/banner.offsetHeight) * 100 + '%';
+
+
+  // });
+
+
+
+
 
   // Initialize Swiper
   var swiper = new Swiper(".swiper", {
