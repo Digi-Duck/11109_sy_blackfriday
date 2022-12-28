@@ -41,5 +41,5 @@ function floatCloud(e) {
     cloud.remove();
   }, 1000);
 }
-body.addEventListener('mousedown', floatCloud);
+window.addEventListener('mousedown', floatCloud);
 
