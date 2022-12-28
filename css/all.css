@@ -302,25 +302,25 @@ body ::selection {
   margin-bottom: 20px;
 }
 
-.glow {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  z-index: 2;
-  left: 50.5%;
-  top: 20%;
-  transition: box-shadow 2s linear;
-}
-.glow:hover {
-  box-shadow: 0 0 300px 200px rgb(255, 217, 0);
-}
-
 #banner {
   width: 100%;
   height: calc(100vh - 80px);
   position: relative;
   overflow: hidden;
+}
+#banner .glow {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  z-index: 1;
+  background-color: transparent;
+  left: 51.5%;
+  top: 20.5%;
+  transition: box-shadow 2s linear;
+}
+#banner .glow:hover {
+  box-shadow: 0 0 200px 100px rgba(246, 224, 86, 0.8);
 }
 #banner img {
   width: 100%;
@@ -571,7 +571,6 @@ body ::selection {
   inset: 0 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
   animation: cloudMove 10s infinite cubic-bezier(0.17, 0.54, 0.68, 0.19);
 }
 #main-card .cloud:nth-child(2) {
@@ -1364,6 +1363,8 @@ body ::selection {
   z-index: 3;
 }
 #tabs a {
+  position: relative;
+  z-index: 1;
   display: inline-block;
   padding: 0px 16px;
   height: 40px;

@@ -333,21 +333,7 @@ body{
   }
 }
 
-.glow{
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  z-index: 2;
-  // background-color: red;
-  //  background-color: transparent;
-  left: 50.5%;
-  top: 20%;
-  transition: box-shadow 2s linear; 
-  &:hover{
-    box-shadow: 0 0 300px 200px rgb(255, 217, 0);
-  }
-}
+
 #banner{
   width: 100%;
   height: calc(100vh - 80px);
@@ -359,7 +345,20 @@ body{
   // background-repeat: no-repeat;
 
   // filter: hue-rotate(170deg);
-  
+  .glow{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    z-index: 1;
+     background-color: transparent;
+    left: 51.5%;
+    top: 20.5%;
+    transition: box-shadow 2s linear; 
+    &:hover{
+      box-shadow: 0 0 200px 100px rgba(246, 224, 86, .8);
+    }
+  }
   img{
     width: 100%;
     height: 100%;
@@ -620,7 +619,6 @@ body{
     inset: 0 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
     animation: cloudMove 10s infinite cubic-bezier(.17,.54,.68,.19);
     &:nth-child(2){
       animation-delay: -5s;
@@ -1504,6 +1502,8 @@ body{
   text-align: right;
   z-index: 3;
   a{
+    position: relative;
+    z-index: 1;
     display: inline-block;
     padding: 0px 16px;
     height: 40px;
@@ -1525,6 +1525,7 @@ body{
       padding: 0px 20px;
       background-color: #5A3A31;
     }
+    
   }
 }
 @media (max-width: 768px){
