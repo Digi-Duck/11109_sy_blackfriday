@@ -2198,11 +2198,10 @@ body{
     }
   }
 }
-@media (max-width: 768px){
+@media (max-width: 1024px){
   #bounce{  
     .modal{
-      width: 76%;
-      // height: 40%;
+      width: 80%;
       .card{
         flex-direction: column;
         .card-img{
@@ -2221,7 +2220,7 @@ body{
   #bounce{  
     .modal{
       width: 90%;
-      // height: 36%;
+      
     }
   }
 }
