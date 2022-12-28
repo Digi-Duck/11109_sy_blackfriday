@@ -437,31 +437,31 @@ body{
       color: $title-color;
       transform: translateY(100px);
       opacity: 0;
-      transition: transform 1s, opacity .5s;
+      transition: transform 1.5s, opacity .5s;
 
       &:nth-child(1){
-        transition-delay: .3s;
+        transition-delay: .1s;
       }
       &:nth-child(2){
-        transition-delay: .6s;
+        transition-delay: .3s;
       }
       &:nth-child(3){
-        transition-delay: .9s;
+        transition-delay: .5s;
       }
       &:nth-child(4){
-        transition-delay: 1.2s;
+        transition-delay: .7s;
       }
       &:nth-child(5){
-        transition-delay: 1.5s;
+        transition-delay: .9s;
       }
       &:nth-child(6){
-        transition-delay: 1.8s;
+        transition-delay: 1.1s;
       }
       &:nth-child(7){
-        transition-delay: 2.1s;
+        transition-delay: 1.3s;
       }
       &:nth-child(8){
-        transition-delay: 2.3s;
+        transition-delay: 1.5s;
       }
       &.fade{
         transform: translateX(0);
@@ -1195,6 +1195,7 @@ body{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: 90% center;
   }
   .card{
     width: 100%;
@@ -1549,7 +1550,7 @@ body{
 #activity{
   padding: 100px 5%;
   background-image: url(../image/雲層act.png);
-  background-position: center;
+  background-position: 30% center;
   background-size: cover;
   background-repeat: no-repeat;
   // background-color: $green;
