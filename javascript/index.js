@@ -25,6 +25,7 @@
       nav.classList.remove('fixed');
       document.body.style.paddingTop = 0;
     }
+    
     if(scrollY + 576 > about.offsetTop){
       about.querySelector('h2').classList.add('fade');
       about.querySelectorAll('.text p').forEach(text => {
@@ -47,10 +48,10 @@
   const pics = document.querySelectorAll('#main-card .card .pic');
   pics.forEach(pic => {
     pic.addEventListener('mousemove', function(e) {
-      let mouseX = -(e.offsetX - pic.offsetWidth) * 0.1;
-      let mouseY = (pic.offsetHeight - e.offsetY ) * 0.1;
-      console.log(mouseX, mouseY);
-      pic.style.transform = `translateX(0) rotate3d(1, 1, 0, ${mouseY - mouseX}deg) rotate3d(1, -1, 0, ${mouseY - mouseX}deg)`;
+      let mouseX = (e.offsetX - pic.offsetWidth/2) * 0.014;
+      let mouseY = -(e.offsetY - pic.offsetHeight/2) * 0.035;
+      // console.log(mouseY);
+      pic.style.transform = `translateX(0) rotate3d(0, 1, 0, ${mouseX}deg) rotate3d(1, 0, 0, ${mouseY}deg)`;
     })
   })
 

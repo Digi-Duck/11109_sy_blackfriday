@@ -30,6 +30,7 @@ function floatCloud(e) {
   cloud.className = 'mousedownCloud';
   let x = e.offsetX;
   let y = e.offsetY;
+  console.log(x, y);
   cloud.style.left = x+'px';
   cloud.style.top = y+'px';
   let size = Math.random() * 100;
