@@ -24,6 +24,7 @@ body{
     color: #fff;
   }
   overflow-x: hidden !important;
+
   position: relative;
   .mousedownCloud{
     position: absolute;
@@ -720,7 +721,7 @@ body{
         object-fit: cover;
       }
       &:hover img{
-        transform: scale(1.1);
+        transform: scale(1.05);
       }
     }
     &:nth-child(2) .pic{

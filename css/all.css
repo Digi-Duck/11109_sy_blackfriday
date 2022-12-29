@@ -678,7 +678,7 @@ body .mousedownCloud {
   object-fit: cover;
 }
 #main-card .card .pic:hover img {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 #main-card .card:nth-child(2) .pic {
   margin: 0 0 0 5%;
