@@ -42,8 +42,17 @@
       around.querySelector('.swiper').classList.add('fade');
     }
   }
-  
   window.addEventListener('scroll', scroll);
+
+  const pics = document.querySelectorAll('#main-card .card .pic');
+  pics.forEach(pic => {
+    pic.addEventListener('mousemove', function(e) {
+      let mouseX = -(e.offsetX - pic.offsetWidth) * 0.1;
+      let mouseY = (pic.offsetHeight - e.offsetY ) * 0.1;
+      console.log(mouseX, mouseY);
+      pic.style.transform = `translateX(0) rotate3d(1, 1, 0, ${mouseY - mouseX}deg) rotate3d(1, -1, 0, ${mouseY - mouseX}deg)`;
+    })
+  })
 
   const topLayer = banner.querySelector('.top');
   const handle = banner.querySelector('.handle');
@@ -101,5 +110,3 @@
       prevEl: ".swiper-button-prev",
     },
   });
-
-
