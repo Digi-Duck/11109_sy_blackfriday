@@ -25,7 +25,7 @@
       nav.classList.remove('fixed');
       document.body.style.paddingTop = 0;
     }
-    
+
     if(scrollY + 576 > about.offsetTop){
       about.querySelector('h2').classList.add('fade');
       about.querySelectorAll('.text p').forEach(text => {
@@ -45,20 +45,8 @@
   }
   window.addEventListener('scroll', scroll);
 
-  const pics = document.querySelectorAll('#main-card .card .pic');
-  pics.forEach(pic => {
-    pic.addEventListener('mousemove', function(e) {
-      let mouseX = (e.offsetX - pic.offsetWidth/2) * 0.014;
-      let mouseY = -(e.offsetY - pic.offsetHeight/2) * 0.035;
-      // console.log(mouseY);
-      pic.style.transform = `translateX(0) rotate3d(0, 1, 0, ${mouseX}deg) rotate3d(1, 0, 0, ${mouseY}deg)`;
-    })
-  })
 
-  const topLayer = banner.querySelector('.top');
-  const handle = banner.querySelector('.handle');
-  let skew = 1000;
-  let delta = 0;
+
 
   const cloud = banner.querySelector('.moveCloud');
 
@@ -70,21 +58,6 @@
   }
   banner.addEventListener('mousemove', mouseCloud);
   banner.addEventListener('touchmove',mouseCloud); 
-   // if(banner.className.indexOf('skewed') != -1){
-  //   skew = 1000;
-  // }
-
-  // banner.addEventListener('mousemove', function(e) {
-    // delta = (e.clientX);
-    // console.log(delta, window.innerWidth);
-    // handle.style.left = e.clientX + delta + 'px';
-    // topLayer.style.width = e.clientX + skew + delta + 'px';
-
-    // console.log(e.pageY,banner.offsetHeight);
-    // topLayer.style.height = ((e.pageY-80)/banner.offsetHeight) * 100 + '%';
-
-
-  // });
 
 
 

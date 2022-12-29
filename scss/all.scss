@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
+
 }
 
 $dark-green: #243628;
@@ -424,6 +425,7 @@ body{
   background-image: url('../image/關於我們-底圖.png');
   background-position: 10% bottom; background-size: 720px;
   background-repeat: no-repeat;
+  font-family: cursive;
   .content{
     margin: 0 0 0 auto;
     writing-mode: vertical-rl;
@@ -558,6 +560,7 @@ body{
   height: 520px;
   display: flex;
   background-color: #292626;
+  font-family: cursive;
   .content{
     width: 50%;
     margin-left: auto;

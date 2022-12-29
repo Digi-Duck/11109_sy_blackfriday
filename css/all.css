@@ -393,6 +393,7 @@ body .mousedownCloud {
   background-position: 10% bottom;
   background-size: 720px;
   background-repeat: no-repeat;
+  font-family: cursive;
 }
 #about .content {
   margin: 0 0 0 auto;
@@ -521,6 +522,7 @@ body .mousedownCloud {
   height: 520px;
   display: flex;
   background-color: #292626;
+  font-family: cursive;
 }
 #sunset-banner .content {
   width: 50%;
