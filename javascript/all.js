@@ -24,16 +24,15 @@ tabs.forEach(function(item) {
 });
 
 function floatCloud(e) {
-  console.dir(parseInt(scrollY));
 
   let cloud = document.createElement('span');
   cloud.className = 'mousedownCloud';
-  let x = e.offsetX;
-  let y = e.offsetY + parseInt(scrollY);
-  // console.log(x, y);
+  let x = e.pageX;
+  let y = e.pageY;
+
   cloud.style.left = x+'px';
   cloud.style.top = y+'px';
-  let size = Math.random() * 100;
+  let size = Math.random() * 60;
   cloud.style.width = size+20+'px';
   cloud.style.height = size+20+'px';
   body.appendChild(cloud);

@@ -17,6 +17,7 @@
   const about = document.querySelector('#about');
   const around = document.querySelector('#around');
   
+  // 滾動監控
   function scroll() {
     if(scrollY > banner.offsetHeight) {
       nav.classList.add('fixed');
@@ -30,15 +31,19 @@
       about.querySelector('h2').classList.add('fade');
       about.querySelectorAll('.text p').forEach(text => {
         text.classList.add('fade');
-      })
+      });
     }
-    cards.forEach((item) => {
-      if(scrollY+700 > item.offsetTop){
-        item.querySelector('.pic').classList.add('fade');
-        item.querySelector('.card-body').classList.add('opc');
-        item.classList.add('topFade');
+    
+    const mainCard = document.querySelector('#main-card');
+    cards.forEach((card) => {
+      // console.log(scrollY, card.offsetTop);
+      if(scrollY + 700 > mainCard.offsetTop + card.offsetTop){
+        card.querySelector('.pic').classList.add('fade');
+        card.querySelector('.card-body').classList.add('opc');
+        card.classList.add('topFade');
       }
     });
+
     if(scrollY + 600 > around.offsetTop){
       around.querySelector('.swiper').classList.add('fade');
     }
@@ -48,13 +53,13 @@
 
 
 
-  const cloud = banner.querySelector('.moveCloud');
+  const cloudBanner = banner.querySelector('.moveCloud');
 
   function mouseCloud(e) {
     // console.log(e.clientX - window.innerWidth / 2);
     let moveX = (e.clientX - window.innerWidth / 2) * 0.03;
     let moveY = (e.clientY - window.innerHeight / 2) * 0.01;
-    cloud.style.transform = `translate3D(-${moveX}px,${moveY}px,${moveY}px)`
+    cloudBanner.style.transform = `translate3D(-${moveX}px,${moveY}px,${moveY}px)`
   }
   banner.addEventListener('mousemove', mouseCloud);
   banner.addEventListener('touchmove',mouseCloud); 
@@ -70,7 +75,7 @@
     centeredSlides: true,
     slidesPerView: "auto",
     initialSlide: 1,
-    // slideToClickedSlide: true,
+    slideToClickedSlide: true,
     coverflowEffect: {
       rotate: 0,
       stretch: 0,
