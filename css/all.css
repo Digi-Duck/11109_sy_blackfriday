@@ -925,13 +925,13 @@ body .mousedownCloud {
 #around .swiper .header .btn-group {
   display: flex;
   margin: 0 0 0 auto;
-  gap: 10px;
+  gap: 4px;
 }
 #around .swiper .header .btn-group .swiper-button-prev, #around .swiper .header .btn-group .swiper-button-next {
   background-image: url(./leftArrow.svg);
   background-repeat: no-repeat;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   position: static;
   margin: 0;
   transform: translateX(0px);
@@ -943,6 +943,7 @@ body .mousedownCloud {
 #around .swiper .header .btn-group .swiper-button-prev img, #around .swiper .header .btn-group .swiper-button-next img {
   width: 100%;
   height: 100%;
+  color: red;
 }
 #around .swiper .header .btn-group .swiper-button-prev:hover {
   transform: translateX(-5px);
@@ -958,7 +959,7 @@ body .mousedownCloud {
   background-size: cover;
   width: 480px;
   height: 320px;
-  filter: blur(4px);
+  filter: blur(2px);
   position: relative;
 }
 #around .swiper .swiper-slide::after {
@@ -1904,7 +1905,7 @@ body .mousedownCloud {
      object-fit: cover;
   vertical-align: bottom;
   cursor: pointer;
-  filter: blur(3px);
+  filter: blur(2px);
   transition: filter 0.15s;
 }
 #product .card .card-body .output div img:hover {
