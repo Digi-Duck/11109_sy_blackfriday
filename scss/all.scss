@@ -342,9 +342,17 @@ body{
       justify-content: center;
       gap: 20px;
       margin-bottom: 12px;
-      a{
-        font-size: 32px;
-        color: $text-white;
+      li{
+        width: 40px;
+        height: 40px;
+        a{
+
+          img{
+            width: 100%;
+            height: 100%;
+          }
+        }
+
       }
     }
     .copyright{
@@ -934,19 +942,16 @@ body{
         .swiper-button-prev:hover{
           transform: translateX(-5px);
         }
-        .swiper-button-next{
-
-          &:hover{
-            transform: translateX(5px);
-          }
+        .swiper-button-next:hover{
+          transform: translateX(5px);
         }
       }
     }
     .swiper-slide{
       background-position: center;
       background-size: cover;
-      width: 560px;
-      height: 360px;
+      width: 620px;
+      height: 380px;
       filter: blur(2px);
       position: relative;
       &::after{
@@ -1024,8 +1029,8 @@ body{
     padding: 80px 20px;
     .swiper{
       .swiper-slide{
-        width: 400px;
-        height: 300px;
+        width: 440px;
+        height: 320px;
       }
       .header{
         h2{
@@ -1065,7 +1070,7 @@ body{
         }
       }
       .swiper-slide{
-        width: 334px;
+        width: 320px;
         height: 300px;
       }
     }
@@ -1096,8 +1101,16 @@ body{
       display: flex;
       font-size: 32px;
       gap: 20px;
-      li a{
-        color: $text-white;
+      li{
+        width: 40px;
+        height: 40px;
+        a{
+
+          img{
+            width: 100%;
+            height: 100%;
+          }
+        }
       }
     }
     .contactUs{

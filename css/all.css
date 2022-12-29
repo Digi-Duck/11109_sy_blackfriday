@@ -361,9 +361,13 @@ body .mousedownCloud {
   gap: 20px;
   margin-bottom: 12px;
 }
-#mobile-menu .footer .social a {
-  font-size: 32px;
-  color: #e2dcdc;
+#mobile-menu .footer .social li {
+  width: 40px;
+  height: 40px;
+}
+#mobile-menu .footer .social li a img {
+  width: 100%;
+  height: 100%;
 }
 #mobile-menu .footer .copyright {
   text-align: center;
@@ -957,8 +961,8 @@ body .mousedownCloud {
 #around .swiper .swiper-slide {
   background-position: center;
   background-size: cover;
-  width: 560px;
-  height: 360px;
+  width: 620px;
+  height: 380px;
   filter: blur(2px);
   position: relative;
 }
@@ -1032,8 +1036,8 @@ body .mousedownCloud {
     padding: 80px 20px;
   }
   #around .swiper .swiper-slide {
-    width: 400px;
-    height: 300px;
+    width: 440px;
+    height: 320px;
   }
   #around .swiper .header h2 {
     font-size: 24px;
@@ -1060,7 +1064,7 @@ body .mousedownCloud {
     height: 52px;
   }
   #around .swiper .swiper-slide {
-    width: 334px;
+    width: 320px;
     height: 300px;
   }
 }
@@ -1090,8 +1094,13 @@ body .mousedownCloud {
   font-size: 32px;
   gap: 20px;
 }
-#footer .news .social li a {
-  color: #e2dcdc;
+#footer .news .social li {
+  width: 40px;
+  height: 40px;
+}
+#footer .news .social li a img {
+  width: 100%;
+  height: 100%;
 }
 #footer .news .contactUs {
   margin: 0 auto;

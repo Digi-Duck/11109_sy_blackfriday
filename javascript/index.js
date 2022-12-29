@@ -33,7 +33,7 @@
         text.classList.add('fade');
       });
     }
-    
+
     const mainCard = document.querySelector('#main-card');
     cards.forEach((card) => {
       // console.log(scrollY, card.offsetTop);
