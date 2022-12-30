@@ -55,14 +55,13 @@
 
   const cloudBanner = banner.querySelector('.moveCloud');
 
-  function mouseCloud(e) {
-    // console.log(e.clientX - window.innerWidth / 2);
-    let moveX = (e.clientX - window.innerWidth / 2) * 0.03;
-    let moveY = (e.clientY - window.innerHeight / 2) * 0.01;
-    cloudBanner.style.transform = `translate3D(-${moveX}px,${moveY}px,${moveY}px)`
-  }
-  banner.addEventListener('mousemove', mouseCloud);
-  banner.addEventListener('touchmove',mouseCloud); 
+  // function mouseCloud(e) {
+  //   // console.log(e.clientX - window.innerWidth / 2);
+  //   let moveX = (e.clientX - window.innerWidth / 2) * 0.03;
+  //   let moveY = (e.clientY - window.innerHeight / 2) * 0.01;
+  //   cloudBanner.style.transform = `translate3D(-${moveX}px,${moveY}px,${moveY}px)`
+  // }
+  // banner.addEventListener('mousemove', mouseCloud);
 
 
 
