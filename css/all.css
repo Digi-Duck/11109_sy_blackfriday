@@ -400,34 +400,51 @@ body .mousedownCloud {
 #banner .glow:hover {
   box-shadow: 0 0 200px 100px rgba(246, 224, 86, 0.8);
 }
-#banner .moveCloud {
+#banner .clouds {
   position: absolute;
-  z-index: 0;
+  inset: 0 0;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  -webkit-animation: moveCloud 20s infinite cubic-bezier(0.17, 0.54, 0.68, 0.19);
-          animation: moveCloud 20s infinite cubic-bezier(0.17, 0.54, 0.68, 0.19);
+  overflow: hidden;
 }
-@-webkit-keyframes moveCloud {
-  0%, 100% {
-    transform: translateX(0px);
+#banner .clouds img {
+  position: absolute;
+  bottom: -120px;
+  width: 100%;
+  opacity: 0.8;
+  -webkit-animation: clouds 12s infinite cubic-bezier(0.17, 0.54, 0.68, 0.19);
+          animation: clouds 12s infinite cubic-bezier(0.17, 0.54, 0.68, 0.19);
+}
+#banner .clouds img:nth-child(2) {
+  -webkit-animation-delay: -2s;
+          animation-delay: -2s;
+}
+#banner .clouds img:nth-child(3) {
+  -webkit-animation-delay: -5s;
+          animation-delay: -5s;
+}
+#banner .clouds img:nth-child(4) {
+  -webkit-animation-delay: -8s;
+          animation-delay: -8s;
+}
+#banner .clouds img:nth-child(5) {
+  -webkit-animation-delay: -10s;
+          animation-delay: -10s;
+}
+@-webkit-keyframes clouds {
+  0% {
+    transform: translateX(-100%);
   }
-  50% {
-    transform: translateX(-50px);
+  100% {
+    transform: translateX(100%);
   }
 }
-@keyframes moveCloud {
-  0%, 100% {
-    transform: translateX(0px);
+@keyframes clouds {
+  0% {
+    transform: translateX(-100%);
   }
-  50% {
-    transform: translateX(-50px);
+  100% {
+    transform: translateX(100%);
   }
 }
 #banner::before {
