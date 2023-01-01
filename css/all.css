@@ -400,7 +400,7 @@ body .mousedownCloud {
 #banner .clouds img {
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: -80px;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -409,20 +409,16 @@ body .mousedownCloud {
           animation: clouds 20s infinite cubic-bezier(0.17, 0.54, 0.68, 0.19);
 }
 #banner .clouds img:nth-child(2) {
-  -webkit-animation-delay: -4s;
-          animation-delay: -4s;
+  -webkit-animation-delay: -5s;
+          animation-delay: -5s;
 }
 #banner .clouds img:nth-child(3) {
-  -webkit-animation-delay: -8s;
-          animation-delay: -8s;
+  -webkit-animation-delay: -10s;
+          animation-delay: -10s;
 }
 #banner .clouds img:nth-child(4) {
-  -webkit-animation-delay: -12s;
-          animation-delay: -12s;
-}
-#banner .clouds img:nth-child(5) {
-  -webkit-animation-delay: -16s;
-          animation-delay: -16s;
+  -webkit-animation-delay: -15s;
+          animation-delay: -15s;
 }
 @-webkit-keyframes clouds {
   0% {
@@ -483,9 +479,17 @@ body .mousedownCloud {
           clip-path: polygon(0% 100%, 74% 0%, 100% 100%);
 }
 
+@media (max-width: 1080px) {
+  #banner .clouds img {
+    bottom: -40px;
+  }
+}
 @media (max-width: 768px) {
   #banner {
     height: 520px;
+  }
+  #banner .clouds img {
+    bottom: 0;
   }
   #banner::before {
     bottom: -0.5px;

@@ -396,23 +396,23 @@ body{
     img{
       position: absolute;
       left: 0;
-      bottom: 0;
+      bottom: -80px;
       width: 100%;
       object-fit: cover;
       opacity: 0.8;
       animation: clouds 20s infinite cubic-bezier(.17,.54,.68,.19);
       &:nth-child(2){
-        animation-delay: -4s;
+        animation-delay: -5s;
       }
       &:nth-child(3){
-        animation-delay: -8s;
+        animation-delay: -10s;
       }
       &:nth-child(4){
-        animation-delay: -12s;
+        animation-delay: -15s;
       }
-      &:nth-child(5){
-        animation-delay: -16s;
-      }
+      // &:nth-child(5){
+      //   animation-delay: -16s;
+      // }
     }
     
     @keyframes clouds{
@@ -454,9 +454,23 @@ body{
     clip-path:polygon(0% 100%, 74% 0%,100% 100%);
   }
 }
+@media (max-width: 1080px){
+  #banner{
+    .clouds{
+      img{
+        bottom: -40px;
+      }
+    }
+  }
+}
 @media (max-width: 768px) {
   #banner{
     height: 520px;
+    .clouds{
+      img{
+        bottom: 0;
+      }
+    }
     &::before{
       bottom: -0.5px;
     }
