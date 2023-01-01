@@ -372,43 +372,44 @@ body{
   background-size: cover;
   background-repeat: no-repeat;
 
-  .glow{
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    z-index: 1;
-    background-color: transparent;
-    left: 51.5%;
-    top: 20.5%;
-    transition: box-shadow 2s linear; 
-    &:hover{
-      box-shadow: 0 0 200px 100px rgba(246, 224, 86, .8);
-    }
-  }
+  // .glow{
+  //   position: absolute;
+  //   width: 40px;
+  //   height: 40px;
+  //   border-radius: 50%;
+  //   z-index: 1;
+  //   background-color: transparent;
+  //   left: 51.5%;
+  //   top: 20.5%;
+  //   transition: box-shadow 2s linear; 
+  //   &:hover{
+  //     box-shadow: 0 0 200px 100px rgba(246, 224, 86, .8);
+  //   }
+  // }
   .clouds{
     position: absolute;
     inset: 0 0;
     width: 100%;
     height: 100%;
     overflow: hidden;
+    user-select: none;
     img{
       position: absolute;
-      bottom: -120px;
+      bottom: -80px;
       width: 100%;
       opacity: 0.8;
-      animation: clouds 12s infinite cubic-bezier(.17,.54,.68,.19);
+      animation: clouds 20s infinite cubic-bezier(.17,.54,.68,.19);
       &:nth-child(2){
-        animation-delay: -2s;
+        animation-delay: -4s;
       }
       &:nth-child(3){
-        animation-delay: -5s;
-      }
-      &:nth-child(4){
         animation-delay: -8s;
       }
+      &:nth-child(4){
+        animation-delay: -12s;
+      }
       &:nth-child(5){
-        animation-delay: -10s;
+        animation-delay: -16s;
       }
     }
     
