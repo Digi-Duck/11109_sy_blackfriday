@@ -398,6 +398,7 @@ body{
       left: 0;
       bottom: 0;
       width: 100%;
+      object-fit: cover;
       opacity: 0.8;
       animation: clouds 20s infinite cubic-bezier(.17,.54,.68,.19);
       &:nth-child(2){

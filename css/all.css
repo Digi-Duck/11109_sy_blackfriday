@@ -402,6 +402,8 @@ body .mousedownCloud {
   left: 0;
   bottom: 0;
   width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
   opacity: 0.8;
   -webkit-animation: clouds 20s infinite cubic-bezier(0.17, 0.54, 0.68, 0.19);
           animation: clouds 20s infinite cubic-bezier(0.17, 0.54, 0.68, 0.19);
