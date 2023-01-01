@@ -399,7 +399,8 @@ body .mousedownCloud {
 }
 #banner .clouds img {
   position: absolute;
-  bottom: 0px;
+  left: 0;
+  bottom: 0;
   width: 100%;
   opacity: 0.8;
   -webkit-animation: clouds 20s infinite cubic-bezier(0.17, 0.54, 0.68, 0.19);

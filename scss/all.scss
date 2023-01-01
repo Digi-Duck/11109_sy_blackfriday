@@ -395,7 +395,8 @@ body{
     user-select: none;
     img{
       position: absolute;
-      bottom: 0px;
+      left: 0;
+      bottom: 0;
       width: 100%;
       opacity: 0.8;
       animation: clouds 20s infinite cubic-bezier(.17,.54,.68,.19);
