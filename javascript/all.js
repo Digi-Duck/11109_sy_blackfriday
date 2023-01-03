@@ -53,9 +53,10 @@ function floatCloud(e) {
   cloud.style.width = size+20+'px';
   cloud.style.height = size+20+'px';
 
-  if(obj.includes('陰天')){
+  if(obj.includes('陰天') || obj.includes('雲')){
     cloud.style.backgroundImage = "url('../image/thundercloud.png')";
-  }else if(obj.includes('晴時多雲')){
+  }
+  if(obj.includes('晴時多雲')){
     cloud.style.backgroundImage = "url('../image/sun.png')";
   }else if(obj.includes('雨')){
     cloud.style.backgroundImage = "url('../image/raining.png')";
