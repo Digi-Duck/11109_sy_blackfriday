@@ -35,7 +35,7 @@ breadBtns.forEach(function(item) {
     bounce.classList.add('active');
     body.style.overflow = 'hidden';
   });
-})
+});
 fruitBtns.forEach(function(item) {
   item.addEventListener('click', function(e) {
 
@@ -48,9 +48,8 @@ fruitBtns.forEach(function(item) {
     });
     bounce.classList.add('active');
     body.style.overflow = 'hidden';
-    
-  })
-})
+  });
+});
 coffeeBtns.forEach(function(item) {
   item.addEventListener('click', function(e) {
 
@@ -63,9 +62,10 @@ coffeeBtns.forEach(function(item) {
     });
     bounce.classList.add('active');
     body.style.overflow = 'hidden';
-  })
-})
+  });
+});
 
+// 點擊旁邊取消彈跳視窗
 window.addEventListener('click', function(e) {
   // console.log(e.target.getAttribute('id'));
   if(e.target.getAttribute('id') == 'bounce'){
@@ -86,7 +86,7 @@ const treeFades = document.querySelectorAll('#product .card-body .tree');
 const outputFades = document.querySelectorAll('#product .card-body .output div');
 
 
-
+// 滾動飄入
 function scrollFade() {
   cardTops.forEach((item) => {
     // console.log(scrollY, item.offsetTop);

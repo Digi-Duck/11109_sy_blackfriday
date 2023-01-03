@@ -24,7 +24,7 @@ const firefly = document.querySelector('#activity [data-type=firefly]');
 const view = document.querySelector('#activity [data-type=view]');
 
 
-
+// 點擊標籤到指定位置
 tab.forEach(function(item) {
   item.addEventListener('click', function(e) {
     e.preventDefault();
@@ -42,7 +42,7 @@ tab.forEach(function(item) {
 });
 
 
-
+// 滾動監控標籤
 window.addEventListener('scroll', function() {
     
     if(scrollY >= ecology.offsetTop-280 && scrollY < pick.offsetTop-280){

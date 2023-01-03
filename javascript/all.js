@@ -24,7 +24,7 @@ tabs.forEach(function(item) {
 });
 
 let obj = {};
-
+// 抓取天氣
 fetch('https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-8D16676E-55B5-4C88-A449-E3A627C1158C')
 .then(function(response) {
   return response.json();
@@ -38,7 +38,7 @@ fetch('https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorizati
   })
 });
 
-
+// 點擊出現圖片
 function floatCloud(e) {
 
   let cloud = document.createElement('span');
