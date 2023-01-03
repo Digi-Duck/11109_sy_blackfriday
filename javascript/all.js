@@ -23,10 +23,27 @@ tabs.forEach(function(item) {
   });
 });
 
+let obj = {};
+
+fetch('https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-8D16676E-55B5-4C88-A449-E3A627C1158C')
+.then(function(response) {
+  return response.json();
+}).then(function(data) {
+  // console.log(data.records.location);
+  data.records.location.forEach(item => {
+    if(item.locationName.includes('臺中')){
+      obj = item.weatherElement[0].time[1].parameter.parameterName;
+      window.addEventListener('mousedown', floatCloud);
+    }
+  })
+});
+
+
 function floatCloud(e) {
 
   let cloud = document.createElement('span');
   cloud.className = 'mousedownCloud';
+ 
   let x = e.pageX;
   let y = e.pageY;
 
@@ -35,13 +52,21 @@ function floatCloud(e) {
   let size = Math.random() * 60;
   cloud.style.width = size+20+'px';
   cloud.style.height = size+20+'px';
-  body.appendChild(cloud);
+  if(obj.includes('陰天')){
+    cloud.style.backgroundImage = "url('../image/thundercloud.png')";
+  }else if(obj.includes('晴時多雲')){
+    console.log(1);
+    cloud.style.backgroundImage = "url('../image/sun.png')";
+  }else if(obj.includes('雨')){
+    cloud.style.backgroundImage = "url('../image/raining.png')";
+  }
 
+  body.appendChild(cloud);
 
   setTimeout(function() {
     cloud.remove();
   }, 1000);
 }
 
-window.addEventListener('mousedown', floatCloud);
+
 
