@@ -52,10 +52,10 @@ function floatCloud(e) {
   let size = Math.random() * 60;
   cloud.style.width = size+20+'px';
   cloud.style.height = size+20+'px';
+
   if(obj.includes('陰天')){
     cloud.style.backgroundImage = "url('../image/thundercloud.png')";
   }else if(obj.includes('晴時多雲')){
-    console.log(1);
     cloud.style.backgroundImage = "url('../image/sun.png')";
   }else if(obj.includes('雨')){
     cloud.style.backgroundImage = "url('../image/raining.png')";
