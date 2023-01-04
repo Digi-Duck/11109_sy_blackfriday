@@ -2054,6 +2054,7 @@ body .mousedownCloud {
   margin-bottom: 8px;
 }
 #bounce .modal .card .card-body p {
+  line-height: 1.5;
   word-break: keep-all;
   word-wrap: break-word;
 }
