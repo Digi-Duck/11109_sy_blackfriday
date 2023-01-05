@@ -56,7 +56,7 @@ function floatCloud(e) {
   if(obj.includes('陰天') || obj.includes('雲')){
     cloud.style.backgroundImage = "url('../image/thundercloud.png')";
   }
-  if(obj.includes('晴時多雲')){
+  if(obj.includes('晴')){
     cloud.style.backgroundImage = "url('../image/sun.png')";
   }else if(obj.includes('雨')){
     cloud.style.backgroundImage = "url('../image/raining.png')";
