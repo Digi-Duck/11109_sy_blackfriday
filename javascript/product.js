@@ -28,7 +28,7 @@ breadBtns.forEach(function(item) {
       type.classList.add('d-none')
       if(type.dataset.type == 'bread'){
         type.classList.remove('d-none');
-        console.log();
+        // console.log();
         type.querySelector('.card-img img').setAttribute('src',item.querySelector('img').getAttribute('src'))
       }
     });
