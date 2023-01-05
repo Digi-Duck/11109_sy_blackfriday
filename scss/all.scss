@@ -45,6 +45,9 @@ body{
     }
   }
 }
+::selection:is(img){
+  background-color: transparent;
+}
 
 @import './_loading';
 @import './_nav.scss';

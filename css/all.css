@@ -35,6 +35,10 @@ body .mousedownCloud {
   }
 }
 
+::selection:is(img) {
+  background-color: transparent;
+}
+
 .loading {
   position: fixed;
   inset: 0 0;
