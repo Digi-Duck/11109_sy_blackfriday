@@ -56,7 +56,7 @@
     width: 100%;
     .content {
       
-      margin-left: auto;
+      margin: 0 0 0 auto;
 
       p {
         color: $text-white;
@@ -97,8 +97,13 @@
         }
       }
     }
-    .copyright p {
-      text-align: center;
+    .copyright {
+      .content {
+        margin: 0 auto;
+        p{
+          text-align: center;
+        }
+    }
     }
   }
 }

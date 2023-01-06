@@ -375,12 +375,6 @@ body .mousedownCloud {
   width: 100%;
   height: 100%;
 }
-#mobile-menu .footer .copyright {
-  text-align: center;
-  color: #e2dcdc;
-  font-size: 14px;
-  margin-bottom: 20px;
-}
 
 #footer {
   padding: 32px 5%;
@@ -439,7 +433,7 @@ body .mousedownCloud {
   width: 100%;
 }
 #footer .copyright .content {
-  margin-left: auto;
+  margin: 0 0 0 auto;
 }
 #footer .copyright .content p {
   color: #e2dcdc;
@@ -469,7 +463,10 @@ body .mousedownCloud {
   #footer .news .contactUs h3 {
     font-size: 20px;
   }
-  #footer .copyright p {
+  #footer .copyright .content {
+    margin: 0 auto;
+  }
+  #footer .copyright .content p {
     text-align: center;
   }
 }
