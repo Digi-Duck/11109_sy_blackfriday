@@ -11,6 +11,10 @@ body {
   overflow-x: hidden !important;
   position: relative;
 }
+body ::-moz-selection {
+  background: #39553f;
+  color: #fff;
+}
 body ::selection {
   background: #39553f;
   color: #fff;
@@ -22,7 +26,18 @@ body .mousedownCloud {
   background-position: center;
   background-size: cover;
   pointer-events: none;
-  animation: animate 3s cubic-bezier(0.17, 0.54, 0.68, 0.19);
+  -webkit-animation: animate 3s cubic-bezier(0.17, 0.54, 0.68, 0.19);
+          animation: animate 3s cubic-bezier(0.17, 0.54, 0.68, 0.19);
+}
+@-webkit-keyframes animate {
+  0% {
+    transform: translate(0, 0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, -1000%);
+    opacity: 0;
+  }
 }
 @keyframes animate {
   0% {
@@ -33,6 +48,10 @@ body .mousedownCloud {
     transform: translate(0, -1000%);
     opacity: 0;
   }
+}
+
+::-moz-selection:is(img) {
+  background-color: transparent;
 }
 
 ::selection:is(img) {
@@ -65,7 +84,8 @@ body .mousedownCloud {
   position: absolute;
   top: 50%;
   left: 50%;
-  animation: float 2s infinite linear;
+  -webkit-animation: float 2s infinite linear;
+          animation: float 2s infinite linear;
 }
 .loading .container img:nth-child(1) {
   width: 100%;
@@ -75,14 +95,24 @@ body .mousedownCloud {
 .loading .container img:nth-child(2) {
   width: 75%;
   height: 75%;
-  animation-delay: -0.2s;
+  -webkit-animation-delay: -0.2s;
+          animation-delay: -0.2s;
   transform: translate(-20%, -30%);
 }
 .loading .container img:nth-child(3) {
   width: 60%;
   height: 60%;
-  animation-delay: -0.4s;
+  -webkit-animation-delay: -0.4s;
+          animation-delay: -0.4s;
   transform: translate(-90%, -20%);
+}
+@-webkit-keyframes float {
+  0%, 100% {
+    top: 52%;
+  }
+  50% {
+    top: 44%;
+  }
 }
 @keyframes float {
   0%, 100% {
@@ -104,8 +134,19 @@ body .mousedownCloud {
   position: absolute;
   width: 100%;
   height: 100%;
-  animation: typing 0.8s steps(4), blink 0.2s 6;
+  -webkit-animation: typing 0.8s steps(4), blink 0.2s 6;
+          animation: typing 0.8s steps(4), blink 0.2s 6;
   background-color: #0c1b2e;
+}
+@-webkit-keyframes typing {
+  0% {
+    left: 12%;
+    border-left: 2px solid #fff;
+  }
+  100% {
+    border-left: 2px solid #fff;
+    left: 88%;
+  }
 }
 @keyframes typing {
   0% {
@@ -115,6 +156,14 @@ body .mousedownCloud {
   100% {
     border-left: 2px solid #fff;
     left: 88%;
+  }
+}
+@-webkit-keyframes blink {
+  0% {
+    border-left: 2px solid #fff;
+  }
+  100% {
+    border-left: 2px solid transparent;
   }
 }
 @keyframes blink {
@@ -385,8 +434,14 @@ body .mousedownCloud {
   color: #e2dcdc;
   font-size: 15px;
 }
-#footer .copyright p {
-  text-align: end;
+#footer .copyright {
+  display: flex;
+  width: 100%;
+}
+#footer .copyright .content {
+  margin-left: auto;
+}
+#footer .copyright .content p {
   color: #e2dcdc;
   font-size: 14px;
 }
@@ -434,25 +489,41 @@ body .mousedownCloud {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 #banner .clouds img {
   position: absolute;
   left: 0;
   bottom: -80px;
   width: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   opacity: 0.8;
-  animation: clouds 20s infinite cubic-bezier(0.17, 0.54, 0.68, 0.19);
+  -webkit-animation: clouds 20s infinite cubic-bezier(0.17, 0.54, 0.68, 0.19);
+          animation: clouds 20s infinite cubic-bezier(0.17, 0.54, 0.68, 0.19);
 }
 #banner .clouds img:nth-child(2) {
-  animation-delay: -5s;
+  -webkit-animation-delay: -5s;
+          animation-delay: -5s;
 }
 #banner .clouds img:nth-child(3) {
-  animation-delay: -10s;
+  -webkit-animation-delay: -10s;
+          animation-delay: -10s;
 }
 #banner .clouds img:nth-child(4) {
-  animation-delay: -15s;
+  -webkit-animation-delay: -15s;
+          animation-delay: -15s;
+}
+@-webkit-keyframes clouds {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
 }
 @keyframes clouds {
   0% {
@@ -467,9 +538,22 @@ body .mousedownCloud {
   z-index: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  user-select: none;
-  animation: moveCloud 20s infinite cubic-bezier(0.17, 0.54, 0.68, 0.19);
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-animation: moveCloud 20s infinite cubic-bezier(0.17, 0.54, 0.68, 0.19);
+          animation: moveCloud 20s infinite cubic-bezier(0.17, 0.54, 0.68, 0.19);
+}
+@-webkit-keyframes moveCloud {
+  0%, 100% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(-50px);
+  }
 }
 @keyframes moveCloud {
   0%, 100% {
@@ -488,7 +572,8 @@ body .mousedownCloud {
   width: 100%;
   height: 60px;
   background: #fff;
-  clip-path: polygon(0% 100%, 74% 0%, 100% 100%);
+  -webkit-clip-path: polygon(0% 100%, 74% 0%, 100% 100%);
+          clip-path: polygon(0% 100%, 74% 0%, 100% 100%);
 }
 
 @media (max-width: 1080px) {
@@ -526,7 +611,8 @@ body .mousedownCloud {
   justify-content: flex-end;
 }
 #about .content {
-  writing-mode: vertical-rl;
+  -ms-writing-mode: tb-rl;
+      writing-mode: vertical-rl;
   line-height: 1.6;
 }
 #about .content h2 {
@@ -648,7 +734,8 @@ body .mousedownCloud {
 #sunset-banner .content {
   width: 50%;
   margin-left: auto;
-  writing-mode: vertical-rl;
+  -ms-writing-mode: tb-rl;
+      writing-mode: vertical-rl;
   color: #e2dcdc;
   font-size: 24px;
   line-height: 64px;
@@ -712,17 +799,32 @@ body .mousedownCloud {
   inset: 0 0;
   width: 100%;
   height: 100%;
-  user-select: none;
-  animation: cloudMove 10s infinite cubic-bezier(0.17, 0.54, 0.68, 0.19);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-animation: cloudMove 10s infinite cubic-bezier(0.17, 0.54, 0.68, 0.19);
+          animation: cloudMove 10s infinite cubic-bezier(0.17, 0.54, 0.68, 0.19);
 }
 #main-card .cloud:nth-child(2) {
-  animation-delay: -5s;
+  -webkit-animation-delay: -5s;
+          animation-delay: -5s;
 }
 #main-card .cloud:nth-child(3) {
-  animation-delay: -10s;
+  -webkit-animation-delay: -10s;
+          animation-delay: -10s;
 }
 #main-card .cloud:nth-child(4) {
-  animation-delay: -15s;
+  -webkit-animation-delay: -15s;
+          animation-delay: -15s;
+}
+@-webkit-keyframes cloudMove {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
 }
 @keyframes cloudMove {
   0% {
@@ -794,7 +896,8 @@ body .mousedownCloud {
   height: 100%;
   vertical-align: bottom;
   transition: transform 0.5s;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 #main-card .card .pic:hover img {
   transform: scale(1.05);
@@ -1033,14 +1136,18 @@ body .mousedownCloud {
   content: "";
   position: absolute;
   inset: 0 0;
-  clip-path: polygon(83% 90%, 96% 90%, 96% 96.5%, 83% 96.5%);
+  -webkit-clip-path: polygon(83% 90%, 96% 90%, 96% 96.5%, 83% 96.5%);
+          clip-path: polygon(83% 90%, 96% 90%, 96% 96.5%, 83% 96.5%);
   background-color: rgba(0, 0, 0, 0.2);
   opacity: 0;
+  transition: opacity 1s, -webkit-clip-path 0.3s;
   transition: clip-path 0.3s, opacity 1s;
+  transition: clip-path 0.3s, opacity 1s, -webkit-clip-path 0.3s;
   transition-delay: 0s 0.3s;
 }
 #around .swiper .swiper-slide.swiper-slide-active:hover::before, #around .swiper .swiper-slide.swiper-slide-active:active::before {
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+          clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
 #around .swiper .swiper-slide.swiper-slide-active::before {
   opacity: 1;
@@ -1102,7 +1209,8 @@ body .mousedownCloud {
     height: 320px;
   }
   #around .swiper .swiper-slide::before {
-    clip-path: polygon(78% 87.5%, 95% 87.5%, 95% 96.5%, 78% 96.5%);
+    -webkit-clip-path: polygon(78% 87.5%, 95% 87.5%, 95% 96.5%, 78% 96.5%);
+            clip-path: polygon(78% 87.5%, 95% 87.5%, 95% 96.5%, 78% 96.5%);
     transition-delay: 0s;
   }
   #around .swiper .header h2 {
@@ -1115,7 +1223,8 @@ body .mousedownCloud {
     height: 300px;
   }
   #around .swiper .swiper-slide::before {
-    clip-path: polygon(73.5% 87.5%, 93.5% 87.5%, 93.5% 96%, 73.5% 96%);
+    -webkit-clip-path: polygon(73.5% 87.5%, 93.5% 87.5%, 93.5% 96%, 73.5% 96%);
+            clip-path: polygon(73.5% 87.5%, 93.5% 87.5%, 93.5% 96%, 73.5% 96%);
   }
 }
 @media (max-width: 420px) {
@@ -1134,7 +1243,8 @@ body .mousedownCloud {
     height: 300px;
   }
   #around .swiper .swiper-slide::before {
-    clip-path: polygon(70.5% 86.5%, 93% 86.5%, 93% 96%, 70.5% 96%);
+    -webkit-clip-path: polygon(70.5% 86.5%, 93% 86.5%, 93% 96%, 70.5% 96%);
+            clip-path: polygon(70.5% 86.5%, 93% 86.5%, 93% 96%, 70.5% 96%);
   }
 }
 #room-banner {
@@ -1154,7 +1264,8 @@ body .mousedownCloud {
   width: 100%;
   height: 60px;
   background: #ecf2ee;
-  clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+  -webkit-clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+          clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
 }
 #room-banner .title {
   position: absolute;
@@ -1197,7 +1308,8 @@ body .mousedownCloud {
   flex-direction: row-reverse;
 }
 #rooms .card:nth-child(2) .card-img::after {
-  animation-delay: -6s;
+  -webkit-animation-delay: -6s;
+          animation-delay: -6s;
 }
 #rooms .card:nth-child(2) .card-body {
   text-align: right;
@@ -1218,13 +1330,15 @@ body .mousedownCloud {
   color: #243628;
 }
 #rooms .card .card-img a:hover .search {
-  clip-path: circle(100%);
+  -webkit-clip-path: circle(100%);
+          clip-path: circle(100%);
 }
 #rooms .card .card-img img {
   width: 100%;
   height: 100%;
   vertical-align: bottom;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 #rooms .card .card-img .search {
   position: absolute;
@@ -1234,11 +1348,14 @@ body .mousedownCloud {
   display: flex;
   justify-content: center;
   align-items: center;
-  clip-path: circle(40px);
+  -webkit-clip-path: circle(40px);
+          clip-path: circle(40px);
   background-color: rgba(119, 119, 119, 0.3);
   top: 0;
   left: 0;
+  transition: -webkit-clip-path 0.5s;
   transition: clip-path 0.5s;
+  transition: clip-path 0.5s, -webkit-clip-path 0.5s;
 }
 #rooms .card .card-body {
   width: 45%;
@@ -1422,7 +1539,8 @@ body .mousedownCloud {
   width: 100%;
   height: 60px;
   background: #ecf2ee;
-  clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+  -webkit-clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+          clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
 }
 #activity-banner .title {
   position: absolute;
@@ -1477,7 +1595,8 @@ body .mousedownCloud {
   font-size: 14px;
   margin: 0 0 8px 0;
   transform: rotate(8deg);
-  clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+  -webkit-clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+          clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
 }
 #tabs a:hover {
   left: -8px;
@@ -1518,7 +1637,8 @@ body .mousedownCloud {
 #activity .card .card-img img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   vertical-align: bottom;
 }
 #activity .card .card-body {
@@ -1750,7 +1870,8 @@ body .mousedownCloud {
   width: 100%;
   height: 60px;
   background: #ecf2ee;
-  clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+  -webkit-clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+          clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
 }
 #product-banner .title {
   position: absolute;
@@ -1855,7 +1976,8 @@ body .mousedownCloud {
 #product .card .card-body .tree img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   vertical-align: bottom;
 }
 #product .card .card-body .tree h3 {
@@ -1901,7 +2023,8 @@ body .mousedownCloud {
 #product .card .card-body .output div img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   vertical-align: bottom;
   cursor: pointer;
   filter: blur(2px);
@@ -2048,7 +2171,8 @@ body .mousedownCloud {
 #bounce .modal .card .card-img img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 #bounce .modal .card .card-body {
   width: 50%;
@@ -2111,7 +2235,8 @@ body .mousedownCloud {
   width: 100%;
   height: 60px;
   background: #ecf2ee;
-  clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+  -webkit-clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+          clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
 }
 #map-banner .title {
   position: absolute;
@@ -2226,4 +2351,4 @@ body .mousedownCloud {
   #map .content h2::after {
     bottom: -6px;
   }
-}
+}/*# sourceMappingURL=all.css.map */

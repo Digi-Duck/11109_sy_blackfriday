@@ -1,70 +1,76 @@
-#footer{
+#footer {
   padding: 32px 5%;
   background-color: $dark-green;
-  .news{
+  .news {
     display: flex;
     margin-bottom: 28px;
-    .title{
+    .title {
       display: flex;
       font-size: 32px;
       margin-bottom: 8px;
       color: $text-white;
-      p{
+      p {
         padding: 0 12px;
-        &:first-child{
+        &:first-child {
           padding-left: 0;
           border-right: 2px solid $text-white;
         }
       }
     }
-    .social{
+    .social {
       display: flex;
       font-size: 32px;
       gap: 20px;
-      li{
+      li {
         width: 36px;
         height: 36px;
-        a{
-
-          img{
+        a {
+          img {
             width: 100%;
             height: 100%;
           }
         }
       }
     }
-    .contactUs{
+    .contactUs {
       margin: 0 auto;
       margin-top: 16px;
-      h3{
+      h3 {
         font-size: 24px;
         margin-bottom: 8px;
         color: $text-white;
       }
-      .content{
+      .content {
         display: flex;
         gap: 60px;
-        p{
+        p {
           margin-bottom: 8px;
           color: $text-white;
           font-size: 15px;
-
         }
       }
     }
   }
-  .copyright p{
-    text-align: end;
-    color: $text-white;
-    font-size: 14px;
+  .copyright {
+    display: flex;
+    width: 100%;
+    .content {
+      
+      margin-left: auto;
+
+      p {
+        color: $text-white;
+        font-size: 14px;
+      }
+    }
   }
 }
 
-@media (max-width: 992px){
-  #footer{
-    .news{
-      .contactUs{
-        .content{
+@media (max-width: 992px) {
+  #footer {
+    .news {
+      .contactUs {
+        .content {
           display: block;
         }
       }
@@ -72,26 +78,26 @@
   }
 }
 
-@media (max-width: 768px){
-  #footer{
+@media (max-width: 768px) {
+  #footer {
     padding: 32px 20px;
-    .news{
+    .news {
       display: block;
       text-align: center;
-      .title{
+      .title {
         justify-content: center;
         font-size: 28px;
       }
-      .social{
+      .social {
         justify-content: center;
       }
-      .contactUs{
-        h3{
+      .contactUs {
+        h3 {
           font-size: 20px;
         }
       }
     }
-    .copyright p{
+    .copyright p {
       text-align: center;
     }
   }
